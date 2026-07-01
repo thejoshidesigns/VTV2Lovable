@@ -2,6 +2,7 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import { Button } from "@/components/ui/button";
 import { SiteHeader } from "@/components/site/SiteHeader";
 import { SiteFooter } from "@/components/site/SiteFooter";
+import { LogoMarquee } from "@/components/site/LogoMarquee";
 
 import adidas from "@/assets/clients/adidas.png.asset.json";
 import alFuttaim from "@/assets/clients/al-futtaim.png.asset.json";
@@ -158,29 +159,19 @@ function ClientExperiencePage() {
           </div>
 
           <div className="bg-muted/40 border border-border rounded-2xl p-8 md:p-12">
-            <h2 className="text-2xl md:text-3xl font-bold mb-6 text-center">
+            <h2 className="text-2xl md:text-3xl font-bold mb-8 text-center">
               Additional Enterprise Clients
             </h2>
-            <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4">
-              {additionalClients.map((c) => (
-                <div
-                  key={c.name}
-                  className="flex flex-col items-center justify-center gap-2 bg-white border border-border rounded-lg p-4 shadow-sm h-28"
-                >
-                  <div className="flex-1 flex items-center justify-center w-full">
-                    <img
-                      src={c.logo}
-                      alt={`${c.name} logo`}
-                      className="max-h-12 max-w-full object-contain"
-                      loading="lazy"
-                    />
-                  </div>
-                  <span className="font-semibold text-xs text-center text-muted-foreground">
-                    {c.name}
-                  </span>
-                </div>
-              ))}
-            </div>
+            <LogoMarquee
+              logos={[
+                ...featured.map((f) => ({ name: f.client, logo: f.logo })),
+                ...additionalClients,
+              ]}
+              speed={70}
+              hoverSpeed={15}
+              logoHeight={56}
+              gap={64}
+            />
           </div>
 
           <div className="mt-16 text-center p-10 rounded-2xl bg-muted/50 border border-border">
