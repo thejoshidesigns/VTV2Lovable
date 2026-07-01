@@ -1,0 +1,115 @@
+import { Link } from "@tanstack/react-router";
+import { Mail, Phone, Linkedin, MapPin, Building2, Receipt } from "lucide-react";
+
+export function SiteFooter() {
+  return (
+    <footer className="bg-slate-950 text-slate-200 relative overflow-hidden">
+      <div className="absolute top-0 left-0 w-full h-1.5 gradient-primary" />
+      <div className="container-x py-16 md:py-20 relative z-10">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-12 lg:gap-8">
+          <div className="lg:col-span-4 space-y-6">
+            <div className="bg-white/5 inline-block p-3 rounded-xl border border-white/10">
+              <img
+                src="https://horizons-cdn.hostinger.com/e34c5094-7004-485f-bc7b-0eac8887f80d/b077d1c29b287ab71e7bfb59407201b1.png"
+                alt="Vibha Technologies UK Ltd Logo"
+                className="h-14 w-auto object-contain"
+              />
+            </div>
+            <span className="text-xs font-bold tracking-wider uppercase gradient-text block">
+              Enterprise SAP Treasury &amp; Finance Consulting
+            </span>
+            <p className="text-slate-400 leading-relaxed text-sm max-w-sm">
+              Specialist consultancy bridging complex financial operations and enterprise
+              technology through deep SAP innovation and real-world banking expertise.
+            </p>
+          </div>
+
+          <div className="lg:col-span-4">
+            <h4 className="text-sm font-bold uppercase tracking-wider mb-6 text-white">
+              Contact Details
+            </h4>
+            <ul className="space-y-4">
+              <li>
+                <a
+                  href="mailto:appa@vibhatechnologies.co.uk"
+                  className="flex items-start text-sm text-slate-400 hover:text-white transition-colors"
+                >
+                  <span className="mt-0.5 mr-3 rounded bg-white/5 p-1.5">
+                    <Mail className="h-4 w-4 text-[#00A6E0]" />
+                  </span>
+                  <span className="pt-1">appa@vibhatechnologies.co.uk</span>
+                </a>
+              </li>
+              <li>
+                <a
+                  href="tel:+447466854499"
+                  className="flex items-start text-sm text-slate-400 hover:text-white transition-colors"
+                >
+                  <span className="mt-0.5 mr-3 rounded bg-white/5 p-1.5">
+                    <Phone className="h-4 w-4 text-[#00A6E0]" />
+                  </span>
+                  <span className="pt-1">+44 7466 854499</span>
+                </a>
+              </li>
+              <li className="flex items-start text-sm text-slate-400">
+                <span className="mt-0.5 mr-3 rounded bg-white/5 p-1.5">
+                  <MapPin className="h-4 w-4 text-[#00A6E0]" />
+                </span>
+                <span className="pt-1 leading-relaxed">
+                  67 Hall Road, East Ham
+                  <br />
+                  London, United Kingdom
+                </span>
+              </li>
+            </ul>
+          </div>
+
+          <div className="lg:col-span-4">
+            <h4 className="text-sm font-bold uppercase tracking-wider mb-6 text-white">
+              Professional Information
+            </h4>
+            <ul className="space-y-4">
+              <li className="flex items-center text-sm text-slate-400">
+                <Building2 className="h-4 w-4 mr-3 text-slate-500 shrink-0" />
+                Company: Vibha Technologies UK Ltd
+              </li>
+              <li className="flex items-center text-sm text-slate-400">
+                <Receipt className="h-4 w-4 mr-3 text-slate-500 shrink-0" />
+                VAT Registration: GB320844719
+              </li>
+              <li className="flex items-center text-sm text-slate-400">
+                <Building2 className="h-4 w-4 mr-3 text-slate-500 shrink-0" />
+                Company Registration: (to be provided)
+              </li>
+              <li className="pt-3">
+                <a
+                  href="https://www.linkedin.com/in/venkata-appa-rao-vadduri-426b1719/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center text-sm font-medium text-white hover:text-[#00A6E0]"
+                >
+                  <Linkedin className="h-5 w-5 mr-2 text-[#00A6E0]" />
+                  Connect on LinkedIn
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <div className="mt-16 pt-8 border-t border-white/10 flex flex-col md:flex-row justify-between items-center gap-4">
+          <p className="text-sm text-slate-500">
+            © {new Date().getFullYear()} Vibha Technologies UK Ltd. All Rights Reserved.
+          </p>
+          <div className="flex space-x-6 text-sm text-slate-500">
+            <Link to="/privacy" className="hover:text-white transition-colors">
+              Privacy Policy
+            </Link>
+            <Link to="/terms" className="hover:text-white transition-colors">
+              Terms of Service
+            </Link>
+          </div>
+        </div>
+      </div>
+    </footer>
+  );
+}
