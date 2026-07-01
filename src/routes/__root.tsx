@@ -84,6 +84,13 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { property: "og:site_name", content: "Vibha Technologies UK Ltd" },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
+      { property: "og:title", content: "Vibha Technologies UK Ltd — SAP Treasury & Finance Consulting" },
+      { name: "twitter:title", content: "Vibha Technologies UK Ltd — SAP Treasury & Finance Consulting" },
+      { name: "description", content: "Vibhatechnologies is a web application built with TanStack Start and TypeScript, showcasing modern web development practices." },
+      { property: "og:description", content: "Vibhatechnologies is a web application built with TanStack Start and TypeScript, showcasing modern web development practices." },
+      { name: "twitter:description", content: "Vibhatechnologies is a web application built with TanStack Start and TypeScript, showcasing modern web development practices." },
+      { property: "og:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/cd04c6a3-74c9-48d0-8759-81010c562b76/id-preview-4182429e--64032eda-b1cc-40bc-911c-a9769ca621f1.lovable.app-1782871796734.png" },
+      { name: "twitter:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/cd04c6a3-74c9-48d0-8759-81010c562b76/id-preview-4182429e--64032eda-b1cc-40bc-911c-a9769ca621f1.lovable.app-1782871796734.png" },
     ],
     links: [
       { rel: "stylesheet", href: appCss },
