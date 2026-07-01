@@ -115,9 +115,22 @@ function ClientExperiencePage() {
                   i === 0 ? "md:col-span-2" : ""
                 }`}
               >
-                <div className="flex items-baseline justify-between mb-4">
-                  <h3 className="text-2xl font-bold gradient-text">{c.client}</h3>
-                  <span className="text-sm text-muted-foreground uppercase tracking-wider">
+                <div className="flex items-center justify-between gap-4 mb-4">
+                  <div className="flex items-center gap-4 min-w-0">
+                    <div className="h-14 w-14 shrink-0 rounded-lg bg-white border border-border flex items-center justify-center p-2">
+                      <img
+                        src={logoUrl(c.domain)}
+                        alt={`${c.client} logo`}
+                        className="max-h-full max-w-full object-contain"
+                        loading="lazy"
+                        onError={(e) => {
+                          (e.currentTarget as HTMLImageElement).style.display = "none";
+                        }}
+                      />
+                    </div>
+                    <h3 className="text-2xl font-bold gradient-text truncate">{c.client}</h3>
+                  </div>
+                  <span className="text-xs md:text-sm text-muted-foreground uppercase tracking-wider text-right shrink-0">
                     {c.industry}
                   </span>
                 </div>
@@ -137,11 +150,23 @@ function ClientExperiencePage() {
             <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4">
               {additionalClients.map((c) => (
                 <div
-                  key={c}
-                  className="flex items-center bg-card border border-border rounded-lg p-4 shadow-sm"
+                  key={c.name}
+                  className="flex flex-col items-center justify-center gap-2 bg-card border border-border rounded-lg p-4 shadow-sm h-28"
                 >
-                  <CheckCircle2 className="h-4 w-4 text-[#00A6E0] mr-2 shrink-0" />
-                  <span className="font-semibold text-sm">{c}</span>
+                  <div className="flex-1 flex items-center justify-center w-full">
+                    <img
+                      src={logoUrl(c.domain)}
+                      alt={`${c.name} logo`}
+                      className="max-h-10 max-w-full object-contain"
+                      loading="lazy"
+                      onError={(e) => {
+                        (e.currentTarget as HTMLImageElement).style.display = "none";
+                      }}
+                    />
+                  </div>
+                  <span className="font-semibold text-xs text-center text-muted-foreground">
+                    {c.name}
+                  </span>
                 </div>
               ))}
             </div>
