@@ -17,7 +17,7 @@ import lloyds from "@/assets/clients/lloyds.png.asset.json";
 import nielsen from "@/assets/clients/nielsen.png.asset.json";
 import ofcom from "@/assets/clients/ofcom.webp.asset.json";
 import sabic from "@/assets/clients/sabic.png.asset.json";
-import sbd from "@/assets/clients/sbd.avif.asset.json";
+import sbd from "@/assets/clients/sbd.png.asset.json";
 import siemensGamesa from "@/assets/clients/siemens-gamesa.webp.asset.json";
 import signet from "@/assets/clients/signet.png.asset.json";
 import tnt from "@/assets/clients/tnt.png.asset.json";
