@@ -10,9 +10,9 @@ export function SiteFooter() {
           <div className="lg:col-span-4 space-y-6">
             <div className="bg-white/5 inline-block p-3 rounded-xl border border-white/10">
               <img
-                src="https://horizons-cdn.hostinger.com/e34c5094-7004-485f-bc7b-0eac8887f80d/b077d1c29b287ab71e7bfb59407201b1.png"
+                src="/__l5e/assets-v1/2e995d0c-6a05-4759-b6b4-4a478300f721/vibha-logo.svg"
                 alt="Vibha Technologies UK Ltd Logo"
-                className="h-14 w-auto object-contain"
+                className="h-16 w-auto object-contain"
               />
             </div>
             <span className="text-xs font-bold tracking-wider uppercase gradient-text block">
