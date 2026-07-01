@@ -1,5 +1,4 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { CheckCircle2 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { SiteHeader } from "@/components/site/SiteHeader";
 import { SiteFooter } from "@/components/site/SiteFooter";
@@ -24,6 +23,7 @@ export const Route = createFileRoute("/client-experience")({
 const featured = [
   {
     client: "Co-op UK",
+    domain: "coop.co.uk",
     industry: "Retail & Consumer",
     scope:
       "Full SAP Treasury implementation including Treasury Transaction Manager, Cash & Liquidity Management, Reuters and 360T integration, and multi-bank connectivity.",
@@ -32,6 +32,7 @@ const featured = [
   },
   {
     client: "Siemens Gamesa",
+    domain: "siemensgamesa.com",
     industry: "Renewable Energy",
     scope:
       "Global Treasury Management System implementation following complex merger integration across 27 countries.",
@@ -40,6 +41,7 @@ const featured = [
   },
   {
     client: "Adidas",
+    domain: "adidas.com",
     industry: "Retail & Manufacturing",
     scope:
       "Global Treasury Transformation focused on FX Risk Management, Hedging, integrated Liquidity Management and Trade Finance automation.",
@@ -48,6 +50,7 @@ const featured = [
   },
   {
     client: "Yorkshire Water",
+    domain: "yorkshirewater.com",
     industry: "Utilities",
     scope:
       "SAP S/4HANA Central Finance transformation across 25 company codes.",
@@ -55,6 +58,7 @@ const featured = [
   },
   {
     client: "Signet Jewelers",
+    domain: "signetjewelers.com",
     industry: "Luxury Retail",
     scope:
       "Global Cash Management modernization supporting 3,300+ retail locations.",
@@ -64,21 +68,23 @@ const featured = [
 ];
 
 const additionalClients = [
-  "SBD",
-  "Capita",
-  "Crossrail",
-  "Ofcom",
-  "Euro Insurances",
-  "Gazprom",
-  "Kellogg's",
-  "TNT",
-  "Homebase",
-  "Lloyds Banking",
-  "Al Futtaim",
-  "AC Nielsen",
-  "GE Water",
-  "Saudi Petro",
+  { name: "SBD", domain: "sbd.co.uk" },
+  { name: "Capita", domain: "capita.com" },
+  { name: "Crossrail", domain: "crossrail.co.uk" },
+  { name: "Ofcom", domain: "ofcom.org.uk" },
+  { name: "Euro Insurances", domain: "euroinsurances.com" },
+  { name: "Gazprom", domain: "gazprom.com" },
+  { name: "Kellogg's", domain: "kelloggs.com" },
+  { name: "TNT", domain: "tnt.com" },
+  { name: "Homebase", domain: "homebase.co.uk" },
+  { name: "Lloyds Banking", domain: "lloydsbankinggroup.com" },
+  { name: "Al Futtaim", domain: "alfuttaim.com" },
+  { name: "AC Nielsen", domain: "nielsen.com" },
+  { name: "GE Water", domain: "ge.com" },
+  { name: "Saudi Petro", domain: "sabic.com" },
 ];
+
+const logoUrl = (domain: string) => `https://logo.clearbit.com/${domain}?size=200`;
 
 function ClientExperiencePage() {
   return (
@@ -108,9 +114,22 @@ function ClientExperiencePage() {
                   i === 0 ? "md:col-span-2" : ""
                 }`}
               >
-                <div className="flex items-baseline justify-between mb-4">
-                  <h3 className="text-2xl font-bold gradient-text">{c.client}</h3>
-                  <span className="text-sm text-muted-foreground uppercase tracking-wider">
+                <div className="flex items-center justify-between gap-4 mb-4">
+                  <div className="flex items-center gap-4 min-w-0">
+                    <div className="h-14 w-14 shrink-0 rounded-lg bg-white border border-border flex items-center justify-center p-2">
+                      <img
+                        src={logoUrl(c.domain)}
+                        alt={`${c.client} logo`}
+                        className="max-h-full max-w-full object-contain"
+                        loading="lazy"
+                        onError={(e) => {
+                          (e.currentTarget as HTMLImageElement).style.display = "none";
+                        }}
+                      />
+                    </div>
+                    <h3 className="text-2xl font-bold gradient-text truncate">{c.client}</h3>
+                  </div>
+                  <span className="text-xs md:text-sm text-muted-foreground uppercase tracking-wider text-right shrink-0">
                     {c.industry}
                   </span>
                 </div>
@@ -130,11 +149,23 @@ function ClientExperiencePage() {
             <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4">
               {additionalClients.map((c) => (
                 <div
-                  key={c}
-                  className="flex items-center bg-card border border-border rounded-lg p-4 shadow-sm"
+                  key={c.name}
+                  className="flex flex-col items-center justify-center gap-2 bg-card border border-border rounded-lg p-4 shadow-sm h-28"
                 >
-                  <CheckCircle2 className="h-4 w-4 text-[#00A6E0] mr-2 shrink-0" />
-                  <span className="font-semibold text-sm">{c}</span>
+                  <div className="flex-1 flex items-center justify-center w-full">
+                    <img
+                      src={logoUrl(c.domain)}
+                      alt={`${c.name} logo`}
+                      className="max-h-10 max-w-full object-contain"
+                      loading="lazy"
+                      onError={(e) => {
+                        (e.currentTarget as HTMLImageElement).style.display = "none";
+                      }}
+                    />
+                  </div>
+                  <span className="font-semibold text-xs text-center text-muted-foreground">
+                    {c.name}
+                  </span>
                 </div>
               ))}
             </div>
