@@ -68,9 +68,9 @@ export function SiteHeader() {
         {/* Logo on the RIGHT */}
         <Link to="/" className="flex items-center shrink-0">
           <img
-            src="https://horizons-cdn.hostinger.com/e34c5094-7004-485f-bc7b-0eac8887f80d/b077d1c29b287ab71e7bfb59407201b1.png"
+            src="/__l5e/assets-v1/2e995d0c-6a05-4759-b6b4-4a478300f721/vibha-logo.svg"
             alt="Vibha Technologies UK Ltd Logo"
-            className="h-16 sm:h-20 w-auto object-contain"
+            className="h-20 sm:h-24 w-auto object-contain"
           />
         </Link>
       </nav>
