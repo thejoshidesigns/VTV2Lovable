@@ -3,6 +3,26 @@ import { Button } from "@/components/ui/button";
 import { SiteHeader } from "@/components/site/SiteHeader";
 import { SiteFooter } from "@/components/site/SiteFooter";
 
+import adidas from "@/assets/clients/adidas.png.asset.json";
+import alFuttaim from "@/assets/clients/al-futtaim.png.asset.json";
+import capita from "@/assets/clients/capita.webp.asset.json";
+import coop from "@/assets/clients/coop.webp.asset.json";
+import crossrail from "@/assets/clients/crossrail.png.asset.json";
+import euroInsurances from "@/assets/clients/euro-insurances.png.asset.json";
+import gazprom from "@/assets/clients/gazprom.png.asset.json";
+import ge from "@/assets/clients/ge.avif.asset.json";
+import homebase from "@/assets/clients/homebase.webp.asset.json";
+import kelloggs from "@/assets/clients/kelloggs.webp.asset.json";
+import lloyds from "@/assets/clients/lloyds.png.asset.json";
+import nielsen from "@/assets/clients/nielsen.png.asset.json";
+import ofcom from "@/assets/clients/ofcom.webp.asset.json";
+import sabic from "@/assets/clients/sabic.png.asset.json";
+import sbd from "@/assets/clients/sbd.avif.asset.json";
+import siemensGamesa from "@/assets/clients/siemens-gamesa.webp.asset.json";
+import signet from "@/assets/clients/signet.png.asset.json";
+import tnt from "@/assets/clients/tnt.png.asset.json";
+import yorkshireWater from "@/assets/clients/yorkshire-water.png.asset.json";
+
 export const Route = createFileRoute("/client-experience")({
   head: () => ({
     meta: [
@@ -23,7 +43,7 @@ export const Route = createFileRoute("/client-experience")({
 const featured = [
   {
     client: "Co-op UK",
-    domain: "coop.co.uk",
+    logo: coop.url,
     industry: "Retail & Consumer",
     scope:
       "Full SAP Treasury implementation including Treasury Transaction Manager, Cash & Liquidity Management, Reuters and 360T integration, and multi-bank connectivity.",
@@ -32,7 +52,7 @@ const featured = [
   },
   {
     client: "Siemens Gamesa",
-    domain: "siemensgamesa.com",
+    logo: siemensGamesa.url,
     industry: "Renewable Energy",
     scope:
       "Global Treasury Management System implementation following complex merger integration across 27 countries.",
@@ -41,7 +61,7 @@ const featured = [
   },
   {
     client: "Adidas",
-    domain: "adidas.com",
+    logo: adidas.url,
     industry: "Retail & Manufacturing",
     scope:
       "Global Treasury Transformation focused on FX Risk Management, Hedging, integrated Liquidity Management and Trade Finance automation.",
@@ -50,7 +70,7 @@ const featured = [
   },
   {
     client: "Yorkshire Water",
-    domain: "yorkshirewater.com",
+    logo: yorkshireWater.url,
     industry: "Utilities",
     scope:
       "SAP S/4HANA Central Finance transformation across 25 company codes.",
@@ -58,7 +78,7 @@ const featured = [
   },
   {
     client: "Signet Jewelers",
-    domain: "signetjewelers.com",
+    logo: signet.url,
     industry: "Luxury Retail",
     scope:
       "Global Cash Management modernization supporting 3,300+ retail locations.",
@@ -68,23 +88,21 @@ const featured = [
 ];
 
 const additionalClients = [
-  { name: "SBD", domain: "sbd.co.uk" },
-  { name: "Capita", domain: "capita.com" },
-  { name: "Crossrail", domain: "crossrail.co.uk" },
-  { name: "Ofcom", domain: "ofcom.org.uk" },
-  { name: "Euro Insurances", domain: "euroinsurances.com" },
-  { name: "Gazprom", domain: "gazprom.com" },
-  { name: "Kellogg's", domain: "kelloggs.com" },
-  { name: "TNT", domain: "tnt.com" },
-  { name: "Homebase", domain: "homebase.co.uk" },
-  { name: "Lloyds Banking", domain: "lloydsbankinggroup.com" },
-  { name: "Al Futtaim", domain: "alfuttaim.com" },
-  { name: "AC Nielsen", domain: "nielsen.com" },
-  { name: "GE Water", domain: "ge.com" },
-  { name: "Saudi Petro", domain: "sabic.com" },
+  { name: "SBD", logo: sbd.url },
+  { name: "Capita", logo: capita.url },
+  { name: "Crossrail", logo: crossrail.url },
+  { name: "Ofcom", logo: ofcom.url },
+  { name: "Euro Insurances", logo: euroInsurances.url },
+  { name: "Gazprom", logo: gazprom.url },
+  { name: "Kellogg's", logo: kelloggs.url },
+  { name: "TNT", logo: tnt.url },
+  { name: "Homebase", logo: homebase.url },
+  { name: "Lloyds Banking", logo: lloyds.url },
+  { name: "Al Futtaim", logo: alFuttaim.url },
+  { name: "AC Nielsen", logo: nielsen.url },
+  { name: "GE Water", logo: ge.url },
+  { name: "Saudi Petro (SABIC)", logo: sabic.url },
 ];
-
-const logoUrl = (domain: string) => `https://logo.clearbit.com/${domain}?size=200`;
 
 function ClientExperiencePage() {
   return (
@@ -116,15 +134,12 @@ function ClientExperiencePage() {
               >
                 <div className="flex items-center justify-between gap-4 mb-4">
                   <div className="flex items-center gap-4 min-w-0">
-                    <div className="h-14 w-14 shrink-0 rounded-lg bg-white border border-border flex items-center justify-center p-2">
+                    <div className="h-16 w-16 shrink-0 rounded-lg bg-white border border-border flex items-center justify-center p-2">
                       <img
-                        src={logoUrl(c.domain)}
+                        src={c.logo}
                         alt={`${c.client} logo`}
                         className="max-h-full max-w-full object-contain"
                         loading="lazy"
-                        onError={(e) => {
-                          (e.currentTarget as HTMLImageElement).style.display = "none";
-                        }}
                       />
                     </div>
                     <h3 className="text-2xl font-bold gradient-text truncate">{c.client}</h3>
@@ -150,17 +165,14 @@ function ClientExperiencePage() {
               {additionalClients.map((c) => (
                 <div
                   key={c.name}
-                  className="flex flex-col items-center justify-center gap-2 bg-card border border-border rounded-lg p-4 shadow-sm h-28"
+                  className="flex flex-col items-center justify-center gap-2 bg-white border border-border rounded-lg p-4 shadow-sm h-28"
                 >
                   <div className="flex-1 flex items-center justify-center w-full">
                     <img
-                      src={logoUrl(c.domain)}
+                      src={c.logo}
                       alt={`${c.name} logo`}
-                      className="max-h-10 max-w-full object-contain"
+                      className="max-h-12 max-w-full object-contain"
                       loading="lazy"
-                      onError={(e) => {
-                        (e.currentTarget as HTMLImageElement).style.display = "none";
-                      }}
                     />
                   </div>
                   <span className="font-semibold text-xs text-center text-muted-foreground">
