@@ -24,6 +24,7 @@ export const Route = createFileRoute("/client-experience")({
 const featured = [
   {
     client: "Co-op UK",
+    domain: "coop.co.uk",
     industry: "Retail & Consumer",
     scope:
       "Full SAP Treasury implementation including Treasury Transaction Manager, Cash & Liquidity Management, Reuters and 360T integration, and multi-bank connectivity.",
@@ -32,6 +33,7 @@ const featured = [
   },
   {
     client: "Siemens Gamesa",
+    domain: "siemensgamesa.com",
     industry: "Renewable Energy",
     scope:
       "Global Treasury Management System implementation following complex merger integration across 27 countries.",
@@ -40,6 +42,7 @@ const featured = [
   },
   {
     client: "Adidas",
+    domain: "adidas.com",
     industry: "Retail & Manufacturing",
     scope:
       "Global Treasury Transformation focused on FX Risk Management, Hedging, integrated Liquidity Management and Trade Finance automation.",
@@ -48,6 +51,7 @@ const featured = [
   },
   {
     client: "Yorkshire Water",
+    domain: "yorkshirewater.com",
     industry: "Utilities",
     scope:
       "SAP S/4HANA Central Finance transformation across 25 company codes.",
@@ -55,6 +59,7 @@ const featured = [
   },
   {
     client: "Signet Jewelers",
+    domain: "signetjewelers.com",
     industry: "Luxury Retail",
     scope:
       "Global Cash Management modernization supporting 3,300+ retail locations.",
@@ -64,21 +69,23 @@ const featured = [
 ];
 
 const additionalClients = [
-  "SBD",
-  "Capita",
-  "Crossrail",
-  "Ofcom",
-  "Euro Insurances",
-  "Gazprom",
-  "Kellogg's",
-  "TNT",
-  "Homebase",
-  "Lloyds Banking",
-  "Al Futtaim",
-  "AC Nielsen",
-  "GE Water",
-  "Saudi Petro",
+  { name: "SBD", domain: "sbd.co.uk" },
+  { name: "Capita", domain: "capita.com" },
+  { name: "Crossrail", domain: "crossrail.co.uk" },
+  { name: "Ofcom", domain: "ofcom.org.uk" },
+  { name: "Euro Insurances", domain: "euroinsurances.com" },
+  { name: "Gazprom", domain: "gazprom.com" },
+  { name: "Kellogg's", domain: "kelloggs.com" },
+  { name: "TNT", domain: "tnt.com" },
+  { name: "Homebase", domain: "homebase.co.uk" },
+  { name: "Lloyds Banking", domain: "lloydsbankinggroup.com" },
+  { name: "Al Futtaim", domain: "alfuttaim.com" },
+  { name: "AC Nielsen", domain: "nielsen.com" },
+  { name: "GE Water", domain: "ge.com" },
+  { name: "Saudi Petro", domain: "sabic.com" },
 ];
+
+const logoUrl = (domain: string) => `https://logo.clearbit.com/${domain}?size=200`;
 
 function ClientExperiencePage() {
   return (
