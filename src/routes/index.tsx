@@ -5,7 +5,7 @@ import { Button } from "@/components/ui/button";
 import { SiteHeader } from "@/components/site/SiteHeader";
 import { SiteFooter } from "@/components/site/SiteFooter";
 import { LiquidLogo } from "@/components/site/LiquidLogo";
-import heroLogo from "@/assets/vt-logo-hero.png.asset.json";
+import heroLogo from "@/assets/vt-logo-hero-v2.png.asset.json";
 
 export const Route = createFileRoute("/")({
   head: () => ({
