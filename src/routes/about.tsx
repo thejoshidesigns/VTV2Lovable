@@ -62,19 +62,19 @@ function AboutPage() {
               <h2 className="mb-6">Our Story</h2>
               <div className="space-y-4 text-muted-foreground leading-relaxed text-lg mb-8">
                 <p>
-                  Vibha Technologies UK Ltd was founded with a singular, focused mission: to
-                  provide organizations with SAP Treasury solutions architected by professionals
-                  who actually understand the business of treasury.
+                  Vibha Technologies UK Ltd was founded in 2019 with a singular, focused
+                  mission: to provide organizations with SAP Treasury solutions architected by
+                  professionals who actually understand the business of treasury.
                 </p>
                 <p>
-                  Our founder spent years inside global banking institutions before transitioning
-                  to enterprise SAP architecture, bringing 14+ years of real time core banking
-                  experience to every engagement.
+                  Our founder garnered 16+ years of rich experience in global banking before
+                  transitioning to enterprise SAP architecture, bringing real time core banking
+                  expertise to every engagement.
                 </p>
               </div>
               <Link to="/contact">
-                <Button className="gradient-primary text-white border-0 shadow-md">
-                  Speak with our Leadership <ArrowRight className="ml-2 h-4 w-4" />
+                <Button size="lg" className="gradient-primary text-white border-0 shadow-md">
+                  Speak with our Leadership <ArrowRight className="ml-2 h-5 w-5" />
                 </Button>
               </Link>
             </div>
