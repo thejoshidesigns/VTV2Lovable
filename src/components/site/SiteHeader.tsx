@@ -34,7 +34,7 @@ export function SiteHeader() {
         {/* Logo on the LEFT */}
         <Link to="/" className="flex items-center shrink-0">
           <img
-            src="/__l5e/assets-v1/0d390d0d-96ba-4b5e-acef-611c18c7fb65/vibha-logo-blue.png"
+            src="/__l5e/assets-v1/2e995d0c-6a05-4759-b6b4-4a478300f721/vibha-logo.svg"
             alt="Vibha Technologies UK Ltd Logo"
             className="h-24 sm:h-28 lg:h-32 w-auto object-contain"
           />

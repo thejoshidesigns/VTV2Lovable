@@ -8,11 +8,11 @@ export function SiteFooter() {
       <div className="container-x py-16 md:py-20 relative z-10">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-12 lg:gap-8">
           <div className="lg:col-span-4 space-y-6">
-            <div className="bg-white/5 inline-block p-3 rounded-xl border border-white/10">
+            <div className="bg-white inline-block p-4 rounded-xl shadow-lg">
               <img
-                src="/__l5e/assets-v1/0d390d0d-96ba-4b5e-acef-611c18c7fb65/vibha-logo-blue.png"
+                src="/__l5e/assets-v1/2e995d0c-6a05-4759-b6b4-4a478300f721/vibha-logo.svg"
                 alt="Vibha Technologies UK Ltd Logo"
-                className="h-16 w-auto object-contain"
+                className="h-20 w-auto object-contain"
               />
             </div>
             <span className="text-xs font-bold tracking-wider uppercase gradient-text block">
