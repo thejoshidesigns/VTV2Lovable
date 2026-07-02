@@ -76,10 +76,10 @@ void main() {
     vec2 m = u_mouse - uv;
     float d = length(m);
     float ring = exp(-d*d * 60.0) * u_mouseAmt;
-    disp += normalize(m + 1e-5) * ring * 6.0 * u_pxScale;
+    disp += normalize(m + 1e-5) * ring * 6.0 * u_pxScale * textMask;
   }
 
-  float ca = 0.35 * u_pxScale;
+  float ca = 0.35 * u_pxScale * textMask;
   vec2 dir = normalize(flow + 1e-5);
   vec4 cr = texture2D(u_tex, uv + disp + dir * ca);
   vec4 cg = texture2D(u_tex, uv + disp);
