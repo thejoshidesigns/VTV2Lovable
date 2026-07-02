@@ -10,7 +10,7 @@ export function SiteFooter() {
           <div className="lg:col-span-4 space-y-6">
             <div className="bg-white/5 inline-block p-3 rounded-xl border border-white/10">
               <img
-                src="/__l5e/assets-v1/2e995d0c-6a05-4759-b6b4-4a478300f721/vibha-logo.svg"
+                src="/__l5e/assets-v1/0d390d0d-96ba-4b5e-acef-611c18c7fb65/vibha-logo-blue.png"
                 alt="Vibha Technologies UK Ltd Logo"
                 className="h-16 w-auto object-contain"
               />
