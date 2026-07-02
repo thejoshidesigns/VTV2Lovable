@@ -111,7 +111,7 @@ function HomePage() {
                 <Link to="/contact">
                   <Button
                     size="lg"
-                    className="h-14 px-8 text-base gradient-primary hover:gradient-primary-hover text-white border-0 shadow-lg w-full sm:w-auto"
+                    className="h-16 px-10 text-xl md:text-2xl font-semibold gradient-primary hover:gradient-primary-hover text-white border-0 shadow-lg w-full sm:w-auto"
                   >
                     Let's Discuss Your SAP Treasury Transformation
                     <ArrowRight className="ml-2 h-5 w-5" />
