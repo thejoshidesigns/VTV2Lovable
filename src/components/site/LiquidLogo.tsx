@@ -2,6 +2,8 @@ import { useEffect, useRef, useState } from "react";
 
 interface LiquidLogoProps {
   src: string;
+  videoSrc?: string;
+  chromaKey?: boolean; // treat near-black pixels as transparent (for MP4 video)
   alt?: string;
   className?: string;
 }
@@ -14,17 +16,17 @@ void main() {
   gl_Position = vec4(a_pos, 0.0, 1.0);
 }`;
 
-// Simplex noise (Ashima) + liquid distortion + subtle chromatic refraction.
 const FRAG = `
 precision highp float;
 varying vec2 v_uv;
 uniform sampler2D u_tex;
 uniform float u_time;
 uniform vec2 u_res;
-uniform vec2 u_mouse;      // 0..1, -1 if none
-uniform float u_mouseAmt;  // 0..1 eased
-uniform float u_pxScale;   // pixels -> uv (1/height)
-uniform float u_aspect;    // image aspect / canvas aspect fit
+uniform vec2 u_mouse;
+uniform float u_mouseAmt;
+uniform float u_pxScale;
+uniform float u_aspect;
+uniform float u_chroma; // 1.0 = chroma-key black to transparent
 
 vec3 permute(vec3 x){ return mod(((x*34.0)+1.0)*x, 289.0); }
 float snoise(vec2 v){
@@ -53,23 +55,19 @@ float snoise(vec2 v){
 
 void main() {
   vec2 uv = v_uv;
-  // center-stable falloff (edges distort more)
   vec2 c = uv - 0.5;
   float r = length(c) * 1.4142;
   float edge = smoothstep(0.15, 0.9, r);
 
   float t = u_time * 0.18;
-  // layered noise -> smooth flow field
   vec2 p = uv * 1.4;
   float n1 = snoise(p + vec2(t, -t*0.7));
   float n2 = snoise(p * 2.1 + vec2(-t*0.6, t*0.9) + 5.2);
   vec2 flow = vec2(n1, n2);
 
-  // intensity in pixels -> uv (5..12 px)
   float px = mix(5.0, 12.0, 0.5 + 0.5 * sin(u_time * 0.3));
   vec2 disp = flow * px * u_pxScale * edge;
 
-  // mouse ripple
   if (u_mouse.x >= 0.0) {
     vec2 m = u_mouse - uv;
     float d = length(m);
@@ -77,17 +75,23 @@ void main() {
     disp += normalize(m + 1e-5) * ring * 6.0 * u_pxScale;
   }
 
-  // subtle chromatic refraction
   float ca = 0.35 * u_pxScale;
   vec2 dir = normalize(flow + 1e-5);
   vec4 cr = texture2D(u_tex, uv + disp + dir * ca);
   vec4 cg = texture2D(u_tex, uv + disp);
   vec4 cb = texture2D(u_tex, uv + disp - dir * ca);
-  float a = max(cr.a, max(cg.a, cb.a));
-  gl_FragColor = vec4(cr.r, cg.g, cb.b, a);
+
+  vec3 col = vec3(cr.r, cg.g, cb.b);
+  float aTex = max(cr.a, max(cg.a, cb.a));
+  // Chroma-key: derive alpha from luminance so pure black becomes transparent
+  float lum = max(col.r, max(col.g, col.b));
+  float aKey = smoothstep(0.06, 0.28, lum);
+  float a = mix(aTex, aKey, u_chroma);
+  // Pre-multiply alpha for correct blending
+  gl_FragColor = vec4(col * a, a);
 }`;
 
-export function LiquidLogo({ src, alt = "", className }: LiquidLogoProps) {
+export function LiquidLogo({ src, videoSrc, chromaKey = false, alt = "", className }: LiquidLogoProps) {
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const wrapRef = useRef<HTMLDivElement>(null);
   const [reduced, setReduced] = useState(false);
@@ -110,7 +114,6 @@ export function LiquidLogo({ src, alt = "", className }: LiquidLogoProps) {
     const gl = canvas.getContext("webgl", { premultipliedAlpha: true, antialias: true, alpha: true });
     if (!gl) return;
 
-    // compile
     const compile = (type: number, src: string) => {
       const s = gl.createShader(type)!;
       gl.shaderSource(s, src);
@@ -138,8 +141,8 @@ export function LiquidLogo({ src, alt = "", className }: LiquidLogoProps) {
     const uMouseAmt = gl.getUniformLocation(prog, "u_mouseAmt");
     const uPxScale = gl.getUniformLocation(prog, "u_pxScale");
     const uAspect = gl.getUniformLocation(prog, "u_aspect");
+    const uChroma = gl.getUniformLocation(prog, "u_chroma");
 
-    // texture
     const tex = gl.createTexture();
     gl.bindTexture(gl.TEXTURE_2D, tex);
     gl.texImage2D(gl.TEXTURE_2D, 0, gl.RGBA, 1, 1, 0, gl.RGBA, gl.UNSIGNED_BYTE, new Uint8Array([0,0,0,0]));
@@ -148,16 +151,32 @@ export function LiquidLogo({ src, alt = "", className }: LiquidLogoProps) {
     gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_MIN_FILTER, gl.LINEAR);
     gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_MAG_FILTER, gl.LINEAR);
 
-    const img = new Image();
-    img.crossOrigin = "anonymous";
-    img.onload = () => {
-      gl.bindTexture(gl.TEXTURE_2D, tex);
-      gl.pixelStorei(gl.UNPACK_FLIP_Y_WEBGL, true);
-      gl.pixelStorei(gl.UNPACK_PREMULTIPLY_ALPHA_WEBGL, true);
-      gl.texImage2D(gl.TEXTURE_2D, 0, gl.RGBA, gl.RGBA, gl.UNSIGNED_BYTE, img);
-      setReady(true);
-    };
-    img.src = src;
+    let video: HTMLVideoElement | null = null;
+
+    if (videoSrc) {
+      video = document.createElement("video");
+      video.src = videoSrc;
+      video.crossOrigin = "anonymous";
+      video.muted = true;
+      video.loop = true;
+      video.playsInline = true;
+      video.autoplay = true;
+      video.setAttribute("playsinline", "");
+      video.setAttribute("muted", "");
+      video.play().catch(() => {});
+      video.addEventListener("loadeddata", () => setReady(true));
+    } else {
+      const img = new Image();
+      img.crossOrigin = "anonymous";
+      img.onload = () => {
+        gl.bindTexture(gl.TEXTURE_2D, tex);
+        gl.pixelStorei(gl.UNPACK_FLIP_Y_WEBGL, true);
+        gl.pixelStorei(gl.UNPACK_PREMULTIPLY_ALPHA_WEBGL, true);
+        gl.texImage2D(gl.TEXTURE_2D, 0, gl.RGBA, gl.RGBA, gl.UNSIGNED_BYTE, img);
+        setReady(true);
+      };
+      img.src = src;
+    }
 
     gl.enable(gl.BLEND);
     gl.blendFunc(gl.ONE, gl.ONE_MINUS_SRC_ALPHA);
@@ -177,7 +196,6 @@ export function LiquidLogo({ src, alt = "", className }: LiquidLogoProps) {
     const ro = new ResizeObserver(resize);
     ro.observe(wrap);
 
-    // mouse
     const mouse = { x: -1, y: -1, amt: 0, targetAmt: 0 };
     const onMove = (e: PointerEvent) => {
       const rect = canvas.getBoundingClientRect();
@@ -189,7 +207,6 @@ export function LiquidLogo({ src, alt = "", className }: LiquidLogoProps) {
     canvas.addEventListener("pointermove", onMove);
     canvas.addEventListener("pointerleave", onLeave);
 
-    // visibility
     let visible = true;
     const io = new IntersectionObserver(([e]) => { visible = e.isIntersecting; }, { threshold: 0.01 });
     io.observe(wrap);
@@ -202,6 +219,16 @@ export function LiquidLogo({ src, alt = "", className }: LiquidLogoProps) {
       mouse.amt += (mouse.targetAmt - mouse.amt) * 0.06;
       mouse.targetAmt *= 0.985;
 
+      // Upload latest video frame
+      if (video && video.readyState >= 2) {
+        gl.bindTexture(gl.TEXTURE_2D, tex);
+        gl.pixelStorei(gl.UNPACK_FLIP_Y_WEBGL, true);
+        gl.pixelStorei(gl.UNPACK_PREMULTIPLY_ALPHA_WEBGL, false);
+        try {
+          gl.texImage2D(gl.TEXTURE_2D, 0, gl.RGBA, gl.RGBA, gl.UNSIGNED_BYTE, video);
+        } catch { /* ignore cross-origin frame errors */ }
+      }
+
       gl.clear(gl.COLOR_BUFFER_BIT);
       gl.uniform1f(uTime, t);
       gl.uniform2f(uRes, canvas.width, canvas.height);
@@ -209,6 +236,7 @@ export function LiquidLogo({ src, alt = "", className }: LiquidLogoProps) {
       gl.uniform1f(uMouseAmt, mouse.amt);
       gl.uniform1f(uPxScale, 1 / canvas.height);
       gl.uniform1f(uAspect, canvas.width / canvas.height);
+      gl.uniform1f(uChroma, chromaKey || !!videoSrc ? 1.0 : 0.0);
       gl.drawArrays(gl.TRIANGLES, 0, 6);
       raf = requestAnimationFrame(tick);
     };
@@ -220,8 +248,12 @@ export function LiquidLogo({ src, alt = "", className }: LiquidLogoProps) {
       io.disconnect();
       canvas.removeEventListener("pointermove", onMove);
       canvas.removeEventListener("pointerleave", onLeave);
+      if (video) {
+        video.pause();
+        video.src = "";
+      }
     };
-  }, [src, reduced]);
+  }, [src, videoSrc, chromaKey, reduced]);
 
   return (
     <div ref={wrapRef} className={className} style={{ position: "relative" }}>
