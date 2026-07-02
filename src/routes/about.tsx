@@ -133,7 +133,7 @@ function AboutPage() {
               <div className="inline-flex items-center rounded-full border border-primary/20 bg-primary/5 px-4 py-1.5 mb-5 text-xs font-bold uppercase tracking-widest gradient-text">
                 About the Founder
               </div>
-              <h2 className="mb-3">Appa Rao Kesineni</h2>
+              <h2 className="mb-3">Appa Rao Vadduri</h2>
               <p className="text-lg font-semibold text-[#0B5CAD] mb-6">
                 Founder &amp; Principal Consultant
               </p>
