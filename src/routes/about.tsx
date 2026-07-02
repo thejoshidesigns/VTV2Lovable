@@ -40,11 +40,14 @@ function AboutPage() {
       <section className="py-20 md:py-32 bg-slate-950 text-white relative overflow-hidden">
         <div className="absolute inset-0 gradient-primary opacity-40" />
         <div className="container-x relative z-10 max-w-3xl">
-          <div className="inline-flex items-center rounded-full border border-white/20 bg-white/5 backdrop-blur-md px-4 py-1.5 text-sm font-medium text-white mb-6">
-            About Vibha Technologies
+          <div className="inline-flex items-center rounded-full border border-white/25 bg-white/10 backdrop-blur-md px-6 py-3 text-lg md:text-xl font-bold uppercase tracking-wide text-white mb-8 shadow-[0_0_20px_rgba(0,166,224,0.35)]">
+            <span className="flex h-3 w-3 rounded-full bg-[#00A6E0] mr-3 shadow-[0_0_10px_#00A6E0]" />
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#4DC9F0] to-white">
+              About Vibha Technologies
+            </span>
           </div>
           <h1 className="mb-6 text-white">
-            Treasury Expertise Built on Real Banking Experience
+            Built on Real Time Core Banking Experience
           </h1>
           <p className="text-xl text-white/80 leading-relaxed font-light">
             Bridging the gap between complex financial operations and enterprise technology.
