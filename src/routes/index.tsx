@@ -4,6 +4,8 @@ import { ArrowRight, Building2, CheckCircle, Globe2 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { SiteHeader } from "@/components/site/SiteHeader";
 import { SiteFooter } from "@/components/site/SiteFooter";
+import { LiquidLogo } from "@/components/site/LiquidLogo";
+import heroLogo from "@/assets/vt-logo-hero.png.asset.json";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -83,49 +85,64 @@ function HomePage() {
         </div>
 
         <div className="container-x relative z-10 py-20 lg:py-32">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, ease: "easeOut" }}
-            className="max-w-4xl"
-          >
-            {/* Enterprise Consultancy badge — bigger + gradient */}
-            <div className="inline-flex items-center rounded-full border border-white/25 bg-white/10 backdrop-blur-md px-6 py-3 mb-8 shadow-[0_0_20px_rgba(0,166,224,0.4)]">
-              <span className="flex h-3 w-3 rounded-full bg-[#00A6E0] mr-3 shadow-[0_0_10px_#00A6E0]" />
-              <span className="text-lg md:text-xl font-bold tracking-wide text-transparent bg-clip-text bg-gradient-to-r from-[#4DC9F0] to-white uppercase">
-                Enterprise Consultancy
-              </span>
-            </div>
-            <h1 className="mb-6 text-white">
-              Transforming Treasury &amp; Finance Operations Through{" "}
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#4DC9F0] to-[#609DE6]">
-                SAP Innovation
-              </span>
-            </h1>
-            <p className="text-xl md:text-2xl text-slate-300 mb-10 leading-relaxed font-light">
-              Specialist SAP Treasury, Cash Management and Finance Transformation consultancy.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4">
-              <Link to="/contact">
-                <Button
-                  size="lg"
-                  className="h-14 px-8 text-base gradient-primary hover:gradient-primary-hover text-white border-0 shadow-lg w-full sm:w-auto"
-                >
-                  Let's Discuss Your SAP Treasury Transformation
-                  <ArrowRight className="ml-2 h-5 w-5" />
-                </Button>
-              </Link>
-              {/* Explore Our Expertise — white bg, black text */}
-              <Link to="/services">
-                <Button
-                  size="lg"
-                  className="h-14 px-8 text-base bg-white text-black hover:bg-slate-100 border-0 w-full sm:w-auto"
-                >
-                  Explore Our Expertise
-                </Button>
-              </Link>
-            </div>
-          </motion.div>
+          <div className="grid grid-cols-1 lg:grid-cols-[1.15fr_1fr] gap-12 items-center">
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, ease: "easeOut" }}
+            >
+              {/* Enterprise Consultancy badge — bigger + gradient */}
+              <div className="inline-flex items-center rounded-full border border-white/25 bg-white/10 backdrop-blur-md px-6 py-3 mb-8 shadow-[0_0_20px_rgba(0,166,224,0.4)]">
+                <span className="flex h-3 w-3 rounded-full bg-[#00A6E0] mr-3 shadow-[0_0_10px_#00A6E0]" />
+                <span className="text-lg md:text-xl font-bold tracking-wide text-transparent bg-clip-text bg-gradient-to-r from-[#4DC9F0] to-white uppercase">
+                  Enterprise Consultancy
+                </span>
+              </div>
+              <h1 className="mb-6 text-white">
+                Transforming Treasury &amp; Finance Operations Through{" "}
+                <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#4DC9F0] to-[#609DE6]">
+                  SAP Innovation
+                </span>
+              </h1>
+              <p className="text-xl md:text-2xl text-slate-300 mb-10 leading-relaxed font-light">
+                Specialist SAP Treasury, Cash Management and Finance Transformation consultancy.
+              </p>
+              <div className="flex flex-col sm:flex-row gap-4">
+                <Link to="/contact">
+                  <Button
+                    size="lg"
+                    className="h-14 px-8 text-base gradient-primary hover:gradient-primary-hover text-white border-0 shadow-lg w-full sm:w-auto"
+                  >
+                    Let's Discuss Your SAP Treasury Transformation
+                    <ArrowRight className="ml-2 h-5 w-5" />
+                  </Button>
+                </Link>
+                {/* Explore Our Expertise — white bg, black text */}
+                <Link to="/services">
+                  <Button
+                    size="lg"
+                    className="h-14 px-8 text-base bg-white text-black hover:bg-slate-100 border-0 w-full sm:w-auto"
+                  >
+                    Explore Our Expertise
+                  </Button>
+                </Link>
+              </div>
+            </motion.div>
+
+            {/* Liquid logo */}
+            <motion.div
+              initial={{ opacity: 0, scale: 0.95 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 1.2, ease: "easeOut", delay: 0.2 }}
+              className="hidden lg:block"
+            >
+              <LiquidLogo
+                src={heroLogo.url}
+                alt="Vibha Technologies liquid logo"
+                className="w-full aspect-square max-w-[520px] ml-auto"
+              />
+            </motion.div>
+          </div>
         </div>
       </section>
 
