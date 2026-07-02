@@ -118,7 +118,7 @@ function AboutPage() {
               <div className="relative rounded-[1.5rem] overflow-hidden bg-slate-950 shadow-2xl w-[260px] h-[320px] md:w-[300px] md:h-[370px]">
                 <img
                   src={founderPhoto.url}
-                  alt="Appa Rao Kesineni, Founder of Vibha Technologies"
+                  alt="Appa Rao Vadduri, Founder of Vibha Technologies"
                   className="w-full h-full object-cover"
                 />
                 <div className="absolute inset-x-0 bottom-0 h-24 bg-gradient-to-t from-slate-950/80 to-transparent" />
