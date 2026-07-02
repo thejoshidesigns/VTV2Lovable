@@ -79,7 +79,7 @@ export function SiteFooter() {
               </li>
               <li className="flex items-center text-sm text-slate-400">
                 <Building2 className="h-4 w-4 mr-3 text-slate-500 shrink-0" />
-                Company Registration: (to be provided)
+                Company Registration: GB11901683
               </li>
               <li className="pt-3">
                 <a
