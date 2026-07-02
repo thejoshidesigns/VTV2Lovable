@@ -30,8 +30,17 @@ export function SiteHeader() {
       }`}
     >
       <div className="absolute bottom-0 left-0 w-full h-[2px] gradient-primary opacity-20" />
-      <nav className="container-x flex h-24 items-center justify-between">
-        {/* Desktop Nav (left) */}
+      <nav className="container-x flex h-28 items-center justify-between">
+        {/* Logo on the LEFT */}
+        <Link to="/" className="flex items-center shrink-0">
+          <img
+            src="/__l5e/assets-v1/2e995d0c-6a05-4759-b6b4-4a478300f721/vibha-logo.svg"
+            alt="Vibha Technologies UK Ltd Logo"
+            className="h-24 sm:h-28 lg:h-32 w-auto object-contain"
+          />
+        </Link>
+
+        {/* Desktop Nav (right) */}
         <div className="hidden lg:flex lg:items-center lg:space-x-1">
           {navLinks.map((link) => (
             <Link
@@ -56,23 +65,14 @@ export function SiteHeader() {
           </div>
         </div>
 
-        {/* Mobile menu button (left on mobile) */}
+        {/* Mobile menu button */}
         <button
           onClick={() => setOpen(!open)}
           className="lg:hidden inline-flex items-center justify-center rounded-md p-2 border border-border/60 text-foreground"
           aria-label="Toggle menu"
         >
-          {open ? <Menu className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
+          {open ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
         </button>
-
-        {/* Logo on the RIGHT */}
-        <Link to="/" className="flex items-center shrink-0">
-          <img
-            src="/__l5e/assets-v1/2e995d0c-6a05-4759-b6b4-4a478300f721/vibha-logo.svg"
-            alt="Vibha Technologies UK Ltd Logo"
-            className="h-20 sm:h-24 w-auto object-contain"
-          />
-        </Link>
       </nav>
 
       {/* Mobile drawer */}
