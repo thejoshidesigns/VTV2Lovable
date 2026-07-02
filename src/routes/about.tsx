@@ -112,7 +112,7 @@ function AboutPage() {
             <div className="inline-flex p-4 rounded-2xl bg-white shadow-sm border border-border mb-6">
               <Landmark className="h-10 w-10 text-[#0B5CAD]" />
             </div>
-            <h2 className="mb-4">What Treasury Teams Manage</h2>
+            <h2 className="mb-4">Enterprise Treasury Capabilities We Enable</h2>
             <p className="text-lg text-muted-foreground">
               Our SAP implementations establish control and visibility across these critical
               areas.
