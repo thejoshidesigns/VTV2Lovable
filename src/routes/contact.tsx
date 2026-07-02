@@ -169,10 +169,10 @@ function ContactPage() {
                     <Mail className="h-5 w-5 text-[#00A6E0] mb-3" />
                     <p className="text-sm text-muted-foreground mb-1">Email Address</p>
                     <a
-                      href="mailto:appa@vibhatechnologies.co.uk"
+                      href="mailto:contact@vibhatechnologies.co.uk"
                       className="font-semibold hover:text-[#0B5CAD] break-all"
                     >
-                      appa@vibhatechnologies.co.uk
+                      contact@vibhatechnologies.co.uk
                     </a>
                   </CardContent>
                 </Card>
