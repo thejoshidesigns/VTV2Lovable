@@ -26,9 +26,9 @@ export const Route = createFileRoute("/")({
 
 const stats = [
   { value: "24+", label: "Years SAP Treasury & Finance Consulting" },
-  { value: "14+", label: "Years Treasury & Banking" },
+  { value: "16+", label: "Years Treasury & Banking" },
   { value: "34", label: "Global SAP Programs" },
-  { value: "9", label: "SAP Certifications + CAIIB" },
+  { value: "9", label: "SAP Certifications + CAIIB (Certified Associate of Indian Institute of Bankers)" },
 ];
 
 const services = [
