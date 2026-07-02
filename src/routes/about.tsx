@@ -118,7 +118,7 @@ function AboutPage() {
               <div className="relative rounded-[1.5rem] overflow-hidden bg-slate-950 shadow-2xl w-[260px] h-[320px] md:w-[300px] md:h-[370px]">
                 <img
                   src={founderPhoto.url}
-                  alt="Appa Rao Kesineni, Founder of Vibha Technologies"
+                  alt="Appa Rao Vadduri, Founder of Vibha Technologies"
                   className="w-full h-full object-cover"
                 />
                 <div className="absolute inset-x-0 bottom-0 h-24 bg-gradient-to-t from-slate-950/80 to-transparent" />
@@ -133,7 +133,7 @@ function AboutPage() {
               <div className="inline-flex items-center rounded-full border border-primary/20 bg-primary/5 px-4 py-1.5 mb-5 text-xs font-bold uppercase tracking-widest gradient-text">
                 About the Founder
               </div>
-              <h2 className="mb-3">Appa Rao Kesineni</h2>
+              <h2 className="mb-3">Appa Rao Vadduri</h2>
               <p className="text-lg font-semibold text-[#0B5CAD] mb-6">
                 Founder &amp; Principal Consultant
               </p>
