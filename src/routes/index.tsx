@@ -121,7 +121,7 @@ function HomePage() {
                 <Link to="/services">
                   <Button
                     size="lg"
-                    className="h-14 px-8 text-base bg-white text-black hover:bg-slate-100 border-0 w-full sm:w-auto"
+                    className="h-16 px-10 text-xl md:text-2xl font-semibold bg-white text-black hover:bg-slate-100 border-0 w-full sm:w-auto"
                   >
                     Explore Our Expertise
                   </Button>
