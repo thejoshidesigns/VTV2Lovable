@@ -58,6 +58,10 @@ void main() {
   vec2 c = uv - 0.5;
   float r = length(c) * 1.4142;
   float edge = smoothstep(0.15, 0.9, r);
+  // Only distort the top emblem region; keep bottom text crisp.
+  // uv.y is flipped (0 = bottom). Text sits roughly in the lower ~28%.
+  float textMask = smoothstep(0.28, 0.38, uv.y);
+  edge *= textMask;
 
   float t = u_time * 0.18;
   vec2 p = uv * 1.4;
