@@ -169,8 +169,8 @@ function ClientExperiencePage() {
               ]}
               speed={70}
               hoverSpeed={15}
-              logoHeight={56}
-              gap={64}
+              logoHeight={96}
+              gap={80}
               grayscale={false}
             />
           </div>
