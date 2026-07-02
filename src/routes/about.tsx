@@ -88,7 +88,7 @@ function AboutPage() {
                 Our Unique Positioning
               </h3>
               <div className="pb-6 border-b border-border/60">
-                <h4 className="text-base font-semibold mb-2">Traditional SAP Firms</h4>
+                <h4 className="text-base font-semibold mb-2 text-[#0B5CAD]">Traditional SAP Firms</h4>
                 <p className="text-muted-foreground text-sm leading-relaxed">
                   Focus primarily on system configuration, requiring extensive hand-holding from
                   internal finance teams.
