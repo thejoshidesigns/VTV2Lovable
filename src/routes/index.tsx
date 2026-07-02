@@ -105,7 +105,7 @@ function HomePage() {
                 </span>
               </h1>
               <p className="text-xl md:text-2xl text-slate-300 mb-10 leading-relaxed font-light">
-                Specialist SAP Treasury, Cash Management and Finance Transformation consultancy.
+                Specialists in SAP Treasury, Cash Management and Finance Transformation.
               </p>
               <div className="flex flex-col sm:flex-row gap-4">
                 <Link to="/contact">
