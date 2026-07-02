@@ -58,6 +58,10 @@ void main() {
   vec2 c = uv - 0.5;
   float r = length(c) * 1.4142;
   float edge = smoothstep(0.15, 0.9, r);
+  // Only distort the top emblem region; keep bottom text crisp.
+  // uv.y is flipped (0 = bottom). Text sits roughly in the lower ~28%.
+  float textMask = smoothstep(0.28, 0.38, uv.y);
+  edge *= textMask;
 
   float t = u_time * 0.18;
   vec2 p = uv * 1.4;
@@ -72,10 +76,10 @@ void main() {
     vec2 m = u_mouse - uv;
     float d = length(m);
     float ring = exp(-d*d * 60.0) * u_mouseAmt;
-    disp += normalize(m + 1e-5) * ring * 6.0 * u_pxScale;
+    disp += normalize(m + 1e-5) * ring * 6.0 * u_pxScale * textMask;
   }
 
-  float ca = 0.35 * u_pxScale;
+  float ca = 0.35 * u_pxScale * textMask;
   vec2 dir = normalize(flow + 1e-5);
   vec4 cr = texture2D(u_tex, uv + disp + dir * ca);
   vec4 cg = texture2D(u_tex, uv + disp);
