@@ -31,13 +31,13 @@ export function SiteFooter() {
             <ul className="space-y-4">
               <li>
                 <a
-                  href="mailto:appa@vibhatechnologies.co.uk"
+                  href="mailto:contact@vibhatechnologies.co.uk"
                   className="flex items-start text-sm text-slate-400 hover:text-white transition-colors"
                 >
                   <span className="mt-0.5 mr-3 rounded bg-white/5 p-1.5">
                     <Mail className="h-4 w-4 text-[#00A6E0]" />
                   </span>
-                  <span className="pt-1">appa@vibhatechnologies.co.uk</span>
+                  <span className="pt-1">contact@vibhatechnologies.co.uk</span>
                 </a>
               </li>
               <li>
