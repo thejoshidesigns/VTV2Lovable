@@ -65,17 +65,14 @@ void main() {
   float n2 = snoise(p * 2.1 + vec2(-t*0.6, t*0.9) + 5.2);
   vec2 flow = vec2(n1, n2);
 
-  float px = mix(8.0, 18.0, 0.5 + 0.5 * sin(u_time * 0.3));
-  // Distortion is OFF by default; only appears near the cursor.
-  vec2 disp = vec2(0.0);
+  float px = mix(5.0, 12.0, 0.5 + 0.5 * sin(u_time * 0.3));
+  vec2 disp = flow * px * u_pxScale * edge;
 
-  if (u_mouse.x >= 0.0 && u_mouseAmt > 0.001) {
+  if (u_mouse.x >= 0.0) {
     vec2 m = u_mouse - uv;
     float d = length(m);
-    float falloff = exp(-d*d * 25.0) * u_mouseAmt;
-    disp += flow * px * u_pxScale * edge * falloff;
     float ring = exp(-d*d * 60.0) * u_mouseAmt;
-    disp += normalize(m + 1e-5) * ring * 8.0 * u_pxScale;
+    disp += normalize(m + 1e-5) * ring * 6.0 * u_pxScale;
   }
 
   float ca = 0.35 * u_pxScale;
