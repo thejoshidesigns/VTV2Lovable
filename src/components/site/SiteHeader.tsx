@@ -23,21 +23,20 @@ export function SiteHeader() {
 
   return (
     <header
-      className={`sticky top-0 z-50 w-full transition-all duration-300 border-b ${
-        scrolled
-          ? "bg-background/95 backdrop-blur-md shadow-sm border-border"
-          : "bg-background border-transparent"
+      className={`sticky top-0 z-50 w-full transition-all duration-300 gradient-primary ${
+        scrolled ? "shadow-lg" : ""
       }`}
     >
-      <div className="absolute bottom-0 left-0 w-full h-[2px] gradient-primary opacity-20" />
-      <nav className="container-x flex h-28 items-center justify-between">
-        {/* Logo on the LEFT */}
+      <nav className="container-x flex h-32 items-center justify-between gap-4">
+        {/* Logo on the LEFT — inside a white rounded panel for visibility */}
         <Link to="/" className="flex items-center shrink-0">
-          <img
-            src="/__l5e/assets-v1/2e995d0c-6a05-4759-b6b4-4a478300f721/vibha-logo.svg"
-            alt="Vibha Technologies UK Ltd Logo"
-            className="h-24 sm:h-28 lg:h-32 w-auto object-contain"
-          />
+          <div className="bg-white rounded-xl shadow-md p-2 sm:p-3">
+            <img
+              src="/__l5e/assets-v1/2e995d0c-6a05-4759-b6b4-4a478300f721/vibha-logo.svg"
+              alt="Vibha Technologies UK Ltd Logo"
+              className="h-20 sm:h-24 lg:h-24 w-auto object-contain block"
+            />
+          </div>
         </Link>
 
         {/* Desktop Nav (right) */}
@@ -46,18 +45,18 @@ export function SiteHeader() {
             <Link
               key={link.path}
               to={link.path}
-              className="px-4 py-2 text-sm font-medium rounded-md text-foreground/80 hover:text-primary transition-colors"
-              activeProps={{ className: "text-primary bg-primary/5" }}
+              className="px-4 py-2 text-sm font-semibold rounded-md text-white/85 hover:text-white hover:bg-white/10 transition-colors"
+              activeProps={{ className: "text-white bg-white/15" }}
               activeOptions={{ exact: link.path === "/" }}
             >
               {link.name}
             </Link>
           ))}
-          <div className="pl-4 ml-2 border-l border-border h-8 flex items-center">
+          <div className="pl-4 ml-2 border-l border-white/25 h-8 flex items-center">
             <Link to="/contact">
               <Button
                 size="sm"
-                className="gradient-primary hover:gradient-primary-hover border-0 text-white shadow-md"
+                className="bg-white text-primary hover:bg-white/90 border-0 shadow-md font-semibold"
               >
                 Contact Us
               </Button>
@@ -68,7 +67,7 @@ export function SiteHeader() {
         {/* Mobile menu button */}
         <button
           onClick={() => setOpen(!open)}
-          className="lg:hidden inline-flex items-center justify-center rounded-md p-2 border border-border/60 text-foreground"
+          className="lg:hidden inline-flex items-center justify-center rounded-md p-2 border border-white/30 text-white"
           aria-label="Toggle menu"
         >
           {open ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
@@ -77,22 +76,22 @@ export function SiteHeader() {
 
       {/* Mobile drawer */}
       {open && (
-        <div className="lg:hidden border-t border-border bg-background">
+        <div className="lg:hidden border-t border-white/15 bg-primary/95 backdrop-blur">
           <div className="container-x py-4 flex flex-col space-y-1">
             {navLinks.map((link) => (
               <Link
                 key={link.path}
                 to={link.path}
                 onClick={() => setOpen(false)}
-                className="px-4 py-3 text-base font-medium rounded-lg hover:bg-muted"
-                activeProps={{ className: "bg-primary/5 text-primary" }}
+                className="px-4 py-3 text-base font-medium rounded-lg text-white/90 hover:bg-white/10"
+                activeProps={{ className: "bg-white/15 text-white" }}
                 activeOptions={{ exact: link.path === "/" }}
               >
                 {link.name}
               </Link>
             ))}
             <Link to="/contact" onClick={() => setOpen(false)}>
-              <Button className="w-full mt-2 gradient-primary text-white border-0">
+              <Button className="w-full mt-2 bg-white text-primary hover:bg-white/90 border-0 font-semibold">
                 Contact Us
               </Button>
             </Link>
