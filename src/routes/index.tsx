@@ -6,6 +6,7 @@ import { SiteHeader } from "@/components/site/SiteHeader";
 import { SiteFooter } from "@/components/site/SiteFooter";
 import { LiquidLogo } from "@/components/site/LiquidLogo";
 import heroLogo from "@/assets/vt-logo-hero-v2.png.asset.json";
+import heroVideo from "@/assets/vt-logo-hero-video.mp4.asset.json";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -137,6 +138,8 @@ function HomePage() {
             >
               <LiquidLogo
                 src={heroLogo.url}
+                videoSrc={heroVideo.url}
+                chromaKey
                 alt="Vibha Technologies liquid logo"
                 className="w-full aspect-square max-w-[520px] ml-auto"
               />
