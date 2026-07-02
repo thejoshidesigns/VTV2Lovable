@@ -1,9 +1,10 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { ArrowRight, ShieldCheck, Award, Landmark } from "lucide-react";
+import { ArrowRight, ShieldCheck, Award, Landmark, Linkedin } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { SiteHeader } from "@/components/site/SiteHeader";
 import { SiteFooter } from "@/components/site/SiteFooter";
+import founderPhoto from "@/assets/founder-appa.png.asset.json";
 
 export const Route = createFileRoute("/about")({
   head: () => ({
