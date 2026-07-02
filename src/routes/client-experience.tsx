@@ -135,18 +135,8 @@ function ClientExperiencePage() {
                     i === 0 ? "md:col-span-2" : ""
                   }`}
                 >
-                  <div className="flex items-center justify-between gap-4 mb-4">
-                    <div className="flex items-center gap-4 min-w-0">
-                      <div className="h-24 w-32 shrink-0 rounded-lg bg-white border border-border flex items-center justify-center p-3">
-                        <img
-                          src={c.logo}
-                          alt={`${c.client} logo`}
-                          className="max-h-full max-w-full object-contain"
-                          loading="lazy"
-                        />
-                      </div>
-                      <h3 className="text-2xl font-bold gradient-text truncate">{c.client}</h3>
-                    </div>
+                  <div className="flex items-start justify-between gap-4 mb-4">
+                    <h3 className="text-2xl font-bold gradient-text">{c.client}</h3>
                     <span className="text-xs md:text-sm text-muted-foreground uppercase tracking-wider text-right shrink-0">
                       {c.industry}
                     </span>
