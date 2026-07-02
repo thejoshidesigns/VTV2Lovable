@@ -211,7 +211,7 @@ function ContactPage() {
                       <p className="text-sm text-muted-foreground mb-1">
                         Company Registration Number
                       </p>
-                      <p className="font-medium">(to be provided)</p>
+                      <p className="font-medium">GB11901683</p>
                     </div>
                   </div>
                   <div className="flex items-start pt-4 border-t border-border/60">
