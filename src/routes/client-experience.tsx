@@ -11,18 +11,18 @@ import coop from "@/assets/clients/coop.webp.asset.json";
 import crossrail from "@/assets/clients/crossrail.png.asset.json";
 import euroInsurances from "@/assets/clients/euro-insurances.png.asset.json";
 import gazprom from "@/assets/clients/gazprom.png.asset.json";
-import ge from "@/assets/clients/ge.avif.asset.json";
+import ge from "@/assets/clients/ge-water.png.asset.json";
 import homebase from "@/assets/clients/homebase.webp.asset.json";
 import kelloggs from "@/assets/clients/kelloggs.webp.asset.json";
 import lloyds from "@/assets/clients/lloyds.png.asset.json";
 import nielsen from "@/assets/clients/nielsen.png.asset.json";
 import ofcom from "@/assets/clients/ofcom.webp.asset.json";
 import sabic from "@/assets/clients/sabic.png.asset.json";
-import sbd from "@/assets/clients/sbd.png.asset.json";
-import siemensGamesa from "@/assets/clients/siemens-gamesa.webp.asset.json";
+import sbd from "@/assets/clients/sbd.svg.asset.json";
+import siemensGamesa from "@/assets/clients/siemens-gamesa.svg.asset.json";
 import signet from "@/assets/clients/signet.png.asset.json";
-import tnt from "@/assets/clients/tnt.png.asset.json";
-import yorkshireWater from "@/assets/clients/yorkshire-water.png.asset.json";
+import tnt from "@/assets/clients/tnt.webp.asset.json";
+import yorkshireWater from "@/assets/clients/yorkshire-water.webp.asset.json";
 
 export const Route = createFileRoute("/client-experience")({
   head: () => ({
