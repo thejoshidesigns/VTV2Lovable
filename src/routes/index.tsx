@@ -107,21 +107,20 @@ function HomePage() {
               <p className="text-xl md:text-2xl text-slate-300 mb-10 leading-relaxed font-light">
                 Specialists in SAP Treasury, Cash Management and Finance Transformation.
               </p>
-              <div className="flex flex-col sm:flex-row gap-4">
-                <Link to="/contact">
+              <div className="flex flex-col sm:flex-row flex-wrap gap-4">
+                <Link to="/contact" className="w-full sm:w-auto">
                   <Button
                     size="lg"
-                    className="h-16 px-10 text-xl md:text-2xl font-semibold gradient-primary hover:gradient-primary-hover text-white border-0 shadow-lg w-full sm:w-auto"
+                    className="gradient-primary hover:gradient-primary-hover text-white border-0 shadow-lg w-full sm:w-auto"
                   >
                     Let's Discuss Your SAP Treasury Transformation
                     <ArrowRight className="ml-2 h-5 w-5" />
                   </Button>
                 </Link>
-                {/* Explore Our Expertise — white bg, black text */}
-                <Link to="/services">
+                <Link to="/services" className="w-full sm:w-auto">
                   <Button
                     size="lg"
-                    className="h-16 px-10 text-xl md:text-2xl font-semibold bg-white text-black hover:bg-slate-100 border-0 w-full sm:w-auto"
+                    className="bg-white text-black hover:bg-slate-100 border-0 w-full sm:w-auto"
                   >
                     Explore Our Expertise
                   </Button>
