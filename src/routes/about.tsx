@@ -40,11 +40,14 @@ function AboutPage() {
       <section className="py-20 md:py-32 bg-slate-950 text-white relative overflow-hidden">
         <div className="absolute inset-0 gradient-primary opacity-40" />
         <div className="container-x relative z-10 max-w-3xl">
-          <div className="inline-flex items-center rounded-full border border-white/20 bg-white/5 backdrop-blur-md px-4 py-1.5 text-sm font-medium text-white mb-6">
-            About Vibha Technologies
+          <div className="inline-flex items-center rounded-full border border-white/25 bg-white/10 backdrop-blur-md px-6 py-3 text-lg md:text-xl font-bold uppercase tracking-wide text-white mb-8 shadow-[0_0_20px_rgba(0,166,224,0.35)]">
+            <span className="flex h-3 w-3 rounded-full bg-[#00A6E0] mr-3 shadow-[0_0_10px_#00A6E0]" />
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#4DC9F0] to-white">
+              About Vibha Technologies
+            </span>
           </div>
           <h1 className="mb-6 text-white">
-            Treasury Expertise Built on Real Banking Experience
+            Built on Real Time Core Banking Experience
           </h1>
           <p className="text-xl text-white/80 leading-relaxed font-light">
             Bridging the gap between complex financial operations and enterprise technology.
@@ -59,19 +62,19 @@ function AboutPage() {
               <h2 className="mb-6">Our Story</h2>
               <div className="space-y-4 text-muted-foreground leading-relaxed text-lg mb-8">
                 <p>
-                  Vibha Technologies UK Ltd was founded with a singular, focused mission: to
-                  provide organizations with SAP Treasury solutions architected by professionals
-                  who actually understand the business of treasury.
+                  Vibha Technologies UK Ltd was founded in 2019 with a singular, focused
+                  mission: to provide organizations with SAP Treasury solutions architected by
+                  professionals who actually understand the business of treasury.
                 </p>
                 <p>
-                  Our founder spent years inside global banking institutions before transitioning
-                  to enterprise SAP architecture, bringing 14+ years of real time core banking
-                  experience to every engagement.
+                  Our founder garnered 16+ years of rich experience in global banking before
+                  transitioning to enterprise SAP architecture, bringing real time core banking
+                  expertise to every engagement.
                 </p>
               </div>
               <Link to="/contact">
-                <Button className="gradient-primary text-white border-0 shadow-md">
-                  Speak with our Leadership <ArrowRight className="ml-2 h-4 w-4" />
+                <Button size="lg" className="gradient-primary text-white border-0 shadow-md">
+                  Speak with our Leadership <ArrowRight className="ml-2 h-5 w-5" />
                 </Button>
               </Link>
             </div>
@@ -85,7 +88,7 @@ function AboutPage() {
                 Our Unique Positioning
               </h3>
               <div className="pb-6 border-b border-border/60">
-                <h4 className="text-base font-semibold mb-2">Traditional SAP Firms</h4>
+                <h4 className="text-base font-semibold mb-2 text-[#0B5CAD]">Traditional SAP Firms</h4>
                 <p className="text-muted-foreground text-sm leading-relaxed">
                   Focus primarily on system configuration, requiring extensive hand-holding from
                   internal finance teams.
@@ -109,7 +112,7 @@ function AboutPage() {
             <div className="inline-flex p-4 rounded-2xl bg-white shadow-sm border border-border mb-6">
               <Landmark className="h-10 w-10 text-[#0B5CAD]" />
             </div>
-            <h2 className="mb-4">What Treasury Teams Manage</h2>
+            <h2 className="mb-4">Enterprise Treasury Capabilities We Enable</h2>
             <p className="text-lg text-muted-foreground">
               Our SAP implementations establish control and visibility across these critical
               areas.
@@ -147,8 +150,8 @@ function AboutPage() {
               </h3>
               <ul className="space-y-4">
                 {[
-                  "9 Active SAP Certifications + CAIIB",
-                  "14+ Years Real Time Core Banking Experience",
+                  "9 Active SAP Certifications + CAIIB (Certified Associate of Indian Institute of Bankers)",
+                  "16+ Years Real Time Core Banking Experience",
                   "34 Global Enterprise Implementations",
                 ].map((it) => (
                   <li

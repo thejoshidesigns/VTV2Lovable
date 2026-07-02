@@ -26,9 +26,9 @@ export const Route = createFileRoute("/")({
 
 const stats = [
   { value: "24+", label: "Years SAP Treasury & Finance Consulting" },
-  { value: "14+", label: "Years Treasury & Banking" },
+  { value: "16+", label: "Years Treasury & Banking" },
   { value: "34", label: "Global SAP Programs" },
-  { value: "9", label: "SAP Certifications + CAIIB" },
+  { value: "9", label: "SAP Certifications + CAIIB (Certified Associate of Indian Institute of Bankers)" },
 ];
 
 const services = [
@@ -42,7 +42,7 @@ const services = [
     title: "Cash & Liquidity Management",
     description:
       "Global visibility and forecasting for enterprise cash flows and positioning.",
-    capabilities: ["Liquidity Forecasting", "Cash Pooling", "Bank Statement Automation"],
+    capabilities: ["Liquidity Structures", "Liquidity Forecasting", "Cash Pooling", "Bank Statement Automation"],
   },
   {
     title: "In-House Banking",
@@ -105,13 +105,13 @@ function HomePage() {
                 </span>
               </h1>
               <p className="text-xl md:text-2xl text-slate-300 mb-10 leading-relaxed font-light">
-                Specialist SAP Treasury, Cash Management and Finance Transformation consultancy.
+                Specialists in SAP Treasury, Cash Management and Finance Transformation.
               </p>
               <div className="flex flex-col sm:flex-row gap-4">
                 <Link to="/contact">
                   <Button
                     size="lg"
-                    className="h-14 px-8 text-base gradient-primary hover:gradient-primary-hover text-white border-0 shadow-lg w-full sm:w-auto"
+                    className="h-16 px-10 text-xl md:text-2xl font-semibold gradient-primary hover:gradient-primary-hover text-white border-0 shadow-lg w-full sm:w-auto"
                   >
                     Let's Discuss Your SAP Treasury Transformation
                     <ArrowRight className="ml-2 h-5 w-5" />
@@ -121,7 +121,7 @@ function HomePage() {
                 <Link to="/services">
                   <Button
                     size="lg"
-                    className="h-14 px-8 text-base bg-white text-black hover:bg-slate-100 border-0 w-full sm:w-auto"
+                    className="h-16 px-10 text-xl md:text-2xl font-semibold bg-white text-black hover:bg-slate-100 border-0 w-full sm:w-auto"
                   >
                     Explore Our Expertise
                   </Button>
@@ -188,16 +188,16 @@ function HomePage() {
                 <br />
                 <span className="gradient-text">Treasury experts.</span>
               </h2>
-              <div className="space-y-6 text-lg text-muted-foreground leading-relaxed">
+              <div className="space-y-6 text-lg text-foreground/85 leading-relaxed">
                 <p>
                   Vibha Technologies bridges the critical gap between complex financial
-                  operations and enterprise technology. Our foundation is built on 14+ years of
+                  operations and enterprise technology. Our foundation is built on 16+ years of
                   real time core banking and treasury experience.
                 </p>
                 <p>
                   We understand the nuances of FX exposures, derivatives, options and swaps, and
-                  SWIFT connectivity because we've managed them. When we architect an SAP
-                  solution, we ensure it solves real-world treasury challenges.
+                  SWIFT connectivity because we've build them. When we architect an SAP
+                  solution, we ensure it resolves real-world treasury challenges.
                 </p>
               </div>
               <ul className="mt-8 space-y-4">
