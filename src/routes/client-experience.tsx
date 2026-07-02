@@ -41,7 +41,48 @@ export const Route = createFileRoute("/client-experience")({
   component: ClientExperiencePage,
 });
 
-const featured: { client: string; logo: string; industry: string; scope: string; outcomes: string }[] = [];
+const featured: { client: string; industry: string; scope: string; outcomes: string }[] = [
+  {
+    client: "Co-op UK",
+    industry: "Retail & Consumer",
+    scope:
+      "SAP S/4HANA Treasury implementation covering Cash Management, Bank Communication Management and In-House Cash for one of the UK's largest consumer co-operatives.",
+    outcomes:
+      "Centralized cash visibility across 2,500+ stores, automated bank statement processing and streamlined intercompany settlements.",
+  },
+  {
+    client: "Siemens Gamesa",
+    industry: "Renewable Energy",
+    scope:
+      "Global SAP Treasury and Risk Management rollout supporting FX exposure management, hedge accounting (IFRS 9) and multi-entity liquidity planning.",
+    outcomes:
+      "Real-time FX risk visibility across 40+ countries and audit-ready hedge documentation.",
+  },
+  {
+    client: "Adidas",
+    industry: "Retail & Apparel",
+    scope:
+      "SAP Treasury and In-House Cash design and delivery supporting global payment factory operations and intercompany netting.",
+    outcomes:
+      "Consolidated payment flows through a single payment factory, reducing external bank fees and improving working capital control.",
+  },
+  {
+    client: "Yorkshire Water",
+    industry: "Utilities",
+    scope:
+      "SAP Treasury and Cash Management implementation aligned with UK regulatory reporting and long-term debt portfolio management.",
+    outcomes:
+      "Accurate daily cash positioning, automated debt servicing and improved compliance reporting.",
+  },
+  {
+    client: "Signet Jewelers",
+    industry: "Retail & Consumer",
+    scope:
+      "SAP Treasury transformation covering cash operations, bank connectivity and risk management for the world's largest specialty jewellery retailer.",
+    outcomes:
+      "Global cash visibility, standardized bank connectivity via SWIFT and reduced manual treasury operations.",
+  },
+];
 
 const additionalClients = [
   { name: "Co-op UK", logo: coop.url },
@@ -94,18 +135,8 @@ function ClientExperiencePage() {
                     i === 0 ? "md:col-span-2" : ""
                   }`}
                 >
-                  <div className="flex items-center justify-between gap-4 mb-4">
-                    <div className="flex items-center gap-4 min-w-0">
-                      <div className="h-24 w-32 shrink-0 rounded-lg bg-white border border-border flex items-center justify-center p-3">
-                        <img
-                          src={c.logo}
-                          alt={`${c.client} logo`}
-                          className="max-h-full max-w-full object-contain"
-                          loading="lazy"
-                        />
-                      </div>
-                      <h3 className="text-2xl font-bold gradient-text truncate">{c.client}</h3>
-                    </div>
+                  <div className="flex items-start justify-between gap-4 mb-4">
+                    <h3 className="text-2xl font-bold gradient-text">{c.client}</h3>
                     <span className="text-xs md:text-sm text-muted-foreground uppercase tracking-wider text-right shrink-0">
                       {c.industry}
                     </span>
