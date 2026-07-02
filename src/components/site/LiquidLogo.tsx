@@ -86,12 +86,11 @@ void main() {
 
   vec3 col = vec3(cr.r, cg.g, cb.b);
   float aTex = max(cr.a, max(cg.a, cb.a));
-  // Chroma-key: derive alpha from luminance so dark backgrounds fall away cleanly
+  // Chroma-key: derive alpha from luminance so pure black becomes transparent
   float lum = max(col.r, max(col.g, col.b));
-  float aKey = smoothstep(0.18, 0.55, lum);
-  // Soft circular vignette to hide any visible video edge/square
-  float vmask = 1.0 - smoothstep(0.62, 0.72, r);
-  float a = mix(aTex, aKey * vmask, u_chroma);
+  float aKey = smoothstep(0.06, 0.28, lum);
+  float a = mix(aTex, aKey, u_chroma);
+  // Pre-multiply alpha for correct blending
   gl_FragColor = vec4(col * a, a);
 }`;
 
