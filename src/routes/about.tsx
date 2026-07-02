@@ -107,6 +107,71 @@ function AboutPage() {
         </div>
       </section>
 
+      {/* Founder */}
+      <section className="section-padding bg-background border-t border-border/60">
+        <div className="container-x">
+          <div className="grid grid-cols-1 lg:grid-cols-[auto_1fr] gap-12 lg:gap-16 items-center">
+            <div className="relative mx-auto lg:mx-0">
+              {/* Branded gradient frame */}
+              <div className="absolute -inset-3 rounded-[2rem] gradient-primary opacity-90 blur-[2px]" />
+              <div className="absolute -inset-1 rounded-[1.75rem] gradient-primary" />
+              <div className="relative rounded-[1.5rem] overflow-hidden bg-slate-950 shadow-2xl w-[260px] h-[320px] md:w-[300px] md:h-[370px]">
+                <img
+                  src={founderPhoto.url}
+                  alt="Appa Rao Kesineni, Founder of Vibha Technologies"
+                  className="w-full h-full object-cover"
+                />
+                <div className="absolute inset-x-0 bottom-0 h-24 bg-gradient-to-t from-slate-950/80 to-transparent" />
+              </div>
+              {/* Corner accent */}
+              <div className="absolute -bottom-4 -right-4 h-16 w-16 rounded-full gradient-primary shadow-lg flex items-center justify-center">
+                <ShieldCheck className="h-7 w-7 text-white" />
+              </div>
+            </div>
+
+            <div>
+              <div className="inline-flex items-center rounded-full border border-primary/20 bg-primary/5 px-4 py-1.5 mb-5 text-xs font-bold uppercase tracking-widest gradient-text">
+                About the Founder
+              </div>
+              <h2 className="mb-3">Appa Rao Kesineni</h2>
+              <p className="text-lg font-semibold text-[#0B5CAD] mb-6">
+                Founder &amp; Principal Consultant
+              </p>
+              <div className="space-y-4 text-foreground/85 leading-relaxed text-lg">
+                <p>
+                  With over <strong>24 years of SAP Treasury &amp; Finance consulting</strong>{" "}
+                  and <strong>16+ years of real time core banking</strong> experience, Appa
+                  founded Vibha Technologies in 2019 to close the gap between how treasury
+                  actually works and how enterprise systems are typically configured.
+                </p>
+                <p>
+                  A <strong>CAIIB</strong>-certified banker (Certified Associate of Indian
+                  Institute of Bankers) holding <strong>9 active SAP certifications</strong>,
+                  he has led 34 global SAP programs across the UK, Europe, Middle East, USA
+                  and India — spanning FX, derivatives, cash pooling, in-house banking, SWIFT
+                  and S/4HANA Finance.
+                </p>
+              </div>
+              <div className="mt-8 flex flex-wrap gap-3">
+                <Link to="/contact">
+                  <Button size="lg" className="gradient-primary text-white border-0 shadow-md">
+                    Speak with the Founder <ArrowRight className="ml-2 h-5 w-5" />
+                  </Button>
+                </Link>
+                <a
+                  href="mailto:appa@vibhatechnologies.co.uk"
+                  className="inline-flex items-center px-5 py-2.5 rounded-md border border-border font-semibold text-foreground hover:bg-muted transition"
+                >
+                  <Linkedin className="h-5 w-5 mr-2 text-[#0B5CAD]" />
+                  Connect Directly
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+
       <section className="py-20 bg-muted/30">
         <div className="container-x">
           <div className="text-center max-w-3xl mx-auto mb-16">
