@@ -42,7 +42,7 @@ const services = [
     title: "Cash & Liquidity Management",
     description:
       "Global visibility and forecasting for enterprise cash flows and positioning.",
-    capabilities: ["Liquidity Forecasting", "Cash Pooling", "Bank Statement Automation"],
+    capabilities: ["Liquidity Structures", "Liquidity Forecasting", "Cash Pooling", "Bank Statement Automation"],
   },
   {
     title: "In-House Banking",
