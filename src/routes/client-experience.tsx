@@ -135,7 +135,7 @@ function ClientExperiencePage() {
               >
                 <div className="flex items-center justify-between gap-4 mb-4">
                   <div className="flex items-center gap-4 min-w-0">
-                    <div className="h-16 w-16 shrink-0 rounded-lg bg-white border border-border flex items-center justify-center p-2">
+                    <div className="h-24 w-32 shrink-0 rounded-lg bg-white border border-border flex items-center justify-center p-3">
                       <img
                         src={c.logo}
                         alt={`${c.client} logo`}
