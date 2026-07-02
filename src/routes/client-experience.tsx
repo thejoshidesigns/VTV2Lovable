@@ -41,54 +41,14 @@ export const Route = createFileRoute("/client-experience")({
   component: ClientExperiencePage,
 });
 
-const featured = [
-  {
-    client: "Co-op UK",
-    logo: coop.url,
-    industry: "Retail & Consumer",
-    scope:
-      "Full SAP Treasury implementation including Treasury Transaction Manager, Cash & Liquidity Management, Reuters and 360T integration, and multi-bank connectivity.",
-    outcomes:
-      "Group-wide cash visibility, automated 90% of banking communications, and robust risk controls.",
-  },
-  {
-    client: "Siemens Gamesa",
-    logo: siemensGamesa.url,
-    industry: "Renewable Energy",
-    scope:
-      "Global Treasury Management System implementation following complex merger integration across 27 countries.",
-    outcomes:
-      "Harmonized treasury processes across 27 countries with a single source of truth for cash and risk positions.",
-  },
-  {
-    client: "Adidas",
-    logo: adidas.url,
-    industry: "Retail & Manufacturing",
-    scope:
-      "Global Treasury Transformation focused on FX Risk Management, Hedging, integrated Liquidity Management and Trade Finance automation.",
-    outcomes:
-      "Reduced FX exposure risk and streamlined global liquidity positioning.",
-  },
-  {
-    client: "Yorkshire Water",
-    logo: yorkshireWater.url,
-    industry: "Utilities",
-    scope:
-      "SAP S/4HANA Central Finance transformation across 25 company codes.",
-    outcomes: "Real-time financial insights and a scalable platform for innovation.",
-  },
-  {
-    client: "Signet Jewelers",
-    logo: signet.url,
-    industry: "Luxury Retail",
-    scope:
-      "Global Cash Management modernization supporting 3,300+ retail locations.",
-    outcomes:
-      "Automated high-volume store deposit reconciliations and near real-time corporate cash positioning.",
-  },
-];
+const featured: { client: string; logo: string; industry: string; scope: string; outcomes: string }[] = [];
 
 const additionalClients = [
+  { name: "Co-op UK", logo: coop.url },
+  { name: "Siemens Gamesa", logo: siemensGamesa.url },
+  { name: "Adidas", logo: adidas.url },
+  { name: "Yorkshire Water", logo: yorkshireWater.url },
+  { name: "Signet Jewelers", logo: signet.url },
   { name: "SBD", logo: sbd.url },
   { name: "Capita", logo: capita.url },
   { name: "Crossrail", logo: crossrail.url },
@@ -125,52 +85,51 @@ function ClientExperiencePage() {
 
       <section className="section-padding bg-background">
         <div className="container-x">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-16">
-            {featured.map((c, i) => (
-              <div
-                key={c.client}
-                className={`bg-card border border-border rounded-2xl p-8 shadow-sm hover:shadow-lg transition ${
-                  i === 0 ? "md:col-span-2" : ""
-                }`}
-              >
-                <div className="flex items-center justify-between gap-4 mb-4">
-                  <div className="flex items-center gap-4 min-w-0">
-                    <div className="h-24 w-32 shrink-0 rounded-lg bg-white border border-border flex items-center justify-center p-3">
-                      <img
-                        src={c.logo}
-                        alt={`${c.client} logo`}
-                        className="max-h-full max-w-full object-contain"
-                        loading="lazy"
-                      />
+          {featured.length > 0 && (
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-16">
+              {featured.map((c, i) => (
+                <div
+                  key={c.client}
+                  className={`bg-card border border-border rounded-2xl p-8 shadow-sm hover:shadow-lg transition ${
+                    i === 0 ? "md:col-span-2" : ""
+                  }`}
+                >
+                  <div className="flex items-center justify-between gap-4 mb-4">
+                    <div className="flex items-center gap-4 min-w-0">
+                      <div className="h-24 w-32 shrink-0 rounded-lg bg-white border border-border flex items-center justify-center p-3">
+                        <img
+                          src={c.logo}
+                          alt={`${c.client} logo`}
+                          className="max-h-full max-w-full object-contain"
+                          loading="lazy"
+                        />
+                      </div>
+                      <h3 className="text-2xl font-bold gradient-text truncate">{c.client}</h3>
                     </div>
-                    <h3 className="text-2xl font-bold gradient-text truncate">{c.client}</h3>
+                    <span className="text-xs md:text-sm text-muted-foreground uppercase tracking-wider text-right shrink-0">
+                      {c.industry}
+                    </span>
                   </div>
-                  <span className="text-xs md:text-sm text-muted-foreground uppercase tracking-wider text-right shrink-0">
-                    {c.industry}
-                  </span>
+                  <p className="text-foreground/90 mb-4 leading-relaxed">{c.scope}</p>
+                  <p className="text-sm text-muted-foreground border-t border-border pt-4">
+                    <span className="font-semibold text-foreground">Outcomes: </span>
+                    {c.outcomes}
+                  </p>
                 </div>
-                <p className="text-foreground/90 mb-4 leading-relaxed">{c.scope}</p>
-                <p className="text-sm text-muted-foreground border-t border-border pt-4">
-                  <span className="font-semibold text-foreground">Outcomes: </span>
-                  {c.outcomes}
-                </p>
-              </div>
-            ))}
-          </div>
+              ))}
+            </div>
+          )}
 
           <div className="bg-muted/40 border border-border rounded-2xl p-8 md:p-12">
             <h2 className="text-2xl md:text-3xl font-bold mb-8 text-center">
               Additional Enterprise Clients
             </h2>
             <LogoMarquee
-              logos={[
-                ...featured.map((f) => ({ name: f.client, logo: f.logo })),
-                ...additionalClients,
-              ]}
+              logos={additionalClients}
               speed={70}
               hoverSpeed={15}
-              logoHeight={96}
-              gap={80}
+              logoHeight={140}
+              gap={96}
               grayscale={false}
             />
           </div>
