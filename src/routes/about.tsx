@@ -150,8 +150,8 @@ function AboutPage() {
               </h3>
               <ul className="space-y-4">
                 {[
-                  "9 Active SAP Certifications + CAIIB",
-                  "14+ Years Real Time Core Banking Experience",
+                  "9 Active SAP Certifications + CAIIB (Certified Associate of Indian Institute of Bankers)",
+                  "16+ Years Real Time Core Banking Experience",
                   "34 Global Enterprise Implementations",
                 ].map((it) => (
                   <li
