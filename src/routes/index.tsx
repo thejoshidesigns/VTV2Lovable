@@ -188,16 +188,16 @@ function HomePage() {
                 <br />
                 <span className="gradient-text">Treasury experts.</span>
               </h2>
-              <div className="space-y-6 text-lg text-muted-foreground leading-relaxed">
+              <div className="space-y-6 text-lg text-foreground/85 leading-relaxed">
                 <p>
                   Vibha Technologies bridges the critical gap between complex financial
-                  operations and enterprise technology. Our foundation is built on 14+ years of
+                  operations and enterprise technology. Our foundation is built on 16+ years of
                   real time core banking and treasury experience.
                 </p>
                 <p>
                   We understand the nuances of FX exposures, derivatives, options and swaps, and
-                  SWIFT connectivity because we've managed them. When we architect an SAP
-                  solution, we ensure it solves real-world treasury challenges.
+                  SWIFT connectivity because we've build them. When we architect an SAP
+                  solution, we ensure it resolves real-world treasury challenges.
                 </p>
               </div>
               <ul className="mt-8 space-y-4">
