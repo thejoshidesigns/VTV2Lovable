@@ -215,7 +215,7 @@ function HomePage() {
                 ))}
               </ul>
             </div>
-            <div className="bg-sky-50 border border-sky-200 p-10 rounded-2xl shadow-xl relative overflow-hidden">
+            <div className="bg-sky-100 border border-sky-300 p-10 rounded-2xl shadow-xl relative overflow-hidden">
               <div className="absolute top-0 left-0 w-full h-1.5 gradient-primary" />
               <div className="p-3 bg-white inline-flex rounded-xl mb-6 shadow-sm">
                 <Building2 className="h-10 w-10 text-[#0B5CAD]" />
