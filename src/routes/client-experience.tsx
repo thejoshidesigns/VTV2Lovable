@@ -9,7 +9,7 @@ import alFuttaim from "@/assets/clients/al-futtaim.png.asset.json";
 import capita from "@/assets/clients/capita.webp.asset.json";
 import coop from "@/assets/clients/coop.webp.asset.json";
 import crossrail from "@/assets/clients/crossrail.png.asset.json";
-import euroInsurances from "@/assets/clients/euro-insurances.png.asset.json";
+import leaseplan from "@/assets/clients/leaseplan.png.asset.json";
 import gazprom from "@/assets/clients/gazprom.png.asset.json";
 import ge from "@/assets/clients/ge-water.png.asset.json";
 import homebase from "@/assets/clients/homebase.webp.asset.json";
@@ -94,7 +94,7 @@ const additionalClients = [
   { name: "Capita", logo: capita.url },
   { name: "Crossrail", logo: crossrail.url },
   { name: "Ofcom", logo: ofcom.url },
-  { name: "Euro Insurances", logo: euroInsurances.url },
+  { name: "LeasePlan", logo: leaseplan.url },
   { name: "Gazprom", logo: gazprom.url },
   { name: "Kellogg's", logo: kelloggs.url },
   { name: "TNT", logo: tnt.url },
