@@ -151,7 +151,9 @@ function ClientExperiencePage() {
             </div>
           )}
 
-          <div className="bg-muted/40 border border-border rounded-2xl p-8 md:p-12">
+          <div className="relative bg-muted/40 border border-border rounded-2xl p-8 md:p-12 overflow-hidden">
+            <div className="absolute inset-x-0 top-0 h-1.5 gradient-primary" aria-hidden="true" />
+            <div className="absolute inset-x-0 bottom-0 h-1.5 gradient-primary" aria-hidden="true" />
             <h2 className="text-2xl md:text-3xl font-bold mb-8 text-center">
               Additional Enterprise Clients
             </h2>
@@ -159,8 +161,8 @@ function ClientExperiencePage() {
               logos={additionalClients}
               speed={70}
               hoverSpeed={15}
-              logoHeight={140}
-              gap={96}
+              logoHeight={98}
+              gap={72}
               grayscale={false}
             />
           </div>
