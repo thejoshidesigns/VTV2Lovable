@@ -111,7 +111,7 @@ function ClientExperiencePage() {
     <div className="min-h-screen flex flex-col">
       <SiteHeader />
 
-      <section className="py-20 bg-muted/30">
+      <section className="pt-16 pb-8 bg-muted/30">
         <div className="container-x max-w-3xl">
           <div className="inline-flex items-center rounded-full border border-primary/20 bg-primary/5 px-4 py-1.5 text-sm font-semibold gradient-text mb-6">
             Proven Track Record
