@@ -172,7 +172,7 @@ function HomePage() {
           </div>
           <div className="mt-12 text-center flex flex-wrap items-center justify-center text-muted-foreground gap-2">
             <Globe2 className="h-5 w-5 text-[#00A6E0]" />
-            <span className="text-sm md:text-base font-semibold">
+            <span className="text-base md:text-lg font-medium">
               Geographic Reach: United Kingdom | Europe | Middle East | USA | India
             </span>
           </div>
