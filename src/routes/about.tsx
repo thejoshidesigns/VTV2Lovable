@@ -68,7 +68,7 @@ function AboutPage() {
                   professionals who actually understand the business of treasury.
                 </p>
                 <p>
-                  Our founder garnered 14+ years of rich experience in global banking before
+                  Our founder garnered 16+ years of rich experience in global banking before
                   transitioning to enterprise SAP architecture, bringing real time core banking
                   expertise to every engagement.
                 </p>
