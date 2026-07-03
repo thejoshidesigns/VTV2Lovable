@@ -107,9 +107,8 @@ function ContactPage() {
           <h1 className="mb-6 text-white">Get in Touch</h1>
           <p className="text-lg md:text-xl text-white/85 leading-relaxed font-light">
             Partner with us for specialized expertise in SAP S/4HANA migration, Treasury
-            Transformation, Cash &amp; Liquidity Management, In-House Banking, Advanced Payment
-            Factory and Advanced Payment Management, and comprehensive Banking Integration
-            services.
+            Transformation, Cash &amp; Liquidity Management, In-House Banking, Payment Factory,
+            Payment Management, and comprehensive Banking Integration services.
           </p>
         </div>
       </section>
@@ -123,8 +122,11 @@ function ContactPage() {
                 <h2 className="text-2xl font-bold mb-6">Contact Information</h2>
                 <p className="text-muted-foreground mb-4 flex items-start gap-2">
                   <Globe2 className="h-5 w-5 text-[#00A6E0] mt-0.5 shrink-0" />
-                  Serving clients across <strong className="mx-1">UK, Europe and global</strong>{" "}
-                  markets — supporting your transformation across all time zones.
+                  <span>
+                    Serving clients across{" "}
+                    <strong>United Kingdom, Europe and global</strong> markets, supporting your
+                    transformation across all time zones.
+                  </span>
                 </p>
               </div>
 
@@ -150,30 +152,34 @@ function ContactPage() {
                 </CardContent>
               </Card>
 
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              <div className="grid grid-cols-1 gap-4">
                 <Card className="border border-border/50 hover:border-[#00A6E0]/40 transition-colors">
-                  <CardContent className="p-5">
-                    <Phone className="h-5 w-5 text-[#00A6E0] mb-3" />
-                    <p className="text-sm text-muted-foreground mb-1">Direct Phone</p>
-                    <a
-                      href="tel:+447466854499"
-                      className="font-semibold hover:text-[#0B5CAD]"
-                    >
-                      +44 7466 854499
-                    </a>
+                  <CardContent className="p-5 flex items-center gap-4">
+                    <Phone className="h-5 w-5 text-[#00A6E0] shrink-0" />
+                    <div className="min-w-0">
+                      <p className="text-sm text-muted-foreground">Direct Phone</p>
+                      <a
+                        href="tel:+447466854499"
+                        className="font-semibold hover:text-[#0B5CAD] whitespace-nowrap"
+                      >
+                        +44 7466 854499
+                      </a>
+                    </div>
                   </CardContent>
                 </Card>
 
                 <Card className="border border-border/50 hover:border-[#00A6E0]/40 transition-colors">
-                  <CardContent className="p-5">
-                    <Mail className="h-5 w-5 text-[#00A6E0] mb-3" />
-                    <p className="text-sm text-muted-foreground mb-1">Email Address</p>
-                    <a
-                      href="mailto:contact@vibhatechnologies.co.uk"
-                      className="font-semibold hover:text-[#0B5CAD] break-all"
-                    >
-                      contact@vibhatechnologies.co.uk
-                    </a>
+                  <CardContent className="p-5 flex items-center gap-4">
+                    <Mail className="h-5 w-5 text-[#00A6E0] shrink-0" />
+                    <div className="min-w-0 flex-1">
+                      <p className="text-sm text-muted-foreground">Email Address</p>
+                      <a
+                        href="mailto:contact@vibhatechnologies.co.uk"
+                        className="font-semibold hover:text-[#0B5CAD] whitespace-nowrap text-sm sm:text-base"
+                      >
+                        contact@vibhatechnologies.co.uk
+                      </a>
+                    </div>
                   </CardContent>
                 </Card>
               </div>
@@ -194,7 +200,7 @@ function ContactPage() {
                       <p className="font-medium leading-relaxed">
                         67 Hall Road, East Ham
                         <br />
-                        London, United Kingdom
+                        London E6 2NG, United Kingdom
                       </p>
                     </div>
                   </div>
