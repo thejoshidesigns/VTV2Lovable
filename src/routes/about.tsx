@@ -28,7 +28,7 @@ const managedItems = [
   "FX Exposure",
   "Debt Management",
   "Intercompany Funding",
-  "Payment Processing",
+  "Advanced Payment Management",
   "Banking Relationships",
   "Financial Risk Management",
   "Regulatory Compliance",
@@ -68,7 +68,7 @@ function AboutPage() {
                   professionals who actually understand the business of treasury.
                 </p>
                 <p>
-                  Our founder garnered 16+ years of rich experience in global banking before
+                  Our founder garnered 14+ years of rich experience in global banking before
                   transitioning to enterprise SAP architecture, bringing real time core banking
                   expertise to every engagement.
                 </p>
@@ -140,16 +140,16 @@ function AboutPage() {
               <div className="space-y-4 text-foreground/85 leading-relaxed text-lg">
                 <p>
                   With over <strong>24 years of SAP Treasury &amp; Finance consulting</strong>{" "}
-                  and <strong>16+ years of real time core banking</strong> experience, Appa
-                  founded Vibha Technologies in 2019 to close the gap between how treasury
-                  actually works and how enterprise systems are typically configured.
+                  and <strong>14+ years of SAP Treasury &amp; Banking</strong> experience,
+                  Appa founded Vibha Technologies in 2019 to close the gap between - how
+                  treasury actually works and how enterprise systems are typically configured.
                 </p>
                 <p>
                   A <strong>CAIIB</strong>-certified banker (Certified Associate of Indian
                   Institute of Bankers) holding <strong>9 active SAP certifications</strong>,
-                  he has led 34 global SAP programs across the UK, Europe, Middle East, USA
-                  and India — spanning FX, derivatives, cash pooling, in-house banking, SWIFT
-                  and S/4HANA Finance.
+                  he has led 34 global SAP programs across the United Kingdom, Europe, Middle
+                  East, USA and India, spanning FX, derivatives, cash pooling, in-house banking,
+                  APM, SWIFT and S/4HANA Finance.
                 </p>
               </div>
               <div className="mt-8 flex flex-wrap gap-3">
@@ -185,8 +185,12 @@ function AboutPage() {
             </p>
           </div>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6">
-            {managedItems.map((item) => (
-              <Card key={item} className="bg-card border-border hover:shadow-md transition">
+            {managedItems.map((item, i) => (
+              <Card
+                key={item}
+                className="bg-card border-border shadow-[0_10px_25px_-12px_rgba(11,92,173,0.25)] hover:shadow-[0_20px_40px_-15px_rgba(11,92,173,0.5)] hover:-translate-y-1 transition-all duration-300"
+                style={{ animationDelay: `${i * 60}ms` }}
+              >
                 <CardContent className="p-6 flex items-center justify-center text-center h-full">
                   <span className="font-semibold">{item}</span>
                 </CardContent>
@@ -217,7 +221,7 @@ function AboutPage() {
               <ul className="space-y-4">
                 {[
                   "9 Active SAP Certifications + CAIIB (Certified Associate of Indian Institute of Bankers)",
-                  "16+ Years Real Time Core Banking Experience",
+                  "14+ Years SAP Treasury & Banking Experience",
                   "34 Global Enterprise Implementations",
                 ].map((it) => (
                   <li
