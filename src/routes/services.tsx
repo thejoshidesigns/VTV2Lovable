@@ -1,4 +1,5 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
+import { motion } from "framer-motion";
 import { ArrowRight, CheckCircle } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { SiteHeader } from "@/components/site/SiteHeader";
@@ -29,7 +30,7 @@ const services = [
     capabilities: [
       "Treasury Transaction Manager",
       "FX Management & Hedging",
-      "Derivatives, Options and Swaps",
+      "Derivatives, Options & Swaps",
       "Money Market & Securities",
       "Risk Management Analyzers",
       "Trade Finance",
@@ -129,10 +130,15 @@ function ServicesPage() {
       <section className="section-padding bg-background">
         <div className="container-x">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {services.map((s) => (
-              <div
+            {services.map((s, i) => (
+              <motion.div
                 key={s.title}
-                className="bg-card border border-border rounded-xl p-6 shadow-sm hover:shadow-lg transition"
+                initial={{ opacity: 0, y: 24 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, margin: "-40px" }}
+                transition={{ duration: 0.5, delay: i * 0.06 }}
+                whileHover={{ y: -6 }}
+                className="bg-card border border-border rounded-xl p-6 shadow-[0_12px_30px_-12px_rgba(11,92,173,0.28)] hover:shadow-[0_25px_50px_-15px_rgba(11,92,173,0.5)] transition-all duration-300"
               >
                 <h3 className="text-xl font-bold mb-3">{s.title}</h3>
                 <p className="text-muted-foreground text-sm mb-4">{s.description}</p>
@@ -144,7 +150,7 @@ function ServicesPage() {
                     </li>
                   ))}
                 </ul>
-              </div>
+              </motion.div>
             ))}
           </div>
 

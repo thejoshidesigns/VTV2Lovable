@@ -1,4 +1,5 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
+import { motion } from "framer-motion";
 import { Building2 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { SiteHeader } from "@/components/site/SiteHeader";
@@ -24,7 +25,7 @@ export const Route = createFileRoute("/industries")({
 const industries = [
   {
     sector: "Banking, Insurance & Financial Services",
-    clients: ["HBOS", "Lloyds Banking", "Euro Insurances"],
+    clients: ["HBOS", "Lloyds Banking", "LeasePlan"],
   },
   {
     sector: "Oil and Gas",
@@ -52,7 +53,7 @@ const industries = [
   },
   {
     sector: "Pharmaceutical & Life Sciences",
-    clients: ["Dr Reddy's", "Sri Krishna Pharma"],
+    clients: ["Sri Krishna Pharma", "Dr Reddy's"],
   },
 ];
 
@@ -64,7 +65,8 @@ function IndustriesPage() {
       <section className="py-20 bg-muted/30 border-b border-border">
         <div className="container-x text-center max-w-3xl mx-auto">
           <h1 className="mb-6">
-            Proven Across <span className="gradient-text">Global Enterprises</span>
+            Proven Experience Across{" "}
+            <span className="gradient-text">Global Enterprises</span>
           </h1>
           <p className="text-xl text-muted-foreground leading-relaxed">
             Our SAP Treasury expertise has been tested across diverse regulatory environments
@@ -76,10 +78,15 @@ function IndustriesPage() {
       <section className="section-padding bg-background">
         <div className="container-x">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
-            {industries.map((ind) => (
-              <div
+            {industries.map((ind, i) => (
+              <motion.div
                 key={ind.sector}
-                className="bg-card border border-border rounded-xl p-6 shadow-sm hover:shadow-lg transition"
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, margin: "-40px" }}
+                transition={{ duration: 0.5, delay: i * 0.05 }}
+                whileHover={{ y: -6 }}
+                className="bg-card border border-border rounded-xl p-6 shadow-[0_12px_30px_-12px_rgba(11,92,173,0.28)] hover:shadow-[0_25px_50px_-15px_rgba(11,92,173,0.5)] transition-all duration-300"
               >
                 <div className="flex items-center mb-4">
                   <span className="p-2 rounded-lg gradient-primary text-white mr-3">
@@ -92,7 +99,7 @@ function IndustriesPage() {
                     <li key={c}>• {c}</li>
                   ))}
                 </ul>
-              </div>
+              </motion.div>
             ))}
           </div>
 
