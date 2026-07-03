@@ -15,9 +15,9 @@ export const Route = createFileRoute("/services")({
           "SAP Treasury, Cash Management, In-House Banking, Advanced Payment Management, Bank Integration and S/4HANA Finance services.",
       },
       { property: "og:title", content: "Specialist SAP Services | Vibha Technologies UK Ltd" },
-      { property: "og:url", content: "/services" },
+      { property: "og:url", content: "https://vibhatechnologies.co.uk/services" },
     ],
-    links: [{ rel: "canonical", href: "/services" }],
+    links: [{ rel: "canonical", href: "https://vibhatechnologies.co.uk/services" }],
   }),
   component: ServicesPage,
 });

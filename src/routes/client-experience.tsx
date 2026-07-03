@@ -34,9 +34,9 @@ export const Route = createFileRoute("/client-experience")({
           "Successful SAP Treasury and Finance implementations across global enterprises including Co-op, Siemens, Adidas, Signet, Yorkshire Water and more.",
       },
       { property: "og:title", content: "Selected Client Experience | Vibha Technologies UK Ltd" },
-      { property: "og:url", content: "/client-experience" },
+      { property: "og:url", content: "https://vibhatechnologies.co.uk/client-experience" },
     ],
-    links: [{ rel: "canonical", href: "/client-experience" }],
+    links: [{ rel: "canonical", href: "https://vibhatechnologies.co.uk/client-experience" }],
   }),
   component: ClientExperiencePage,
 });

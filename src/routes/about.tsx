@@ -16,9 +16,9 @@ export const Route = createFileRoute("/about")({
           "Treasury expertise built on real banking experience. Discover the unique positioning of Vibha Technologies.",
       },
       { property: "og:title", content: "About Us | Vibha Technologies UK Ltd" },
-      { property: "og:url", content: "/about" },
+      { property: "og:url", content: "https://vibhatechnologies.co.uk/about" },
     ],
-    links: [{ rel: "canonical", href: "/about" }],
+    links: [{ rel: "canonical", href: "https://vibhatechnologies.co.uk/about" }],
   }),
   component: AboutPage,
 });
