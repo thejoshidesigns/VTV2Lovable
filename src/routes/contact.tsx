@@ -198,9 +198,10 @@ function ContactPage() {
                     <div>
                       <p className="text-sm text-muted-foreground mb-1">Headquarters</p>
                       <p className="font-medium leading-relaxed">
-                        67 Hall Road, East Ham
-                        <br />
-                        London E6 2NG, United Kingdom
+                        67<br />
+                        Hall Road<br />
+                        London E6 2NG<br />
+                        United Kingdom
                       </p>
                     </div>
                   </div>
