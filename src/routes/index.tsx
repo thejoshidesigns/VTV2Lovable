@@ -18,9 +18,9 @@ export const Route = createFileRoute("/")({
           "Specialist SAP Treasury, Cash Management and Finance Transformation consultancy. Real banking experience meets deep SAP expertise.",
       },
       { property: "og:title", content: "SAP Treasury Transformation | Vibha Technologies UK Ltd" },
-      { property: "og:url", content: "/" },
+      { property: "og:url", content: "https://vibhatechnologies.co.uk/" },
     ],
-    links: [{ rel: "canonical", href: "/" }],
+    links: [{ rel: "canonical", href: "https://vibhatechnologies.co.uk/" }],
   }),
   component: HomePage,
 });

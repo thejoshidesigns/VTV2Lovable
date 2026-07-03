@@ -15,9 +15,34 @@ export const Route = createFileRoute("/services")({
           "SAP Treasury, Cash Management, In-House Banking, Advanced Payment Management, Bank Integration and S/4HANA Finance services.",
       },
       { property: "og:title", content: "Specialist SAP Services | Vibha Technologies UK Ltd" },
-      { property: "og:url", content: "/services" },
+      { property: "og:description", content: "SAP Treasury, Cash Management, In-House Banking, Advanced Payment Management, Bank Integration and S/4HANA Finance services." },
+      { property: "og:url", content: "https://vibhatechnologies.co.uk/services" },
     ],
-    links: [{ rel: "canonical", href: "/services" }],
+    links: [{ rel: "canonical", href: "https://vibhatechnologies.co.uk/services" }],
+    scripts: [
+      {
+        type: "application/ld+json",
+        children: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "Service",
+          serviceType: "SAP Treasury & Finance Consulting",
+          provider: { "@type": "Organization", name: "Vibha Technologies UK Ltd", url: "https://vibhatechnologies.co.uk" },
+          areaServed: ["United Kingdom", "Europe", "Middle East", "United States", "India"],
+          hasOfferCatalog: {
+            "@type": "OfferCatalog",
+            name: "SAP Services",
+            itemListElement: [
+              "SAP Treasury & Risk Management",
+              "SAP Cash Management",
+              "SAP In-House Banking",
+              "SAP Advanced Payment Management",
+              "SAP Bank Communication Management",
+              "SAP S/4HANA Finance",
+            ].map((n) => ({ "@type": "Offer", itemOffered: { "@type": "Service", name: n } })),
+          },
+        }),
+      },
+    ],
   }),
   component: ServicesPage,
 });
