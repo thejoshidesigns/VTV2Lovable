@@ -27,7 +27,7 @@ export const Route = createFileRoute("/")({
 
 const stats = [
   { value: "24+", label: "Years SAP Treasury & Finance Consulting" },
-  { value: "16+", label: "Years Treasury & Banking" },
+  { value: "14+", label: "Years SAP Treasury & Banking" },
   { value: "34", label: "Global SAP Programs" },
   { value: "9", label: "SAP Certifications + CAIIB (Certified Associate of Indian Institute of Bankers)" },
 ];
@@ -37,7 +37,7 @@ const services = [
     title: "SAP Treasury & Risk Management",
     description:
       "End-to-end implementation of Transaction Manager, Risk Analyzers, and Trade Finance.",
-    capabilities: ["FX & Hedging", "Derivatives, Options and Swaps", "Treasury Accounting"],
+    capabilities: ["FX & Hedging", "Derivatives, Options & Swaps", "Treasury Accounting"],
   },
   {
     title: "Cash & Liquidity Management",
@@ -58,7 +58,7 @@ const services = [
   {
     title: "Advanced Payment Management",
     description:
-      "Advanced Payment Factory and centralized global payment control across entities.",
+      "Payment Factory, centralized global payment control across entities.",
     capabilities: ["Centralized Payments", "Format Mapping (DME)", "Approval Workflows"],
   },
   {
@@ -74,7 +74,7 @@ function HomePage() {
       <SiteHeader />
 
       {/* Hero */}
-      <section className="relative min-h-[90dvh] flex items-center bg-slate-950 overflow-hidden border-b border-border">
+      <section className="relative flex items-center bg-slate-950 overflow-hidden border-b border-border">
         <div className="absolute inset-0 z-0">
           <img
             src="https://images.unsplash.com/photo-1535504663857-dab4d2908557"
@@ -85,30 +85,29 @@ function HomePage() {
           <div className="absolute inset-0 gradient-primary mix-blend-multiply opacity-50" />
         </div>
 
-        <div className="container-x relative z-10 py-20 lg:py-32">
-          <div className="grid grid-cols-1 lg:grid-cols-[1.15fr_1fr] gap-12 items-center">
+        <div className="container-x relative z-10 py-8 md:py-12 lg:py-14 w-full">
+          <div className="grid grid-cols-1 lg:grid-cols-[1.15fr_1fr] gap-8 lg:gap-10 items-start">
             <motion.div
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, ease: "easeOut" }}
             >
-              {/* Enterprise Consultancy badge — bigger + gradient */}
-              <div className="inline-flex items-center rounded-full border border-white/25 bg-white/10 backdrop-blur-md px-6 py-3 mb-8 shadow-[0_0_20px_rgba(0,166,224,0.4)]">
-                <span className="flex h-3 w-3 rounded-full bg-[#00A6E0] mr-3 shadow-[0_0_10px_#00A6E0]" />
-                <span className="text-lg md:text-xl font-bold tracking-wide text-transparent bg-clip-text bg-gradient-to-r from-[#4DC9F0] to-white uppercase">
+              <div className="inline-flex items-center rounded-full border border-white/25 bg-white/10 backdrop-blur-md px-5 py-2 mb-5 shadow-[0_0_20px_rgba(0,166,224,0.4)]">
+                <span className="flex h-2.5 w-2.5 rounded-full bg-[#00A6E0] mr-3 shadow-[0_0_10px_#00A6E0]" />
+                <span className="text-base md:text-lg font-bold tracking-wide text-transparent bg-clip-text bg-gradient-to-r from-[#4DC9F0] to-white uppercase">
                   Enterprise Consultancy
                 </span>
               </div>
-              <h1 className="mb-6 text-white">
+              <h1 className="mb-4 text-white text-3xl md:text-4xl lg:text-5xl leading-tight">
                 Transforming Treasury &amp; Finance Operations Through{" "}
                 <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#4DC9F0] to-[#609DE6]">
                   SAP Innovation
                 </span>
               </h1>
-              <p className="text-xl md:text-2xl text-slate-300 mb-10 leading-relaxed font-light">
+              <p className="text-lg md:text-xl text-slate-300 mb-6 leading-relaxed font-light">
                 Specialists in SAP Treasury, Cash Management and Finance Transformation.
               </p>
-              <div className="flex flex-col sm:flex-row flex-wrap gap-4">
+              <div className="flex flex-col sm:flex-row flex-wrap gap-3">
                 <Link to="/contact" className="w-full sm:w-auto">
                   <Button
                     size="lg"
@@ -129,19 +128,19 @@ function HomePage() {
               </div>
             </motion.div>
 
-            {/* Liquid logo */}
+            {/* Liquid logo — top-aligned with text, visible on all sizes */}
             <motion.div
               initial={{ opacity: 0, scale: 0.95 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 1.2, ease: "easeOut", delay: 0.2 }}
-              className="hidden lg:block"
+              className="block order-first lg:order-none"
             >
               <LiquidLogo
                 src={heroLogo.url}
                 videoSrc={heroVideo.url}
                 chromaKey
                 alt="Vibha Technologies liquid logo"
-                className="w-full aspect-square max-w-[520px] ml-auto"
+                className="w-full aspect-square max-w-[320px] sm:max-w-[380px] lg:max-w-[460px] mx-auto lg:ml-auto lg:mr-0"
               />
             </motion.div>
           </div>
@@ -171,10 +170,10 @@ function HomePage() {
               </motion.div>
             ))}
           </div>
-          <div className="mt-12 text-center flex items-center justify-center text-muted-foreground space-x-2">
+          <div className="mt-12 text-center flex flex-wrap items-center justify-center text-muted-foreground gap-2">
             <Globe2 className="h-5 w-5 text-[#00A6E0]" />
-            <span className="font-medium tracking-wide uppercase text-sm">
-              Geographic Reach: UK | Europe | Middle East | USA | India
+            <span className="text-sm md:text-base font-semibold">
+              Geographic Reach: United Kingdom | Europe | Middle East | USA | India
             </span>
           </div>
         </div>
@@ -193,13 +192,14 @@ function HomePage() {
               <div className="space-y-6 text-lg text-foreground/85 leading-relaxed">
                 <p>
                   Vibha Technologies bridges the critical gap between complex financial
-                  operations and enterprise technology. Our foundation is built on 16+ years of
+                  operations and enterprise technology. Our foundation is built on 14+ years of
                   real time core banking and treasury experience.
                 </p>
                 <p>
-                  We understand the nuances of FX exposures, derivatives, options and swaps, and
-                  SWIFT connectivity because we've build them. When we architect an SAP
-                  solution, we ensure it resolves real-world treasury challenges.
+                  We understand the nuances of FX exposures, liquidity structures, derivatives,
+                  options &amp; swaps, and SWIFT connectivity because we've built them. When we
+                  architect an SAP solution, we ensure it resolves real-world treasury
+                  challenges.
                 </p>
               </div>
               <ul className="mt-8 space-y-4">
@@ -215,13 +215,13 @@ function HomePage() {
                 ))}
               </ul>
             </div>
-            <div className="bg-card border border-border p-10 rounded-2xl shadow-xl relative overflow-hidden">
+            <div className="bg-sky-50 border border-sky-200 p-10 rounded-2xl shadow-xl relative overflow-hidden">
               <div className="absolute top-0 left-0 w-full h-1.5 gradient-primary" />
-              <div className="p-3 bg-primary/5 inline-flex rounded-xl mb-6">
+              <div className="p-3 bg-white inline-flex rounded-xl mb-6 shadow-sm">
                 <Building2 className="h-10 w-10 text-[#0B5CAD]" />
               </div>
-              <h3 className="text-2xl font-bold mb-4">Enterprise Transformation</h3>
-              <p className="text-muted-foreground mb-8">
+              <h3 className="text-2xl font-bold mb-4 text-[#0B3A6B]">Enterprise Transformation</h3>
+              <p className="text-slate-700 mb-8">
                 Delivering scalable, compliant, highly automated treasury solutions for
                 organizations migrating to SAP S/4HANA or optimizing existing landscapes.
               </p>
@@ -265,7 +265,8 @@ function HomePage() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.4, delay: i * 0.05 }}
-                className="bg-card border border-border rounded-xl p-6 shadow-sm hover:shadow-md transition"
+                whileHover={{ y: -6 }}
+                className="bg-card border border-border rounded-xl p-6 shadow-[0_10px_30px_-12px_rgba(11,92,173,0.25)] hover:shadow-[0_20px_45px_-15px_rgba(11,92,173,0.45)] transition-all duration-300"
               >
                 <h3 className="text-xl font-bold mb-3">{s.title}</h3>
                 <p className="text-muted-foreground text-sm mb-4">{s.description}</p>

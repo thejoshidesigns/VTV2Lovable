@@ -13,6 +13,7 @@ import { Route as TermsRouteImport } from './routes/terms'
 import { Route as ServicesRouteImport } from './routes/services'
 import { Route as PrivacyRouteImport } from './routes/privacy'
 import { Route as IndustriesRouteImport } from './routes/industries'
+import { Route as CoreCompetenciesRouteImport } from './routes/core-competencies'
 import { Route as ContactRouteImport } from './routes/contact'
 import { Route as ClientExperienceRouteImport } from './routes/client-experience'
 import { Route as AboutRouteImport } from './routes/about'
@@ -36,6 +37,11 @@ const PrivacyRoute = PrivacyRouteImport.update({
 const IndustriesRoute = IndustriesRouteImport.update({
   id: '/industries',
   path: '/industries',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const CoreCompetenciesRoute = CoreCompetenciesRouteImport.update({
+  id: '/core-competencies',
+  path: '/core-competencies',
   getParentRoute: () => rootRouteImport,
 } as any)
 const ContactRoute = ContactRouteImport.update({
@@ -64,6 +70,7 @@ export interface FileRoutesByFullPath {
   '/about': typeof AboutRoute
   '/client-experience': typeof ClientExperienceRoute
   '/contact': typeof ContactRoute
+  '/core-competencies': typeof CoreCompetenciesRoute
   '/industries': typeof IndustriesRoute
   '/privacy': typeof PrivacyRoute
   '/services': typeof ServicesRoute
@@ -74,6 +81,7 @@ export interface FileRoutesByTo {
   '/about': typeof AboutRoute
   '/client-experience': typeof ClientExperienceRoute
   '/contact': typeof ContactRoute
+  '/core-competencies': typeof CoreCompetenciesRoute
   '/industries': typeof IndustriesRoute
   '/privacy': typeof PrivacyRoute
   '/services': typeof ServicesRoute
@@ -85,6 +93,7 @@ export interface FileRoutesById {
   '/about': typeof AboutRoute
   '/client-experience': typeof ClientExperienceRoute
   '/contact': typeof ContactRoute
+  '/core-competencies': typeof CoreCompetenciesRoute
   '/industries': typeof IndustriesRoute
   '/privacy': typeof PrivacyRoute
   '/services': typeof ServicesRoute
@@ -97,6 +106,7 @@ export interface FileRouteTypes {
     | '/about'
     | '/client-experience'
     | '/contact'
+    | '/core-competencies'
     | '/industries'
     | '/privacy'
     | '/services'
@@ -107,6 +117,7 @@ export interface FileRouteTypes {
     | '/about'
     | '/client-experience'
     | '/contact'
+    | '/core-competencies'
     | '/industries'
     | '/privacy'
     | '/services'
@@ -117,6 +128,7 @@ export interface FileRouteTypes {
     | '/about'
     | '/client-experience'
     | '/contact'
+    | '/core-competencies'
     | '/industries'
     | '/privacy'
     | '/services'
@@ -128,6 +140,7 @@ export interface RootRouteChildren {
   AboutRoute: typeof AboutRoute
   ClientExperienceRoute: typeof ClientExperienceRoute
   ContactRoute: typeof ContactRoute
+  CoreCompetenciesRoute: typeof CoreCompetenciesRoute
   IndustriesRoute: typeof IndustriesRoute
   PrivacyRoute: typeof PrivacyRoute
   ServicesRoute: typeof ServicesRoute
@@ -162,6 +175,13 @@ declare module '@tanstack/react-router' {
       path: '/industries'
       fullPath: '/industries'
       preLoaderRoute: typeof IndustriesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/core-competencies': {
+      id: '/core-competencies'
+      path: '/core-competencies'
+      fullPath: '/core-competencies'
+      preLoaderRoute: typeof CoreCompetenciesRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/contact': {
@@ -200,6 +220,7 @@ const rootRouteChildren: RootRouteChildren = {
   AboutRoute: AboutRoute,
   ClientExperienceRoute: ClientExperienceRoute,
   ContactRoute: ContactRoute,
+  CoreCompetenciesRoute: CoreCompetenciesRoute,
   IndustriesRoute: IndustriesRoute,
   PrivacyRoute: PrivacyRoute,
   ServicesRoute: ServicesRoute,

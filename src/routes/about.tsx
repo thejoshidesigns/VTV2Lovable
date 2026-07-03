@@ -1,5 +1,5 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { ArrowRight, ShieldCheck, Award, Landmark, Linkedin } from "lucide-react";
+import { ArrowRight, ShieldCheck, Award, Landmark } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { SiteHeader } from "@/components/site/SiteHeader";
@@ -28,7 +28,7 @@ const managedItems = [
   "FX Exposure",
   "Debt Management",
   "Intercompany Funding",
-  "Payment Processing",
+  "Advanced Payment Management",
   "Banking Relationships",
   "Financial Risk Management",
   "Regulatory Compliance",
@@ -68,7 +68,7 @@ function AboutPage() {
                   professionals who actually understand the business of treasury.
                 </p>
                 <p>
-                  Our founder garnered 16+ years of rich experience in global banking before
+                  Our founder garnered 14+ years of rich experience in global banking before
                   transitioning to enterprise SAP architecture, bringing real time core banking
                   expertise to every engagement.
                 </p>
@@ -140,16 +140,16 @@ function AboutPage() {
               <div className="space-y-4 text-foreground/85 leading-relaxed text-lg">
                 <p>
                   With over <strong>24 years of SAP Treasury &amp; Finance consulting</strong>{" "}
-                  and <strong>16+ years of real time core banking</strong> experience, Appa
-                  founded Vibha Technologies in 2019 to close the gap between how treasury
-                  actually works and how enterprise systems are typically configured.
+                  and <strong>14+ years of SAP Treasury &amp; Banking</strong> experience,
+                  Appa founded Vibha Technologies in 2019 to close the gap between - how
+                  treasury actually works and how enterprise systems are typically configured.
                 </p>
                 <p>
                   A <strong>CAIIB</strong>-certified banker (Certified Associate of Indian
                   Institute of Bankers) holding <strong>9 active SAP certifications</strong>,
-                  he has led 34 global SAP programs across the UK, Europe, Middle East, USA
-                  and India — spanning FX, derivatives, cash pooling, in-house banking, SWIFT
-                  and S/4HANA Finance.
+                  he has led 34 global SAP programs across the United Kingdom, Europe, Middle
+                  East, USA and India, spanning FX, derivatives, cash pooling, in-house banking,
+                  APM, SWIFT and S/4HANA Finance.
                 </p>
               </div>
               <div className="mt-8 flex flex-wrap gap-3">
@@ -159,11 +159,17 @@ function AboutPage() {
                   </Button>
                 </Link>
                 <a
-                  href="mailto:appa@vibhatechnologies.co.uk"
+                  href="https://www.linkedin.com/in/venkata-appa-rao-vadduri-426b1719/"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="inline-flex items-center px-5 py-2.5 rounded-md border border-border font-semibold text-foreground hover:bg-muted transition"
                 >
-                  <Linkedin className="h-5 w-5 mr-2 text-[#0B5CAD]" />
-                  Connect Directly
+                  <span className="inline-flex items-center justify-center h-6 w-6 rounded bg-[#0A66C2] mr-2">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" className="h-3.5 w-3.5 fill-white" aria-hidden="true">
+                      <path d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.86 0-2.14 1.45-2.14 2.95v5.66H9.34V9h3.42v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 1 1 0-4.13 2.06 2.06 0 0 1 0 4.13zM7.12 20.45H3.56V9h3.56v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.72v20.56C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.72V1.72C24 .77 23.2 0 22.22 0z" />
+                    </svg>
+                  </span>
+                  Connect on LinkedIn
                 </a>
               </div>
             </div>
@@ -185,8 +191,12 @@ function AboutPage() {
             </p>
           </div>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6">
-            {managedItems.map((item) => (
-              <Card key={item} className="bg-card border-border hover:shadow-md transition">
+            {managedItems.map((item, i) => (
+              <Card
+                key={item}
+                className="bg-card border-border shadow-[0_10px_25px_-12px_rgba(11,92,173,0.25)] hover:shadow-[0_20px_40px_-15px_rgba(11,92,173,0.5)] hover:-translate-y-1 transition-all duration-300"
+                style={{ animationDelay: `${i * 60}ms` }}
+              >
                 <CardContent className="p-6 flex items-center justify-center text-center h-full">
                   <span className="font-semibold">{item}</span>
                 </CardContent>
@@ -217,7 +227,7 @@ function AboutPage() {
               <ul className="space-y-4">
                 {[
                   "9 Active SAP Certifications + CAIIB (Certified Associate of Indian Institute of Bankers)",
-                  "16+ Years Real Time Core Banking Experience",
+                  "14+ Years SAP Treasury & Banking Experience",
                   "34 Global Enterprise Implementations",
                 ].map((it) => (
                   <li

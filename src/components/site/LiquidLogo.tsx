@@ -159,16 +159,33 @@ export function LiquidLogo({ src, videoSrc, chromaKey = false, alt = "", classNa
 
     if (videoSrc) {
       video = document.createElement("video");
-      video.src = videoSrc;
-      video.crossOrigin = "anonymous";
+      // NOTE: do NOT set crossOrigin — asset is same-origin and setting it
+      // triggers CORS-tainted-canvas errors on some Intel GPU drivers
+      // (Iris Xe / Arc), causing texImage2D to silently fail.
       video.muted = true;
+      video.defaultMuted = true;
       video.loop = true;
       video.playsInline = true;
       video.autoplay = true;
+      video.preload = "auto";
       video.setAttribute("playsinline", "");
       video.setAttribute("muted", "");
-      video.play().catch(() => {});
-      video.addEventListener("loadeddata", () => setReady(true));
+      video.setAttribute("autoplay", "");
+      const markReady = () => setReady(true);
+      video.addEventListener("loadeddata", markReady);
+      video.addEventListener("canplay", markReady);
+      video.src = videoSrc;
+      video.load();
+      const tryPlay = () => video?.play().catch(() => {});
+      tryPlay();
+      // Some browsers require a user gesture; retry on first interaction
+      const kickstart = () => {
+        tryPlay();
+        window.removeEventListener("pointerdown", kickstart);
+        window.removeEventListener("touchstart", kickstart);
+      };
+      window.addEventListener("pointerdown", kickstart, { once: true });
+      window.addEventListener("touchstart", kickstart, { once: true });
     } else {
       const img = new Image();
       img.crossOrigin = "anonymous";

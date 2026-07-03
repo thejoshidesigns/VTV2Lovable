@@ -9,7 +9,7 @@ import alFuttaim from "@/assets/clients/al-futtaim.png.asset.json";
 import capita from "@/assets/clients/capita.webp.asset.json";
 import coop from "@/assets/clients/coop.webp.asset.json";
 import crossrail from "@/assets/clients/crossrail.png.asset.json";
-import euroInsurances from "@/assets/clients/euro-insurances.png.asset.json";
+import leaseplan from "@/assets/clients/leaseplan.png.asset.json";
 import gazprom from "@/assets/clients/gazprom.png.asset.json";
 import ge from "@/assets/clients/ge-water.png.asset.json";
 import homebase from "@/assets/clients/homebase.webp.asset.json";
@@ -94,7 +94,7 @@ const additionalClients = [
   { name: "Capita", logo: capita.url },
   { name: "Crossrail", logo: crossrail.url },
   { name: "Ofcom", logo: ofcom.url },
-  { name: "Euro Insurances", logo: euroInsurances.url },
+  { name: "LeasePlan", logo: leaseplan.url },
   { name: "Gazprom", logo: gazprom.url },
   { name: "Kellogg's", logo: kelloggs.url },
   { name: "TNT", logo: tnt.url },
@@ -151,7 +151,9 @@ function ClientExperiencePage() {
             </div>
           )}
 
-          <div className="bg-muted/40 border border-border rounded-2xl p-8 md:p-12">
+          <div className="relative bg-muted/40 border border-border rounded-2xl p-8 md:p-12 overflow-hidden">
+            <div className="absolute inset-x-0 top-0 h-1.5 gradient-primary" aria-hidden="true" />
+            <div className="absolute inset-x-0 bottom-0 h-1.5 gradient-primary" aria-hidden="true" />
             <h2 className="text-2xl md:text-3xl font-bold mb-8 text-center">
               Additional Enterprise Clients
             </h2>
@@ -159,8 +161,8 @@ function ClientExperiencePage() {
               logos={additionalClients}
               speed={70}
               hoverSpeed={15}
-              logoHeight={140}
-              gap={96}
+              logoHeight={98}
+              gap={72}
               grayscale={false}
             />
           </div>
