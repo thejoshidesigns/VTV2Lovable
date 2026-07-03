@@ -172,7 +172,7 @@ function HomePage() {
           </div>
           <div className="mt-12 text-center flex flex-wrap items-center justify-center text-muted-foreground gap-2">
             <Globe2 className="h-5 w-5 text-[#00A6E0]" />
-            <span className="text-sm md:text-base font-semibold">
+            <span className="text-base md:text-lg font-medium">
               Geographic Reach: United Kingdom | Europe | Middle East | USA | India
             </span>
           </div>
@@ -215,7 +215,7 @@ function HomePage() {
                 ))}
               </ul>
             </div>
-            <div className="bg-sky-50 border border-sky-200 p-10 rounded-2xl shadow-xl relative overflow-hidden">
+            <div className="bg-sky-100 border border-sky-300 p-10 rounded-2xl shadow-xl relative overflow-hidden">
               <div className="absolute top-0 left-0 w-full h-1.5 gradient-primary" />
               <div className="p-3 bg-white inline-flex rounded-xl mb-6 shadow-sm">
                 <Building2 className="h-10 w-10 text-[#0B5CAD]" />

@@ -111,7 +111,7 @@ function ClientExperiencePage() {
     <div className="min-h-screen flex flex-col">
       <SiteHeader />
 
-      <section className="py-20 bg-muted/30">
+      <section className="pt-16 pb-8 bg-muted/30">
         <div className="container-x max-w-3xl">
           <div className="inline-flex items-center rounded-full border border-primary/20 bg-primary/5 px-4 py-1.5 text-sm font-semibold gradient-text mb-6">
             Proven Track Record
@@ -124,7 +124,7 @@ function ClientExperiencePage() {
         </div>
       </section>
 
-      <section className="section-padding bg-background">
+      <section className="pt-6 pb-16 md:pb-20 bg-background">
         <div className="container-x">
           {featured.length > 0 && (
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-16">
@@ -161,7 +161,7 @@ function ClientExperiencePage() {
               logos={additionalClients}
               speed={70}
               hoverSpeed={15}
-              logoHeight={98}
+              logoHeight={84}
               gap={72}
               grayscale={false}
             />

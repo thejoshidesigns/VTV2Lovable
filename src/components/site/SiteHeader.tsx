@@ -28,14 +28,14 @@ export function SiteHeader() {
         scrolled ? "shadow-lg" : ""
       }`}
     >
-      <nav className="container-x flex h-20 md:h-24 items-center justify-between gap-4">
+      <nav className="container-x flex h-28 md:h-32 items-center justify-between gap-4">
         {/* Logo on the LEFT — inside a white rounded panel for visibility */}
         <Link to="/" className="flex items-center shrink-0">
           <div className="bg-white rounded-xl shadow-md p-2">
             <img
               src="/__l5e/assets-v1/2e995d0c-6a05-4759-b6b4-4a478300f721/vibha-logo.svg"
               alt="Vibha Technologies UK Ltd Logo"
-              className="h-14 md:h-16 w-auto object-contain block"
+              className="h-20 md:h-24 w-auto object-contain block"
             />
           </div>
         </Link>
