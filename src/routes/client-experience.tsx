@@ -161,7 +161,7 @@ function ClientExperiencePage() {
               logos={additionalClients}
               speed={70}
               hoverSpeed={15}
-              logoHeight={98}
+              logoHeight={84}
               gap={72}
               grayscale={false}
             />
