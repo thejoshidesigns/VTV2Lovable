@@ -56,9 +56,10 @@ export function SiteFooter() {
                   <MapPin className="h-4 w-4 text-[#00A6E0]" />
                 </span>
                 <span className="pt-1 leading-relaxed">
-                  67 Hall Road, East Ham
-                  <br />
-                  London E6 2NG, United Kingdom
+                  67<br />
+                  Hall Road<br />
+                  London E6 2NG<br />
+                  United Kingdom
                 </span>
               </li>
             </ul>
