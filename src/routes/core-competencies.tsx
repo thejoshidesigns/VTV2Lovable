@@ -125,15 +125,15 @@ function CoreCompetenciesPage() {
     <div className="min-h-screen flex flex-col">
       <SiteHeader />
 
-      <section className="py-20 bg-slate-950 text-white relative overflow-hidden border-b border-white/10">
+      <section className="py-20 bg-sky-50 relative overflow-hidden border-b border-border">
         <div className="container-x max-w-3xl relative z-10">
-          <div className="inline-flex items-center rounded-full border border-white/25 bg-white/10 backdrop-blur-md px-5 py-2 mb-6">
-            <span className="text-sm md:text-base font-bold tracking-wide uppercase text-white">
+          <div className="inline-flex items-center rounded-full border border-primary/20 bg-white/70 backdrop-blur-md px-5 py-2 mb-6">
+            <span className="text-sm md:text-base font-bold tracking-wide uppercase gradient-text">
               Core Competencies
             </span>
           </div>
-          <h1 className="mb-4 text-white">Where Banking Meets SAP</h1>
-          <p className="text-lg md:text-xl text-white/85 leading-relaxed font-light">
+          <h1 className="mb-4">Where Banking Meets <span className="gradient-text">SAP</span></h1>
+          <p className="text-lg md:text-xl text-muted-foreground leading-relaxed font-light">
             Deep expertise across the complete SAP Treasury and Finance stack,
             underpinned by real world banking experience.
           </p>
