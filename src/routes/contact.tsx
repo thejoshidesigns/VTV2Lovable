@@ -270,11 +270,10 @@ function ContactPage() {
 
             {/* Form column */}
             <div className="lg:col-span-7">
-              <Card className="relative overflow-hidden border-border/60 shadow-md">
-                <div className="absolute top-0 left-0 w-full h-1.5 gradient-primary" />
-                <CardHeader className="border-b border-border/50 pb-6 bg-muted/10 pt-8">
-                  <CardTitle className="text-2xl">Consulting Inquiry</CardTitle>
-                  <CardDescription className="text-base mt-2">
+              <Card className="relative overflow-hidden border-border/60 shadow-md pt-0">
+                <CardHeader className="gradient-primary px-8 py-5 rounded-none">
+                  <CardTitle className="text-2xl text-white">Consulting Inquiry</CardTitle>
+                  <CardDescription className="text-base mt-2 text-white/85">
                     Share your project details. We typically respond within 24 hours.
                   </CardDescription>
                 </CardHeader>
