@@ -13,6 +13,23 @@ export default defineConfig({
   },
   nitro: {
     preset: "static",
+    // @ts-expect-error nitro prerender is supported at runtime by the underlying preset
+    prerender: {
+      crawlLinks: true,
+      failOnError: false,
+      routes: [
+        "/",
+        "/about",
+        "/services",
+        "/core-competencies",
+        "/industries",
+        "/client-experience",
+        "/contact",
+        "/privacy",
+        "/terms",
+        "/sitemap.xml",
+      ],
+    },
   },
   vite: {
     plugins: [mcpPlugin()],
