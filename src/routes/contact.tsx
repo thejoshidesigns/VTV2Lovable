@@ -179,12 +179,20 @@ function ContactPage() {
                     <Mail className="h-5 w-5 text-[#00A6E0] shrink-0" />
                     <div className="min-w-0 flex-1">
                       <p className="text-sm text-muted-foreground">Email Address</p>
-                      <a
-                        href="mailto:contact@vibhatechnologies.co.uk"
-                        className="font-semibold hover:text-[#0B5CAD] whitespace-nowrap text-sm sm:text-base"
-                      >
-                        contact@vibhatechnologies.co.uk
-                      </a>
+                      <div className="flex flex-col">
+                        <a
+                          href="mailto:contact@vibhatechnologies.co.uk"
+                          className="font-semibold hover:text-[#0B5CAD] whitespace-nowrap text-sm sm:text-base"
+                        >
+                          contact@vibhatechnologies.co.uk
+                        </a>
+                        <a
+                          href="mailto:appa@vibhatechnologies.co.uk"
+                          className="font-semibold hover:text-[#0B5CAD] whitespace-nowrap text-sm sm:text-base"
+                        >
+                          appa@vibhatechnologies.co.uk
+                        </a>
+                      </div>
                     </div>
                   </CardContent>
                 </Card>
