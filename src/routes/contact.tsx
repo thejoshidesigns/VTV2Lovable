@@ -86,16 +86,35 @@ function ContactPage() {
   const onSubmit = async (data: FormData) => {
     setIsSubmitting(true);
     try {
-      await new Promise((r) => setTimeout(r, 1200));
-      console.log("Contact form:", data);
-      toast.success("Inquiry submitted successfully", {
-        description: "We will contact you shortly regarding your requirements.",
+      const formData = new FormData();
+      formData.append("access_key", "bfd85ed7-4a04-4876-a2b2-eab349a0479e");
+      formData.append("subject", "New Consulting Inquiry — Vibha Technologies");
+      formData.append("from_name", "Vibha Technologies Website");
+      formData.append("name", data.name);
+      formData.append("email", data.email);
+      formData.append("phone", data.phone);
+      formData.append("company", data.company);
+      formData.append("serviceArea", data.serviceArea);
+      formData.append("message", data.message);
+
+      const response = await fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        body: formData,
       });
-      reset();
-      setValue("serviceArea", "");
+      const result = await response.json();
+
+      if (result.success) {
+        toast.success("Inquiry submitted successfully", {
+          description: "We will contact you shortly regarding your requirements.",
+        });
+        reset();
+        setValue("serviceArea", "");
+      } else {
+        throw new Error(result.message || "Submission failed");
+      }
     } catch {
       toast.error("Submission failed", {
-        description: "Please try again or contact us directly via email.",
+        description: "Please try again or email us at appa@vibhatechnologies.co.uk.",
       });
     } finally {
       setIsSubmitting(false);
