@@ -35,11 +35,11 @@ export function SiteFooter() {
                     <Mail className="h-4 w-4 text-[#00A6E0]" />
                   </span>
                   <span className="pt-1 flex flex-col gap-1">
-                    <a href="mailto:contact@vibhatechnologies.co.uk" className="hover:text-white transition-colors">
-                      contact@vibhatechnologies.co.uk
-                    </a>
                     <a href="mailto:appa@vibhatechnologies.co.uk" className="hover:text-white transition-colors">
                       appa@vibhatechnologies.co.uk
+                    </a>
+                    <a href="mailto:contact@vibhatechnologies.co.uk" className="hover:text-white transition-colors">
+                      contact@vibhatechnologies.co.uk
                     </a>
                   </span>
                 </div>
