@@ -21,7 +21,7 @@ function PrivacyPage() {
       <SiteHeader />
       <section className="section-padding bg-background">
         <div className="container-x max-w-3xl">
-          <h1 className="mb-6">Privacy Policy</h1>
+          <h1 className="mb-6"><span className="gradient-text">Privacy</span> Policy</h1>
           <div className="prose prose-slate max-w-none space-y-4 text-muted-foreground leading-relaxed">
             <p>
               Vibha Technologies UK Ltd ("we", "us", "our") respects your privacy. This policy

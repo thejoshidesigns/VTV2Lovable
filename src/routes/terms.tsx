@@ -21,7 +21,7 @@ function TermsPage() {
       <SiteHeader />
       <section className="section-padding bg-background">
         <div className="container-x max-w-3xl">
-          <h1 className="mb-6">Terms of Service</h1>
+          <h1 className="mb-6"><span className="gradient-text">Terms</span> of Service</h1>
           <div className="space-y-4 text-muted-foreground leading-relaxed">
             <p>
               These terms govern your use of the Vibha Technologies UK Ltd website. By

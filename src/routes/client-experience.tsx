@@ -116,7 +116,7 @@ function ClientExperiencePage() {
           <div className="inline-flex items-center rounded-full border border-primary/20 bg-primary/5 px-4 py-1.5 text-sm font-semibold gradient-text mb-6">
             Proven Track Record
           </div>
-          <h1 className="mb-6">Selected Client Experience</h1>
+          <h1 className="mb-6">Selected <span className="gradient-text">Client Experience</span></h1>
           <p className="text-xl text-muted-foreground leading-relaxed">
             We have architected and delivered highly complex treasury transformations for some
             of the world's most recognized brands.
