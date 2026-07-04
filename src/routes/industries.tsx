@@ -15,6 +15,7 @@ export const Route = createFileRoute("/industries")({
           "Proven across Banking, Insurance & Financial Services, Oil and Gas, Utilities, Media, Manufacturing and Public Sector.",
       },
       { property: "og:title", content: "Industries We Serve | Vibha Technologies UK Ltd" },
+      { property: "og:description", content: "SAP Treasury and Finance experience across banking, retail, utilities, energy, manufacturing and public sector." },
       { property: "og:url", content: "https://vibhatechnologies.co.uk/industries" },
     ],
     links: [{ rel: "canonical", href: "https://vibhatechnologies.co.uk/industries" }],
@@ -59,8 +60,9 @@ const industries = [
 
 function IndustriesPage() {
   return (
-    <div className="min-h-screen flex flex-col">
+    <div className="min-h-screen flex flex-col"><a href="#main-content" className="sr-only focus:not-sr-only focus:fixed focus:top-2 focus:left-2 focus:z-[100] focus:rounded-md focus:bg-primary focus:px-4 focus:py-2 focus:text-white">Skip to main content</a>
       <SiteHeader />
+      <main id="main-content" className="flex-1">
 
       <section className="py-20 bg-muted/30 border-b border-border">
         <div className="container-x text-center max-w-3xl mx-auto">
@@ -118,6 +120,7 @@ function IndustriesPage() {
         </div>
       </section>
 
+      </main>
       <SiteFooter />
     </div>
   );

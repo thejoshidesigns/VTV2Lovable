@@ -8,6 +8,7 @@ export const Route = createFileRoute("/terms")({
       { title: "Terms of Service | Vibha Technologies UK Ltd" },
       { name: "description", content: "Terms of service for Vibha Technologies UK Ltd." },
       { property: "og:title", content: "Terms of Service | Vibha Technologies UK Ltd" },
+      { property: "og:description", content: "Terms governing the use of the Vibha Technologies UK Ltd website and services." },
       { property: "og:url", content: "https://vibhatechnologies.co.uk/terms" },
     ],
     links: [{ rel: "canonical", href: "https://vibhatechnologies.co.uk/terms" }],
@@ -17,8 +18,9 @@ export const Route = createFileRoute("/terms")({
 
 function TermsPage() {
   return (
-    <div className="min-h-screen flex flex-col">
+    <div className="min-h-screen flex flex-col"><a href="#main-content" className="sr-only focus:not-sr-only focus:fixed focus:top-2 focus:left-2 focus:z-[100] focus:rounded-md focus:bg-primary focus:px-4 focus:py-2 focus:text-white">Skip to main content</a>
       <SiteHeader />
+      <main id="main-content" className="flex-1">
       <section className="section-padding bg-background">
         <div className="container-x max-w-3xl">
           <h1 className="mb-6"><span className="gradient-text">Terms</span> of Service</h1>
@@ -53,6 +55,7 @@ function TermsPage() {
           </div>
         </div>
       </section>
+      </main>
       <SiteFooter />
     </div>
   );

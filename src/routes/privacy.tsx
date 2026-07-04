@@ -8,6 +8,7 @@ export const Route = createFileRoute("/privacy")({
       { title: "Privacy Policy | Vibha Technologies UK Ltd" },
       { name: "description", content: "Privacy policy for Vibha Technologies UK Ltd." },
       { property: "og:title", content: "Privacy Policy | Vibha Technologies UK Ltd" },
+      { property: "og:description", content: "How Vibha Technologies UK Ltd collects, uses and protects your personal information." },
       { property: "og:url", content: "https://vibhatechnologies.co.uk/privacy" },
     ],
     links: [{ rel: "canonical", href: "https://vibhatechnologies.co.uk/privacy" }],
@@ -17,8 +18,9 @@ export const Route = createFileRoute("/privacy")({
 
 function PrivacyPage() {
   return (
-    <div className="min-h-screen flex flex-col">
+    <div className="min-h-screen flex flex-col"><a href="#main-content" className="sr-only focus:not-sr-only focus:fixed focus:top-2 focus:left-2 focus:z-[100] focus:rounded-md focus:bg-primary focus:px-4 focus:py-2 focus:text-white">Skip to main content</a>
       <SiteHeader />
+      <main id="main-content" className="flex-1">
       <section className="section-padding bg-background">
         <div className="container-x max-w-3xl">
           <h1 className="mb-6"><span className="gradient-text">Privacy</span> Policy</h1>
@@ -54,6 +56,7 @@ function PrivacyPage() {
           </div>
         </div>
       </section>
+      </main>
       <SiteFooter />
     </div>
   );

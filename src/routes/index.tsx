@@ -18,6 +18,7 @@ export const Route = createFileRoute("/")({
           "Specialist SAP Treasury, Cash Management and Finance Transformation consultancy. Real banking experience meets deep SAP expertise.",
       },
       { property: "og:title", content: "SAP Treasury Transformation | Vibha Technologies UK Ltd" },
+      { property: "og:description", content: "Specialist SAP Treasury, Cash Management and Finance Transformation consultancy with 16+ years of expertise across UK, Europe, Middle East, USA and India." },
       { property: "og:url", content: "https://vibhatechnologies.co.uk/" },
       { property: "og:image", content: "https://vibhatechnologies.co.uk/og/og-home.jpg" },
       { property: "og:image:width", content: "1216" },
@@ -74,8 +75,9 @@ const services = [
 
 function HomePage() {
   return (
-    <div className="min-h-screen flex flex-col">
+    <div className="min-h-screen flex flex-col"><a href="#main-content" className="sr-only focus:not-sr-only focus:fixed focus:top-2 focus:left-2 focus:z-[100] focus:rounded-md focus:bg-primary focus:px-4 focus:py-2 focus:text-white">Skip to main content</a>
       <SiteHeader />
+      <main id="main-content" className="flex-1">
 
       {/* Hero */}
       <section className="relative flex items-center bg-slate-950 overflow-hidden border-b border-border">
@@ -297,6 +299,7 @@ function HomePage() {
         </div>
       </section>
 
+      </main>
       <SiteFooter />
     </div>
   );

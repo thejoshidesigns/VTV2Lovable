@@ -25,6 +25,7 @@ export const Route = createFileRoute("/core-competencies")({
           "Core SAP Treasury, Cash & Liquidity, In-House Banking, Advanced Payment Management, Bank Connectivity and S/4HANA Finance competencies.",
       },
       { property: "og:title", content: "Core Competencies | Vibha Technologies UK Ltd" },
+      { property: "og:description", content: "Core SAP Treasury, Cash & Liquidity, In-House Banking, Advanced Payment Management, Bank Connectivity and S/4HANA Finance competencies." },
       { property: "og:url", content: "https://vibhatechnologies.co.uk/core-competencies" },
     ],
     links: [{ rel: "canonical", href: "https://vibhatechnologies.co.uk/core-competencies" }],
@@ -122,8 +123,9 @@ const competencies = [
 
 function CoreCompetenciesPage() {
   return (
-    <div className="min-h-screen flex flex-col">
+    <div className="min-h-screen flex flex-col"><a href="#main-content" className="sr-only focus:not-sr-only focus:fixed focus:top-2 focus:left-2 focus:z-[100] focus:rounded-md focus:bg-primary focus:px-4 focus:py-2 focus:text-white">Skip to main content</a>
       <SiteHeader />
+      <main id="main-content" className="flex-1">
 
       <section className="py-20 bg-sky-50 relative overflow-hidden border-b border-border">
         <div className="container-x max-w-3xl relative z-10">
@@ -133,7 +135,7 @@ function CoreCompetenciesPage() {
             </span>
           </div>
           <h1 className="mb-4">Where Banking Meets <span className="gradient-text">SAP</span></h1>
-          <p className="text-lg md:text-xl text-muted-foreground leading-relaxed font-light">
+          <p className="text-lg md:text-xl text-foreground/80 leading-relaxed font-light">
             Deep expertise across the complete SAP Treasury and Finance stack,
             underpinned by real world banking experience.
           </p>
@@ -186,6 +188,7 @@ function CoreCompetenciesPage() {
         </div>
       </section>
 
+      </main>
       <SiteFooter />
     </div>
   );

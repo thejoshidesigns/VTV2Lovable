@@ -47,6 +47,7 @@ export const Route = createFileRoute("/contact")({
           "Contact Vibha Technologies for SAP S/4HANA migration, Treasury Transformation, Cash & Liquidity Management, In-House Banking and Advanced Payment Management.",
       },
       { property: "og:title", content: "Get in Touch | Vibha Technologies UK Ltd" },
+      { property: "og:description", content: "Get in touch with Vibha Technologies UK Ltd to discuss your SAP Treasury and Finance transformation." },
       { property: "og:url", content: "https://vibhatechnologies.co.uk/contact" },
       { property: "og:image", content: "https://vibhatechnologies.co.uk/og/og-contact.jpg" },
       { property: "og:image:width", content: "1216" },
@@ -102,8 +103,9 @@ function ContactPage() {
   };
 
   return (
-    <div className="min-h-screen flex flex-col">
+    <div className="min-h-screen flex flex-col"><a href="#main-content" className="sr-only focus:not-sr-only focus:fixed focus:top-2 focus:left-2 focus:z-[100] focus:rounded-md focus:bg-primary focus:px-4 focus:py-2 focus:text-white">Skip to main content</a>
       <SiteHeader />
+      <main id="main-content" className="flex-1">
 
       <section className="py-20 bg-slate-950 text-white relative overflow-hidden border-b border-white/10">
         <div className="absolute inset-0 gradient-primary opacity-40" />
@@ -380,6 +382,7 @@ function ContactPage() {
         </div>
       </section>
 
+      </main>
       <SiteFooter />
     </div>
   );
