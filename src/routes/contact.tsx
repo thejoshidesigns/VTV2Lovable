@@ -105,7 +105,7 @@ function ContactPage() {
     <div className="min-h-screen flex flex-col">
       <SiteHeader />
 
-      <section className="py-20 bg-slate-950 border-b border-border relative overflow-hidden">
+      <section className="py-20 bg-slate-950 text-white relative overflow-hidden border-b border-white/10">
         <div className="absolute inset-0 gradient-primary opacity-40" />
         <div className="container-x relative z-10 text-center max-w-4xl mx-auto">
           <h1 className="mb-6 text-white">Get in Touch</h1>
