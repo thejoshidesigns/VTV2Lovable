@@ -115,10 +115,10 @@ function HomePage() {
                 <Link to="/contact" className="w-full sm:w-auto">
                   <Button
                     size="lg"
-                    className="gradient-primary hover:gradient-primary-hover text-white border-0 shadow-lg w-full sm:w-auto"
+                    className="gradient-primary hover:gradient-primary-hover text-white border-0 shadow-lg w-full sm:w-auto h-auto min-h-11 whitespace-normal text-center leading-snug py-3 text-sm sm:text-base"
                   >
-                    Let's Discuss Your SAP Treasury Transformation
-                    <ArrowRight className="ml-2 h-5 w-5" />
+                    <span className="flex-1">Let's Discuss Your SAP Treasury Transformation</span>
+                    <ArrowRight className="ml-2 h-5 w-5 shrink-0" />
                   </Button>
                 </Link>
                 <Link to="/services" className="w-full sm:w-auto">
