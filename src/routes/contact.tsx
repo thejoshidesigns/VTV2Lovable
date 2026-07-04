@@ -1,5 +1,7 @@
 import { useState } from "react";
 import { createFileRoute } from "@tanstack/react-router";
+import { useServerFn } from "@tanstack/react-start";
+import { submitContactInquiry } from "@/lib/contact.functions";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import * as z from "zod";
@@ -83,35 +85,17 @@ function ContactPage() {
     resolver: zodResolver(formSchema),
   });
 
+  const submitInquiry = useServerFn(submitContactInquiry);
+
   const onSubmit = async (data: FormData) => {
     setIsSubmitting(true);
     try {
-      const formData = new FormData();
-      formData.append("access_key", "bfd85ed7-4a04-4876-a2b2-eab349a0479e");
-      formData.append("subject", "New Consulting Inquiry — Vibha Technologies");
-      formData.append("from_name", "Vibha Technologies Website");
-      formData.append("name", data.name);
-      formData.append("email", data.email);
-      formData.append("phone", data.phone);
-      formData.append("company", data.company);
-      formData.append("serviceArea", data.serviceArea);
-      formData.append("message", data.message);
-
-      const response = await fetch("https://api.web3forms.com/submit", {
-        method: "POST",
-        body: formData,
+      await submitInquiry({ data });
+      toast.success("Inquiry submitted successfully", {
+        description: "We will contact you shortly regarding your requirements.",
       });
-      const result = await response.json();
-
-      if (result.success) {
-        toast.success("Inquiry submitted successfully", {
-          description: "We will contact you shortly regarding your requirements.",
-        });
-        reset();
-        setValue("serviceArea", "");
-      } else {
-        throw new Error(result.message || "Submission failed");
-      }
+      reset();
+      setValue("serviceArea", "");
     } catch {
       toast.error("Submission failed", {
         description: "Please try again or email us at appa@vibhatechnologies.co.uk.",
