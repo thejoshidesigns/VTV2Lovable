@@ -175,17 +175,21 @@ function ClientExperiencePage() {
             />
           </div>
 
-          <div className="mt-16 text-center p-10 rounded-2xl bg-muted/50 border border-border">
-            <h3 className="text-2xl font-bold mb-4">Ready to start your transformation?</h3>
-            <p className="text-muted-foreground mb-6 max-w-2xl mx-auto">
-              Leverage our experience with global enterprises to ensure your SAP Treasury
-              deployment is successful, compliant, and optimized.
-            </p>
-            <Link to="/contact">
-              <Button className="gradient-primary text-white border-0 shadow-md">
-                Contact Our Team
-              </Button>
-            </Link>
+          <div className="mt-16 rounded-2xl bg-card border border-border overflow-hidden shadow-sm">
+            <div className="gradient-primary px-8 py-5">
+              <h3 className="text-2xl font-bold text-white">Ready to start your transformation?</h3>
+            </div>
+            <div className="p-10 text-center">
+              <p className="text-muted-foreground mb-6 max-w-2xl mx-auto">
+                Leverage our experience with global enterprises to ensure your SAP Treasury
+                deployment is successful, compliant, and optimized.
+              </p>
+              <Link to="/contact">
+                <Button className="gradient-primary text-white border-0 shadow-md">
+                  Contact Our Team
+                </Button>
+              </Link>
+            </div>
           </div>
         </div>
       </section>
