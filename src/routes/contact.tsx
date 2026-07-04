@@ -1,6 +1,5 @@
 import { useState } from "react";
 import { createFileRoute } from "@tanstack/react-router";
-import { useServerFn } from "@tanstack/react-start";
 import { submitContactInquiry } from "@/lib/contact.functions";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
@@ -85,12 +84,10 @@ function ContactPage() {
     resolver: zodResolver(formSchema),
   });
 
-  const submitInquiry = useServerFn(submitContactInquiry);
-
   const onSubmit = async (data: FormData) => {
     setIsSubmitting(true);
     try {
-      await submitInquiry({ data });
+      await submitContactInquiry(data);
       toast.success("Inquiry submitted successfully", {
         description: "We will contact you shortly regarding your requirements.",
       });

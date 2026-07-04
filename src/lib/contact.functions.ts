@@ -1,4 +1,5 @@
-import { createServerFn } from "@tanstack/react-start";
+// Client-side Web3Forms submission — no server needed (safe for static hosting).
+// Set VITE_WEB3FORMS_ACCESS_KEY in your .env before building.
 import { z } from "zod";
 
 const inputSchema = z.object({
@@ -10,43 +11,34 @@ const inputSchema = z.object({
   message: z.string().min(10).max(4000),
 });
 
-export const submitContactInquiry = createServerFn({ method: "POST" })
-  .inputValidator((data: unknown) => inputSchema.parse(data))
-  .handler(async ({ data }) => {
-    const accessKey = process.env.WEB3FORMS_ACCESS_KEY;
-    if (!accessKey) {
-      throw new Error("Contact form is not configured");
-    }
+export type ContactInquiry = z.infer<typeof inputSchema>;
 
-    const payload = {
-      access_key: accessKey,
-      subject: "New Consulting Inquiry — Vibha Technologies",
-      from_name: "Vibha Technologies Website",
-      name: data.name,
-      email: data.email,
-      phone: data.phone,
-      company: data.company,
-      serviceArea: data.serviceArea,
-      message: data.message,
-    };
+export async function submitContactInquiry(data: ContactInquiry) {
+  const parsed = inputSchema.parse(data);
+  const accessKey = import.meta.env.VITE_WEB3FORMS_ACCESS_KEY as string | undefined;
+  if (!accessKey) {
+    throw new Error("Contact form is not configured (missing VITE_WEB3FORMS_ACCESS_KEY)");
+  }
 
-    const response = await fetch("https://api.web3forms.com/submit", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-        Accept: "application/json",
-      },
-      body: JSON.stringify(payload),
-    });
+  const payload = {
+    access_key: accessKey,
+    subject: "New Consulting Inquiry — Vibha Technologies",
+    from_name: "Vibha Technologies Website",
+    ...parsed,
+  };
 
-    const result = (await response.json().catch(() => ({}))) as {
-      success?: boolean;
-      message?: string;
-    };
-
-    if (!response.ok || !result.success) {
-      throw new Error(result.message || "Failed to submit inquiry");
-    }
-
-    return { success: true };
+  const response = await fetch("https://api.web3forms.com/submit", {
+    method: "POST",
+    headers: { "Content-Type": "application/json", Accept: "application/json" },
+    body: JSON.stringify(payload),
   });
+
+  const result = (await response.json().catch(() => ({}))) as {
+    success?: boolean;
+    message?: string;
+  };
+  if (!response.ok || !result.success) {
+    throw new Error(result.message || "Failed to submit inquiry");
+  }
+  return { success: true };
+}
