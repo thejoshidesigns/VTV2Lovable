@@ -134,7 +134,7 @@ function CoreCompetenciesPage() {
             </span>
           </div>
           <h1 className="mb-4">Where Banking Meets <span className="gradient-text">SAP</span></h1>
-          <p className="text-lg md:text-xl text-muted-foreground leading-relaxed font-light">
+          <p className="text-lg md:text-xl text-foreground/80 leading-relaxed font-light">
             Deep expertise across the complete SAP Treasury and Finance stack,
             underpinned by real world banking experience.
           </p>
