@@ -77,11 +77,11 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { name: "viewport", content: "width=device-width, initial-scale=1" },
       { name: "theme-color", content: "#0a2540" },
       { name: "format-detection", content: "telephone=no" },
-      { title: "Vibha Technologies UK Ltd — SAP Treasury & Finance Consulting" },
+      { title: "Vibha Technologies — SAP Treasury & Finance Consulting" },
       {
         name: "description",
         content:
-          "Specialist SAP Treasury, Cash Management and Finance Transformation consultancy. 16+ years of banking and SAP expertise across UK, Europe, Middle East, USA and India.",
+          "SAP Treasury, Cash Management and Finance Transformation consultancy. 16+ years of banking and SAP expertise across UK, Europe, Middle East and beyond.",
       },
       { name: "keywords", content: "SAP Treasury, SAP TRM, SAP S/4HANA Finance, Cash Management, In-House Banking, Advanced Payment Management, Bank Integration, Treasury Transformation, SAP Consulting UK" },
       { name: "author", content: "Vibha Technologies UK Ltd" },

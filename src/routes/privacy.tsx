@@ -6,7 +6,7 @@ export const Route = createFileRoute("/privacy")({
   head: () => ({
     meta: [
       { title: "Privacy Policy | Vibha Technologies UK Ltd" },
-      { name: "description", content: "Privacy policy for Vibha Technologies UK Ltd." },
+      { name: "description", content: "Privacy policy for Vibha Technologies UK Ltd: how we collect, use and protect your personal information." },
       { property: "og:title", content: "Privacy Policy | Vibha Technologies UK Ltd" },
       { property: "og:description", content: "How Vibha Technologies UK Ltd collects, uses and protects your personal information." },
       { property: "og:image", content: "https://vibhatechnologies.lovable.app/__l5e/assets-v1/b61956a1-0b05-4f34-ab05-3de3d8151c51/og-image.jpg" },
