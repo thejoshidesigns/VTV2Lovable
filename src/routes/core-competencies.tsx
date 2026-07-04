@@ -125,7 +125,7 @@ function CoreCompetenciesPage() {
     <div className="min-h-screen flex flex-col">
       <SiteHeader />
 
-      <section className="py-16 gradient-primary text-white relative overflow-hidden">
+      <section className="py-20 bg-slate-950 text-white relative overflow-hidden border-b border-white/10">
         <div className="container-x max-w-3xl relative z-10">
           <div className="inline-flex items-center rounded-full border border-white/25 bg-white/10 backdrop-blur-md px-5 py-2 mb-6">
             <span className="text-sm md:text-base font-bold tracking-wide uppercase text-white">

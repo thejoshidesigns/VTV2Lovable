@@ -42,7 +42,7 @@ function AboutPage() {
   return (
     <div className="min-h-screen flex flex-col">
       <SiteHeader />
-      <section className="py-20 md:py-32 bg-slate-950 text-white relative overflow-hidden">
+      <section className="py-20 bg-slate-950 text-white relative overflow-hidden border-b border-white/10">
         <div className="absolute inset-0 gradient-primary opacity-40" />
         <div className="container-x relative z-10 max-w-3xl">
           <div className="inline-flex items-center rounded-full border border-white/25 bg-white/10 backdrop-blur-md px-6 py-3 text-lg md:text-xl font-bold uppercase tracking-wide text-white mb-8 shadow-[0_0_20px_rgba(0,166,224,0.35)]">
