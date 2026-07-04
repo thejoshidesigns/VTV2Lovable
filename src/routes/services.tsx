@@ -148,7 +148,7 @@ function ServicesPage() {
 
       <section className="py-20 bg-muted/30 border-b border-border">
         <div className="container-x max-w-3xl">
-          <h1 className="mb-6">Our Services</h1>
+          <h1 className="mb-6">Our <span className="gradient-text">Services</span></h1>
           <p className="text-xl text-muted-foreground leading-relaxed">
             Specialized architectural design, implementation, and optimization across the
             complete SAP Finance and Treasury suite.
