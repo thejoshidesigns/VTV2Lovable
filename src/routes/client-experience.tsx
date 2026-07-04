@@ -131,21 +131,25 @@ function ClientExperiencePage() {
               {featured.map((c, i) => (
                 <div
                   key={c.client}
-                  className={`bg-card border border-border rounded-2xl p-8 shadow-sm hover:shadow-lg transition ${
+                  className={`bg-card border border-border rounded-2xl overflow-hidden shadow-sm hover:shadow-lg transition flex flex-col ${
                     i === 0 ? "md:col-span-2" : ""
                   }`}
                 >
-                  <div className="flex items-start justify-between gap-4 mb-4">
-                    <h3 className="text-2xl font-bold gradient-text">{c.client}</h3>
-                    <span className="text-xs md:text-sm text-muted-foreground uppercase tracking-wider text-right shrink-0">
+                  <div className="gradient-primary px-6 md:px-8 py-4 md:py-5 flex items-start justify-between gap-4">
+                    <h3 className="text-xl md:text-2xl font-bold text-white leading-tight min-w-0">
+                      {c.client}
+                    </h3>
+                    <span className="text-xs md:text-sm text-white/85 uppercase tracking-wider text-right shrink-0 pt-1">
                       {c.industry}
                     </span>
                   </div>
-                  <p className="text-foreground/90 mb-4 leading-relaxed">{c.scope}</p>
-                  <p className="text-sm text-muted-foreground border-t border-border pt-4">
-                    <span className="font-semibold text-foreground">Outcomes: </span>
-                    {c.outcomes}
-                  </p>
+                  <div className="p-6 md:p-8 flex-1">
+                    <p className="text-foreground/90 mb-4 leading-relaxed">{c.scope}</p>
+                    <p className="text-sm text-muted-foreground border-t border-border pt-4">
+                      <span className="font-semibold text-foreground">Outcomes: </span>
+                      {c.outcomes}
+                    </p>
+                  </div>
                 </div>
               ))}
             </div>

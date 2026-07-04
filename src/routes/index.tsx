@@ -219,22 +219,27 @@ function HomePage() {
                 ))}
               </ul>
             </div>
-            <div className="bg-sky-100 border border-sky-300 p-10 rounded-2xl shadow-xl relative overflow-hidden">
-              <div className="absolute top-0 left-0 w-full h-1.5 gradient-primary" />
-              <div className="p-3 bg-white inline-flex rounded-xl mb-6 shadow-sm">
-                <Building2 className="h-10 w-10 text-[#0B5CAD]" />
+            <div className="bg-sky-100 border border-sky-300 rounded-2xl shadow-xl overflow-hidden">
+              <div className="gradient-primary px-6 md:px-10 py-5 flex items-center gap-4">
+                <div className="p-2.5 bg-white/95 inline-flex rounded-lg shadow-sm shrink-0">
+                  <Building2 className="h-7 w-7 text-[#0B5CAD]" />
+                </div>
+                <h3 className="text-xl md:text-2xl font-bold text-white leading-tight min-w-0">
+                  Enterprise Transformation
+                </h3>
               </div>
-              <h3 className="text-2xl font-bold mb-4 text-[#0B3A6B]">Enterprise Transformation</h3>
-              <p className="text-slate-700 mb-8">
-                Delivering scalable, compliant, highly automated treasury solutions for
-                organizations migrating to SAP S/4HANA or optimizing existing landscapes.
-              </p>
-              <Link
-                to="/client-experience"
-                className="inline-flex items-center font-semibold gradient-text hover:opacity-80"
-              >
-                View our client experience <ArrowRight className="ml-2 h-4 w-4 text-[#0B5CAD]" />
-              </Link>
+              <div className="p-6 md:p-10">
+                <p className="text-slate-700 mb-8">
+                  Delivering scalable, compliant, highly automated treasury solutions for
+                  organizations migrating to SAP S/4HANA or optimizing existing landscapes.
+                </p>
+                <Link
+                  to="/client-experience"
+                  className="inline-flex items-center font-semibold gradient-text hover:opacity-80"
+                >
+                  View our client experience <ArrowRight className="ml-2 h-4 w-4 text-[#0B5CAD]" />
+                </Link>
+              </div>
             </div>
           </div>
         </div>
@@ -270,9 +275,12 @@ function HomePage() {
                 viewport={{ once: true }}
                 transition={{ duration: 0.4, delay: i * 0.05 }}
                 whileHover={{ y: -6 }}
-                className="bg-card border border-border rounded-xl p-6 shadow-[0_10px_30px_-12px_rgba(11,92,173,0.25)] hover:shadow-[0_20px_45px_-15px_rgba(11,92,173,0.45)] transition-all duration-300"
+                className="bg-card border border-border rounded-xl overflow-hidden shadow-[0_10px_30px_-12px_rgba(11,92,173,0.25)] hover:shadow-[0_20px_45px_-15px_rgba(11,92,173,0.45)] transition-all duration-300 flex flex-col"
               >
-                <h3 className="text-xl font-bold mb-3">{s.title}</h3>
+                <div className="gradient-primary px-5 py-4">
+                  <h3 className="text-lg font-bold text-white leading-tight">{s.title}</h3>
+                </div>
+                <div className="p-6 flex-1">
                 <p className="text-muted-foreground text-sm mb-4">{s.description}</p>
                 <ul className="space-y-2">
                   {s.capabilities.map((c) => (
@@ -282,6 +290,7 @@ function HomePage() {
                     </li>
                   ))}
                 </ul>
+                </div>
               </motion.div>
             ))}
           </div>
