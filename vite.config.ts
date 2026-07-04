@@ -13,22 +13,6 @@ export default defineConfig({
   },
   nitro: {
     preset: "static",
-    prerender: {
-      crawlLinks: true,
-      failOnError: false,
-      routes: [
-        "/",
-        "/about",
-        "/services",
-        "/core-competencies",
-        "/industries",
-        "/client-experience",
-        "/contact",
-        "/privacy",
-        "/terms",
-        "/sitemap.xml",
-      ],
-    },
   },
   vite: {
     plugins: [mcpPlugin()],
