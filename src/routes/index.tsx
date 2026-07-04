@@ -25,7 +25,15 @@ export const Route = createFileRoute("/")({
       { property: "og:image:width", content: "1216" },
       { property: "og:image:height", content: "640" },
     ],
-    links: [{ rel: "canonical", href: "https://vibhatechnologies.co.uk/" }],
+    links: [
+      { rel: "canonical", href: "https://vibhatechnologies.co.uk/" },
+      {
+        rel: "preload",
+        as: "image",
+        href: "https://images.unsplash.com/photo-1535504663857-dab4d2908557?w=1600&q=70&auto=format&fit=crop",
+        fetchpriority: "high",
+      },
+    ],
   }),
   component: HomePage,
 });
