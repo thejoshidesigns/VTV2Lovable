@@ -137,7 +137,7 @@ export function LogoMarquee({
             >
               <img
                 src={l.logo}
-                alt={i < logos.length ? `${l.name} logo` : ""}
+                alt={`${l.name} partner logo`}
                 className="max-h-full w-auto object-contain transition duration-300"
                 style={{
                   height: logoHeight,

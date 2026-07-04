@@ -96,9 +96,9 @@ function IndustriesPage() {
                   <span className="p-2 rounded-lg bg-white/15 backdrop-blur-sm text-white shrink-0">
                     <Building2 className="h-5 w-5" />
                   </span>
-                  <h3 className="text-base md:text-lg font-bold text-white leading-tight min-w-0">
+                  <h2 className="text-base md:text-lg font-bold text-white leading-tight min-w-0">
                     {ind.sector}
-                  </h3>
+                  </h2>
                 </div>
                 <ul className="p-6 space-y-1.5 text-sm text-muted-foreground flex-1">
                   {ind.clients.map((c) => (
