@@ -8,6 +8,7 @@ export const Route = createFileRoute("/terms")({
       { title: "Terms of Service | Vibha Technologies UK Ltd" },
       { name: "description", content: "Terms of service for Vibha Technologies UK Ltd." },
       { property: "og:title", content: "Terms of Service | Vibha Technologies UK Ltd" },
+      { property: "og:description", content: "Terms governing the use of the Vibha Technologies UK Ltd website and services." },
       { property: "og:url", content: "https://vibhatechnologies.co.uk/terms" },
     ],
     links: [{ rel: "canonical", href: "https://vibhatechnologies.co.uk/terms" }],

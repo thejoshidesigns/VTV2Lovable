@@ -16,6 +16,7 @@ export const Route = createFileRoute("/about")({
           "Treasury expertise built on real banking experience. Discover the unique positioning of Vibha Technologies.",
       },
       { property: "og:title", content: "About Us | Vibha Technologies UK Ltd" },
+      { property: "og:description", content: "Founded by Appa Rao Vadduri, Vibha Technologies delivers SAP Treasury and Finance transformation for global enterprises." },
       { property: "og:url", content: "https://vibhatechnologies.co.uk/about" },
       { property: "og:image", content: "https://vibhatechnologies.co.uk/og/og-about.jpg" },
       { property: "og:image:width", content: "1216" },

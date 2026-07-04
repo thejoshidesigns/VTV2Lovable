@@ -8,6 +8,7 @@ export const Route = createFileRoute("/privacy")({
       { title: "Privacy Policy | Vibha Technologies UK Ltd" },
       { name: "description", content: "Privacy policy for Vibha Technologies UK Ltd." },
       { property: "og:title", content: "Privacy Policy | Vibha Technologies UK Ltd" },
+      { property: "og:description", content: "How Vibha Technologies UK Ltd collects, uses and protects your personal information." },
       { property: "og:url", content: "https://vibhatechnologies.co.uk/privacy" },
     ],
     links: [{ rel: "canonical", href: "https://vibhatechnologies.co.uk/privacy" }],

@@ -47,6 +47,7 @@ export const Route = createFileRoute("/contact")({
           "Contact Vibha Technologies for SAP S/4HANA migration, Treasury Transformation, Cash & Liquidity Management, In-House Banking and Advanced Payment Management.",
       },
       { property: "og:title", content: "Get in Touch | Vibha Technologies UK Ltd" },
+      { property: "og:description", content: "Get in touch with Vibha Technologies UK Ltd to discuss your SAP Treasury and Finance transformation." },
       { property: "og:url", content: "https://vibhatechnologies.co.uk/contact" },
       { property: "og:image", content: "https://vibhatechnologies.co.uk/og/og-contact.jpg" },
       { property: "og:image:width", content: "1216" },

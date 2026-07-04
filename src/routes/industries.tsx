@@ -15,6 +15,7 @@ export const Route = createFileRoute("/industries")({
           "Proven across Banking, Insurance & Financial Services, Oil and Gas, Utilities, Media, Manufacturing and Public Sector.",
       },
       { property: "og:title", content: "Industries We Serve | Vibha Technologies UK Ltd" },
+      { property: "og:description", content: "SAP Treasury and Finance experience across banking, retail, utilities, energy, manufacturing and public sector." },
       { property: "og:url", content: "https://vibhatechnologies.co.uk/industries" },
     ],
     links: [{ rel: "canonical", href: "https://vibhatechnologies.co.uk/industries" }],
