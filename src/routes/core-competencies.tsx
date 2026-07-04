@@ -26,6 +26,8 @@ export const Route = createFileRoute("/core-competencies")({
       },
       { property: "og:title", content: "Core Competencies | Vibha Technologies UK Ltd" },
       { property: "og:description", content: "Core SAP Treasury, Cash & Liquidity, In-House Banking, Advanced Payment Management, Bank Connectivity and S/4HANA Finance competencies." },
+      { property: "og:image", content: "https://vibhatechnologies.lovable.app/__l5e/assets-v1/b61956a1-0b05-4f34-ab05-3de3d8151c51/og-image.jpg" },
+      { name: "twitter:image", content: "https://vibhatechnologies.lovable.app/__l5e/assets-v1/b61956a1-0b05-4f34-ab05-3de3d8151c51/og-image.jpg" },
       { property: "og:url", content: "https://vibhatechnologies.co.uk/core-competencies" },
     ],
     links: [{ rel: "canonical", href: "https://vibhatechnologies.co.uk/core-competencies" }],

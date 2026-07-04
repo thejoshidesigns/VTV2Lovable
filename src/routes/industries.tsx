@@ -16,6 +16,8 @@ export const Route = createFileRoute("/industries")({
       },
       { property: "og:title", content: "Industries We Serve | Vibha Technologies UK Ltd" },
       { property: "og:description", content: "SAP Treasury and Finance experience across banking, retail, utilities, energy, manufacturing and public sector." },
+      { property: "og:image", content: "https://vibhatechnologies.lovable.app/__l5e/assets-v1/b61956a1-0b05-4f34-ab05-3de3d8151c51/og-image.jpg" },
+      { name: "twitter:image", content: "https://vibhatechnologies.lovable.app/__l5e/assets-v1/b61956a1-0b05-4f34-ab05-3de3d8151c51/og-image.jpg" },
       { property: "og:url", content: "https://vibhatechnologies.co.uk/industries" },
     ],
     links: [{ rel: "canonical", href: "https://vibhatechnologies.co.uk/industries" }],
