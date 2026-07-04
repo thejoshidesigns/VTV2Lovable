@@ -86,27 +86,28 @@ function AboutPage() {
               </Link>
             </div>
 
-            <div className="bg-card shadow-sm p-8 rounded-2xl border border-border relative overflow-hidden">
-              <div className="absolute top-0 left-0 w-1.5 h-full gradient-primary" />
-              <h3 className="mb-6 flex items-center text-xl">
-                <span className="p-2 rounded-lg bg-primary/5 mr-3">
-                  <ShieldCheck className="h-6 w-6 text-[#00A6E0]" />
+            <div className="bg-card shadow-sm rounded-2xl border border-border relative overflow-hidden">
+              <div className="gradient-primary px-8 py-4 flex items-center">
+                <span className="p-2 rounded-lg bg-white/15 backdrop-blur-sm mr-3">
+                  <ShieldCheck className="h-6 w-6 text-white" />
                 </span>
-                Our Unique Positioning
-              </h3>
-              <div className="pb-6 border-b border-border/60">
-                <h4 className="text-base font-semibold mb-2 text-[#0B5CAD]">Traditional SAP Firms</h4>
-                <p className="text-muted-foreground text-sm leading-relaxed">
-                  Focus primarily on system configuration, requiring extensive hand-holding from
-                  internal finance teams.
-                </p>
+                <h3 className="text-xl text-white">Our Unique Positioning</h3>
               </div>
-              <div className="pt-6">
-                <h4 className="text-base font-semibold mb-2 gradient-text">Vibha Technologies</h4>
-                <p className="text-foreground font-medium text-sm leading-relaxed">
-                  We speak the language of Finance. We design SAP solutions that inherently
-                  address the complexities of risk, liquidity, and compliance.
-                </p>
+              <div className="p-8">
+                <div className="pb-6 border-b border-border/60">
+                  <h4 className="text-base font-semibold mb-2 text-[#0B5CAD]">Traditional SAP Firms</h4>
+                  <p className="text-foreground font-medium text-sm leading-relaxed">
+                    Focus primarily on system configuration, requiring extensive hand-holding from
+                    internal finance teams.
+                  </p>
+                </div>
+                <div className="pt-6">
+                  <h4 className="text-base font-semibold mb-2 gradient-text">Vibha Technologies</h4>
+                  <p className="text-foreground font-medium text-sm leading-relaxed">
+                    We speak the language of Finance. We design SAP solutions that inherently
+                    address the complexities of risk, liquidity, and compliance.
+                  </p>
+                </div>
               </div>
             </div>
           </div>
