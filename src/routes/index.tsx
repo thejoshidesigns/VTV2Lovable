@@ -83,8 +83,12 @@ function HomePage() {
       <section className="relative flex items-center bg-slate-950 overflow-hidden border-b border-border">
         <div className="absolute inset-0 z-0">
           <img
-            src="https://images.unsplash.com/photo-1535504663857-dab4d2908557"
+            src="https://images.unsplash.com/photo-1535504663857-dab4d2908557?w=1600&q=70&auto=format&fit=crop"
             alt="Modern architectural glass building representing corporate finance"
+            width={1600}
+            height={900}
+            fetchPriority="high"
+            decoding="async"
             className="w-full h-full object-cover opacity-20 saturate-0"
           />
           <div className="absolute inset-0 bg-gradient-to-r from-slate-950 via-slate-950/90 to-slate-950/60" />
