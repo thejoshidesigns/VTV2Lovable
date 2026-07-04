@@ -46,12 +46,12 @@ function TermsPage() {
             <h2 className="text-foreground text-2xl font-bold mt-8">Contact</h2>
             <p>
               Questions about these terms:{" "}
-              <a href="mailto:contact@vibhatechnologies.co.uk" className="text-[#0B5CAD] font-medium">
-                contact@vibhatechnologies.co.uk
-              </a>{" "}
-              or{" "}
               <a href="mailto:appa@vibhatechnologies.co.uk" className="text-[#0B5CAD] font-medium">
                 appa@vibhatechnologies.co.uk
+              </a>{" "}
+              or{" "}
+              <a href="mailto:contact@vibhatechnologies.co.uk" className="text-[#0B5CAD] font-medium">
+                contact@vibhatechnologies.co.uk
               </a>
               .
             </p>
