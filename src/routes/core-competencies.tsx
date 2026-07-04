@@ -163,9 +163,9 @@ function CoreCompetenciesPage() {
                     <span className="inline-flex p-2 rounded-lg bg-white/15 backdrop-blur-sm text-white shrink-0">
                       <Icon className="h-5 w-5" />
                     </span>
-                    <h3 className="text-base md:text-lg font-bold text-white leading-tight min-w-0">
+                    <h2 className="text-base md:text-lg font-bold text-white leading-tight min-w-0">
                       {c.title}
-                    </h3>
+                    </h2>
                   </div>
                   <ul className="p-6 space-y-1.5 text-sm text-muted-foreground flex-1">
                     {c.points.map((p) => (
