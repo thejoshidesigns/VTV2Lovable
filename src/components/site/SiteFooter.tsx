@@ -15,7 +15,7 @@ export function SiteFooter() {
                 className="h-40 w-auto object-contain"
               />
             </div>
-            <span className="text-xs font-bold tracking-wider uppercase gradient-text block">
+            <span className="text-xs font-bold tracking-wider uppercase text-white block">
               Enterprise SAP Treasury &amp; Finance Consulting
             </span>
             <p className="text-slate-400 leading-relaxed text-sm max-w-sm">
