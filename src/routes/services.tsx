@@ -167,18 +167,22 @@ function ServicesPage() {
                 viewport={{ once: true, margin: "-40px" }}
                 transition={{ duration: 0.5, delay: i * 0.06 }}
                 whileHover={{ y: -6 }}
-                className="bg-card border border-border rounded-xl p-6 shadow-[0_12px_30px_-12px_rgba(11,92,173,0.28)] hover:shadow-[0_25px_50px_-15px_rgba(11,92,173,0.5)] transition-all duration-300"
+                className="bg-card border border-border rounded-xl overflow-hidden shadow-[0_12px_30px_-12px_rgba(11,92,173,0.28)] hover:shadow-[0_25px_50px_-15px_rgba(11,92,173,0.5)] transition-all duration-300 flex flex-col"
               >
-                <h3 className="text-xl font-bold mb-3">{s.title}</h3>
-                <p className="text-muted-foreground text-sm mb-4">{s.description}</p>
-                <ul className="space-y-2">
-                  {s.capabilities.map((c) => (
-                    <li key={c} className="flex items-start text-sm">
-                      <CheckCircle className="h-4 w-4 text-[#00A6E0] mr-2 mt-0.5 shrink-0" />
-                      <span>{c}</span>
-                    </li>
-                  ))}
-                </ul>
+                <div className="gradient-primary px-5 py-4">
+                  <h3 className="text-base md:text-lg font-bold text-white leading-tight">{s.title}</h3>
+                </div>
+                <div className="p-6 flex-1">
+                  <p className="text-muted-foreground text-sm mb-4">{s.description}</p>
+                  <ul className="space-y-2">
+                    {s.capabilities.map((c) => (
+                      <li key={c} className="flex items-start text-sm">
+                        <CheckCircle className="h-4 w-4 text-[#00A6E0] mr-2 mt-0.5 shrink-0" />
+                        <span>{c}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
               </motion.div>
             ))}
           </div>

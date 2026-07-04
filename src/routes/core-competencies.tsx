@@ -153,13 +153,17 @@ function CoreCompetenciesPage() {
                   viewport={{ once: true, margin: "-40px" }}
                   transition={{ duration: 0.5, delay: i * 0.05 }}
                   whileHover={{ y: -6 }}
-                  className="bg-card border border-border rounded-xl p-6 shadow-[0_12px_30px_-12px_rgba(11,92,173,0.28)] hover:shadow-[0_25px_50px_-15px_rgba(11,92,173,0.5)] transition-all duration-300"
+                  className="bg-card border border-border rounded-xl overflow-hidden shadow-[0_12px_30px_-12px_rgba(11,92,173,0.28)] hover:shadow-[0_25px_50px_-15px_rgba(11,92,173,0.5)] transition-all duration-300 flex flex-col"
                 >
-                  <div className="inline-flex p-3 rounded-xl gradient-primary text-white mb-4 shadow-sm">
-                    <Icon className="h-6 w-6" />
+                  <div className="gradient-primary px-5 py-4 flex items-center gap-3">
+                    <span className="inline-flex p-2 rounded-lg bg-white/15 backdrop-blur-sm text-white shrink-0">
+                      <Icon className="h-5 w-5" />
+                    </span>
+                    <h3 className="text-base md:text-lg font-bold text-white leading-tight min-w-0">
+                      {c.title}
+                    </h3>
                   </div>
-                  <h3 className="text-lg font-bold mb-3">{c.title}</h3>
-                  <ul className="space-y-1.5 text-sm text-muted-foreground">
+                  <ul className="p-6 space-y-1.5 text-sm text-muted-foreground flex-1">
                     {c.points.map((p) => (
                       <li key={p}>• {p}</li>
                     ))}

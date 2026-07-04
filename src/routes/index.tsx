@@ -290,6 +290,7 @@ function HomePage() {
                     </li>
                   ))}
                 </ul>
+                </div>
               </motion.div>
             ))}
           </div>
