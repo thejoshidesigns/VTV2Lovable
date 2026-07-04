@@ -13,6 +13,7 @@ export default defineConfig({
   },
   nitro: {
     preset: "static",
+    // @ts-expect-error nitro prerender is supported at runtime by the underlying preset
     prerender: {
       crawlLinks: true,
       failOnError: false,
