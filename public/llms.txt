@@ -1,0 +1,17 @@
+# Vibha Technologies UK Ltd
+
+> Specialist SAP Treasury, Cash Management and Finance Transformation consultancy with 16+ years of banking and SAP expertise across the UK, Europe, Middle East, USA and India.
+
+Vibha Technologies UK Ltd bridges the gap between complex financial operations and enterprise technology. The site explains the company’s SAP Treasury & Risk Management, Cash & Liquidity Management, In-House Banking, Bank Connectivity, Advanced Payment Management and SAP S/4HANA Finance capabilities, and provides a way to get in touch for consulting engagements.
+
+## Pages
+
+- [Home](/): SAP Treasury, Cash Management and Finance Transformation specialists.
+- [About](/about): Company background, banking roots and SAP consulting approach.
+- [Services](/services): Overview of SAP Treasury, Cash Management, In-House Banking, Bank Connectivity, Advanced Payment Management and S/4HANA Finance services.
+- [Core Competencies](/core-competencies): Detailed capability areas and technical expertise.
+- [Client Experience](/client-experience): Case studies and client delivery track record.
+- [Industries](/industries): Industry sectors and geographic reach served by Vibha Technologies.
+- [Contact](/contact): Consulting enquiry form and contact details.
+- [Privacy Policy](/privacy): How Vibha Technologies collects, uses and protects personal information.
+- [Terms of Service](/terms): Terms governing use of the website and services.
