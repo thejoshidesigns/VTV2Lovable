@@ -124,6 +124,7 @@ function CoreCompetenciesPage() {
   return (
     <div className="min-h-screen flex flex-col"><a href="#main-content" className="sr-only focus:not-sr-only focus:fixed focus:top-2 focus:left-2 focus:z-[100] focus:rounded-md focus:bg-primary focus:px-4 focus:py-2 focus:text-white">Skip to main content</a>
       <SiteHeader />
+      <main id="main-content" className="flex-1">
 
       <section className="py-20 bg-sky-50 relative overflow-hidden border-b border-border">
         <div className="container-x max-w-3xl relative z-10">
@@ -186,6 +187,7 @@ function CoreCompetenciesPage() {
         </div>
       </section>
 
+      </main>
       <SiteFooter />
     </div>
   );

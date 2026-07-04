@@ -76,6 +76,7 @@ function HomePage() {
   return (
     <div className="min-h-screen flex flex-col"><a href="#main-content" className="sr-only focus:not-sr-only focus:fixed focus:top-2 focus:left-2 focus:z-[100] focus:rounded-md focus:bg-primary focus:px-4 focus:py-2 focus:text-white">Skip to main content</a>
       <SiteHeader />
+      <main id="main-content" className="flex-1">
 
       {/* Hero */}
       <section className="relative flex items-center bg-slate-950 overflow-hidden border-b border-border">
@@ -297,6 +298,7 @@ function HomePage() {
         </div>
       </section>
 
+      </main>
       <SiteFooter />
     </div>
   );

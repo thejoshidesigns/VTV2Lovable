@@ -104,6 +104,7 @@ function ContactPage() {
   return (
     <div className="min-h-screen flex flex-col"><a href="#main-content" className="sr-only focus:not-sr-only focus:fixed focus:top-2 focus:left-2 focus:z-[100] focus:rounded-md focus:bg-primary focus:px-4 focus:py-2 focus:text-white">Skip to main content</a>
       <SiteHeader />
+      <main id="main-content" className="flex-1">
 
       <section className="py-20 bg-slate-950 text-white relative overflow-hidden border-b border-white/10">
         <div className="absolute inset-0 gradient-primary opacity-40" />
@@ -380,6 +381,7 @@ function ContactPage() {
         </div>
       </section>
 
+      </main>
       <SiteFooter />
     </div>
   );
