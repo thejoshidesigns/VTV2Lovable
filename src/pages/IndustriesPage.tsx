@@ -1,0 +1,68 @@
+import { Link } from "react-router-dom";
+import { Helmet } from "react-helmet-async";
+import { motion } from "framer-motion";
+import { Building2 } from "lucide-react";
+import { Button } from "@/components/ui/button";
+import { SiteHeader } from "@/components/site/SiteHeader";
+import { SiteFooter } from "@/components/site/SiteFooter";
+
+const industries = [
+  { sector: "Banking, Insurance & Financial Services", clients: ["HBOS", "Lloyds Banking", "LeasePlan"] },
+  { sector: "Oil and Gas", clients: ["Saudi Petro", "Gazprom"] },
+  { sector: "Utilities", clients: ["SWS", "GE Water", "Yorkshire Water"] },
+  { sector: "Media", clients: ["Cox Newspapers", "AC Nielsen"] },
+  { sector: "Manufacturing", clients: ["Siemens Gamesa", "SBD", "Lanxess Chemicals", "Grasim Industries"] },
+  { sector: "Retail & Consumer", clients: ["Co-op UK", "Adidas", "Signet Jewelers", "Homebase", "Kellogg's"] },
+  { sector: "Public Sector", clients: ["Detroit Public Schools", "Crossrail", "Ofcom", "Birmingham City Council"] },
+  { sector: "Pharmaceutical & Life Sciences", clients: ["Sri Krishna Pharma", "Dr Reddy's"] },
+];
+
+export default function IndustriesPage() {
+  return (
+    <div className="min-h-screen flex flex-col">
+      <Helmet>
+        <title>Industries We Serve | Vibha Technologies UK Ltd</title>
+        <meta name="description" content="Proven across Banking, Insurance & Financial Services, Oil and Gas, Utilities, Media, Manufacturing and Public Sector." />
+        <meta property="og:title" content="Industries We Serve | Vibha Technologies UK Ltd" />
+        <meta property="og:description" content="SAP Treasury and Finance experience across banking, retail, utilities, energy, manufacturing and public sector." />
+        <meta property="og:image" content="/media/og-image.jpg" />
+        <meta property="og:url" content="https://vibhatechnologies.co.uk/industries" />
+        <meta name="twitter:image" content="/media/og-image.jpg" />
+        <link rel="canonical" href="https://vibhatechnologies.co.uk/industries" />
+      </Helmet>
+      <a href="#main-content" className="sr-only focus:not-sr-only focus:fixed focus:top-2 focus:left-2 focus:z-[100] focus:rounded-md focus:bg-primary focus:px-4 focus:py-2 focus:text-white">Skip to main content</a>
+      <SiteHeader />
+      <main id="main-content" className="flex-1">
+        <section className="py-20 bg-muted/30 border-b border-border">
+          <div className="container-x text-center max-w-3xl mx-auto">
+            <h1 className="mb-6">Proven Experience Across <span className="gradient-text">Global Enterprises</span></h1>
+            <p className="text-xl text-muted-foreground leading-relaxed">Our SAP Treasury expertise has been tested across diverse regulatory environments and global operational scales.</p>
+          </div>
+        </section>
+        <section className="section-padding bg-background">
+          <div className="container-x">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
+              {industries.map((ind, i) => (
+                <motion.div key={ind.sector} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, margin: "-40px" }} transition={{ duration: 0.5, delay: i * 0.05 }} whileHover={{ y: -6 }} className="bg-card border border-border rounded-xl overflow-hidden shadow-[0_12px_30px_-12px_rgba(11,92,173,0.28)] hover:shadow-[0_25px_50px_-15px_rgba(11,92,173,0.5)] transition-all duration-300 flex flex-col">
+                  <div className="gradient-primary px-5 py-4 flex items-center gap-3">
+                    <span className="p-2 rounded-lg bg-white/15 backdrop-blur-sm text-white shrink-0"><Building2 className="h-5 w-5" /></span>
+                    <h2 className="text-base md:text-lg font-bold text-white leading-tight min-w-0">{ind.sector}</h2>
+                  </div>
+                  <ul className="p-6 space-y-1.5 text-sm text-muted-foreground flex-1">
+                    {ind.clients.map((c) => <li key={c}>• {c}</li>)}
+                  </ul>
+                </motion.div>
+              ))}
+            </div>
+            <div className="mt-16 text-center">
+              <Link to="/contact">
+                <Button size="lg" className="gradient-primary text-white border-0 shadow-md h-14 px-8 text-lg">Discuss Your Industry Requirements</Button>
+              </Link>
+            </div>
+          </div>
+        </section>
+      </main>
+      <SiteFooter />
+    </div>
+  );
+}
