@@ -1,12 +1,10 @@
 {
-  "name": "tanstack_start_ts",
+  "name": "vibha-technologies",
   "private": true,
-  "sideEffects": false,
   "type": "module",
   "scripts": {
-    "dev": "vite dev",
+    "dev": "vite",
     "build": "vite build",
-    "build:static": "vite build && node scripts/build-spa.mjs",
     "build:dev": "vite build --mode development",
     "preview": "vite preview",
     "lint": "eslint .",
