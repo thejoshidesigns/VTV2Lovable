@@ -47,7 +47,7 @@ export default function HomePage() {
             <div className="absolute inset-0 bg-gradient-to-r from-slate-950 via-slate-950/90 to-slate-950/60" />
             <div className="absolute inset-0 gradient-primary mix-blend-multiply opacity-50" />
           </div>
-          <div className="container-x relative z-10 py-8 md:py-12 lg:py-14 w-full">
+          <div className="container-x relative z-10 py-6 md:py-8 lg:py-10 w-full">
             <div className="grid grid-cols-1 lg:grid-cols-[1.15fr_1fr] gap-8 lg:gap-10 items-start">
               <motion.div initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8, ease: "easeOut" }}>
                 <div className="inline-flex items-center rounded-full border border-white/25 bg-white/10 backdrop-blur-md px-5 py-2 mb-5 shadow-[0_0_20px_rgba(0,166,224,0.4)]">
