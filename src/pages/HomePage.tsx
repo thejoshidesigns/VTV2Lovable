@@ -74,7 +74,7 @@ export default function HomePage() {
                 </div>
               </motion.div>
               <motion.div initial={{ opacity: 0, scale: 0.95 }} animate={{ opacity: 1, scale: 1 }} transition={{ duration: 1.2, ease: "easeOut", delay: 0.2 }} className="block order-first lg:order-none">
-                <LiquidLogo src={heroLogo.url} videoSrc={heroVideo.url} chromaKey alt="Vibha Technologies liquid logo" className="w-full aspect-square max-w-[260px] sm:max-w-[300px] lg:max-w-[360px] mx-auto lg:ml-auto lg:mr-0" />
+                <LiquidLogo src={heroLogo.url} videoSrc={heroVideo.url} chromaKey alt="Vibha Technologies liquid logo" className="w-full aspect-square max-w-[340px] sm:max-w-[400px] lg:max-w-[480px] mx-auto lg:ml-auto lg:mr-0" />
               </motion.div>
             </div>
           </div>
