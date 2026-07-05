@@ -159,15 +159,17 @@ export function LiquidLogo({ src, videoSrc, chromaKey = false, alt = "", classNa
 
     if (videoSrc) {
       video = document.createElement("video");
-      // NOTE: do NOT set crossOrigin — asset is same-origin and setting it
-      // triggers CORS-tainted-canvas errors on some Intel GPU drivers
-      // (Iris Xe / Arc), causing texImage2D to silently fail.
+      // Video is served from the Lovable assets CDN (cross-origin on preview
+      // and Hostinger). crossOrigin="anonymous" is required so WebGL can
+      // sample the frames without tainting the canvas.
+      video.crossOrigin = "anonymous";
       video.muted = true;
       video.defaultMuted = true;
       video.loop = true;
       video.playsInline = true;
       video.autoplay = true;
       video.preload = "auto";
+      video.setAttribute("crossorigin", "anonymous");
       video.setAttribute("playsinline", "");
       video.setAttribute("muted", "");
       video.setAttribute("autoplay", "");
